@@ -34,7 +34,6 @@
                     opacity: 0;
                 }
             }
-
             .Home__text {
                 margin-top: 15px;
                 position: relative;
@@ -72,7 +71,6 @@
             }
             &:hover {
                 cursor: pointer;
-
                 .Home__img {
                     .blackHome {
                         opacity: 1;
@@ -86,7 +84,7 @@
         margin: 30px auto;
         .Home__rap {
             margin-top: 20px;
-            .Home__logo{
+            .Home__logo {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -95,7 +93,6 @@
                     width: 100px;
                 }
             }
-         
             .rap__item {
                 box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.2);
                 max-width: 24%;
@@ -108,13 +105,13 @@
                     .BHD {
                         color: $color-green-1;
                     }
-                    .CGV{
-                        color:  $color-red-primary;
+                    .CGV {
+                        color: $color-red-primary;
                     }
-                    .CNS{
+                    .CNS {
                         color: $color-red-pink;
                     }
-                    .Beta{
+                    .Beta {
                         color: #008fe5;
                     }
                 }

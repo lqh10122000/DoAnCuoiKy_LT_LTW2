@@ -467,7 +467,7 @@ li {
     margin-top: 4%;
 }
 
-.app .app__content .app__banner .app__img {
+.app .app__content .app__banner {
     position: relative;
 }
 
@@ -479,8 +479,8 @@ li {
 .app .app__content .app__banner .app__main {
     position: absolute;
     width: 45%;
-    top: 3543px;
-    left: 194px;
+    top: 50%;
+    margin: auto;
     color: white;
 }
 
