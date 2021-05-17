@@ -7,7 +7,9 @@
         "../scss/Helper/_reset.scss",
         "../scss/Helper/_variables.scss",
         "../scss/Pages/_Home.scss",
-        "../scss/Pages/_Layout.scss"
+        "../scss/Pages/_Layout.scss",
+        "../scss/Pages/_news.scss",
+        "../scss/Pages/_app.scss"
     ],
     "names": [],
     "file": "main.css"

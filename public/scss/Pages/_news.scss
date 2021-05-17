@@ -1,0 +1,153 @@
+.news {
+    margin-top: 8%;
+    .news__content {
+        width: 80%;
+        margin: auto;
+        .news__row {
+            display: flex;
+            .news__col {
+                width: 50%;
+                margin-right: 30px;
+                .news__col__img {
+                    img {
+                        width: 100%;
+                        border-radius: 5px;
+                    }
+                }
+                .news__title {
+                    a {
+                        text-decoration: none;
+                        color: black;
+                        p {
+                            font-size: 17px;
+                            font-weight: 600;
+                            margin-top: 20px;
+                        }
+                        &:hover {
+                            color: red;
+                            transition: 0.5s;
+                        }
+                    }
+                }
+                .news__text {
+                    font-size: 14px;
+                }
+                .news__comment {
+                    display: flex;
+                    .news__like {
+                        margin-right: 20px;
+                        display: flex;
+                        img {
+                            width: 50%;
+                            margin-right: 0;
+                            &:hover {
+                                width: 52%;
+                            }
+                        }
+                    }
+                    .news__cmt {
+                        display: flex;
+                        img {
+                            width: 50%;
+                            &:hover {
+                                width: 52%;
+                            }
+                        }
+                    }
+                }
+            }
+            .news__col:first-child {
+                .news__comment {
+                    margin-top: 35px;
+                }
+            }
+        }
+        .news__main {
+            display: flex;
+            margin-top: 30px;
+            .news__item {
+                width: 95%;
+                margin-right: 20px;
+                .news__item__img {
+                    img {
+                        width: 100%;
+                        height: 173px;
+                        border-radius: 8px;
+                    }
+                }
+                .news__title {
+                    a {
+                        text-decoration: none;
+                        color: black;
+                        p {
+                            font-size: 15px;
+                            font-weight: 600;
+                            margin-top: 10px;
+                        }
+                        &:hover {
+                            color: red;
+                            transition: 0.5s;
+                        }
+                    }
+                }
+                .news__text {
+                    font-size: 14px;
+                }
+                .news__comment {
+                    display: flex;
+                    .news__like {
+                        margin-right: 20px;
+                        display: flex;
+                        img {
+                            width: 50%;
+                            margin-right: 0;
+                            &:hover {
+                                width: 52%;
+                            }
+                        }
+                    }
+                    .news__cmt {
+                        display: flex;
+                        img {
+                            width: 50%;
+                            &:hover {
+                                width: 52%;
+                            }
+                        }
+                    }
+                }
+            }
+            .news__item:first-child {
+                .news__comment {
+                    margin-top: 15px;
+                }
+            }
+        }
+        .news__end {
+            .news__end__text {
+                margin-bottom: 5px;
+                display: flex;
+                .news__img {
+                    img {
+                        width: 60px;
+                        height: 60px;
+                        margin-right: 20px;
+                    }
+                }
+                .news__title {
+                    a {
+                        text-decoration: none;
+                        color: black;
+                        p {
+                            font-size: 16px;
+                        }
+                        &:hover {
+                            color: red;
+                            transition: 0.5s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
