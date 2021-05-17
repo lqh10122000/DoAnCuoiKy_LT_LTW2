@@ -33,13 +33,135 @@ li {
   margin: 30px auto;
 }
 
-.Home .Home__List .Home__item img {
+.Home .Home__List .Home__item {
+  transition: 0.5s;
+}
+
+.Home .Home__List .Home__item .Home__img {
+  position: relative;
+}
+
+.Home .Home__List .Home__item .Home__img img {
   width: 100%;
+  border-radius: 10px;
+}
+
+.Home .Home__List .Home__item .Home__img .blackHome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0));
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+.Home .Home__List .Home__item .Home__text {
+  margin-top: 15px;
+  position: relative;
 }
 
 .Home .Home__List .Home__item .Home__text h2 {
   font-size: 20px;
   font-weight: 500;
+  min-height: 50px;
+}
+
+.Home .Home__List .Home__item .Home__text h2 span {
+  padding: 0 10px;
+  background-color: #00ac4d;
+  margin-right: 5px;
+  color: white;
+  border-radius: 6px;
+}
+
+.Home .Home__List .Home__item .Home__text .buttonHome {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  opacity: 0;
+}
+
+.Home .Home__List .Home__item .Home__text .buttonHome button {
+  width: 95%;
+  margin-top: 12px;
+}
+
+.Home .Home__List .Home__item .Home__text:hover .buttonHome {
+  opacity: 1;
+}
+
+.Home .Home__List .Home__item:hover {
+  cursor: pointer;
+}
+
+.Home .Home__List .Home__item:hover .Home__img .blackHome {
+  opacity: 1;
+}
+
+.Home .Home__CumRap {
+  width: 80%;
+  margin: 30px auto;
+}
+
+.Home .Home__CumRap .Home__rap {
+  margin-top: 20px;
+}
+
+.Home .Home__CumRap .Home__rap .Home__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Home .Home__CumRap .Home__rap .Home__logo img {
+  border-radius: 50%;
+  width: 100px;
+}
+
+.Home .Home__CumRap .Home__rap .rap__item {
+  box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  max-width: 24%;
+  padding: 10px;
+  margin-right: 8px;
+  margin-top: 10px;
+}
+
+.Home .Home__CumRap .Home__rap .rap__item h3 {
+  font-size: 16px;
+  min-height: 38px;
+}
+
+.Home .Home__CumRap .Home__rap .rap__item h3 .BHD {
+  color: #8bc541;
+}
+
+.Home .Home__CumRap .Home__rap .rap__item h3 .CGV {
+  color: #ff5252;
+}
+
+.Home .Home__CumRap .Home__rap .rap__item h3 .CNS {
+  color: #df0d7a;
+}
+
+.Home .Home__CumRap .Home__rap .rap__item h3 .Beta {
+  color: #008fe5;
+}
+
+.Home .Home__CumRap .Home__rap .rap__item p {
+  font-size: 14px;
+  color: #c7c7c7;
+  margin-bottom: 5px;
+}
+
+.Home .Home__CumRap .Home__rap .rap__item a {
+  color: #ff5252;
+  text-decoration: none;
 }
 
 .footer {
