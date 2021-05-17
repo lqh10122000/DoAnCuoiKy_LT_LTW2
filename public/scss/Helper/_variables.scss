@@ -1,0 +1,32 @@
+// variable color
+$color-red-primary: #ff5252;
+$color-red-light: #ff867f;
+$color-red-dark: #c50e29;
+$color-white-0: #fff;
+$color-white-1: #c7c7c7;
+$color-black-0:#000;
+$color-black-1:#1b1b1b;
+$color-trans:transparent;
+
+// variable font-size
+$fs-0: 13px; 
+$fs-1: 15px;
+$fs-2: 20px;
+$fs-3: 24px;
+$fs-4: 36px;
+$fs-4: 40px;
+
+//variable font-weight
+$fw-normal: normal;
+$fw-thin: 100;
+$fw-n3: 300;
+$fw-n4: 400;
+$fw-bold: 700;
+
+//break points
+$breakpoints:(
+    'extra-large': 1200px,
+    'large' : 992px,
+    'medium' : 768px,
+    'small' : 576px,
+)

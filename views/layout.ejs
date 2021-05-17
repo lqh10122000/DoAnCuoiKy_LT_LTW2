@@ -1,55 +1,144 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%- title %></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%- title %>
+  </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/main.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="/">Lập trình Web 2</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link <%- title === 'Trang chủ' ? 'active': '' %> " aria-current="page" href="/">Trang chủ</a>
-                  </li>
-                  
-                  <% if(currentUser){ %>                  
-                    <li class="nav-item">
-                      <a class="nav-link <%- title === 'Đổi mật khẩu' ? 'active': '' %> " href="/auth/changePassword">Đổi mật khẩu</a>
-                    </li> 
-                    <li class="nav-item">
-                      <a class="nav-link <%- title === 'Quên mật khẩu' ? 'active': '' %> " href="/auth/forgotPassword">Quên mật khẩu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/auth/logout">Đăng xuất</a>
-                    </li>                    
-                    <li class="nav-item">
-                        <a class="nav-link <%- title === 'Thông tin cá nhân' ? 'active': '' %> " href="/user/profile"><%- currentUser.displayName %></a>
-                    </li>
-                  <% } else{%>                       
-                    <li class="nav-item">
-                        <a class="nav-link <%- title === 'Đăng nhập' ? 'active': '' %> " href="/auth/login">Đăng nhập</a>
-                    </li>       
-                    <li class="nav-item">
-                      <a class="nav-link <%- title === 'Đăng kí tài khoản' ? 'active': '' %> " href="/auth/signup">Đăng kí tài khoản</a>
-                    </li>  
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><%- currentUser?currentUser.displayName: 'Khách' %></a>
-                    </li>
-                    <% } %>                                                            
-              </div>
+
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Lập trình Web 2</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link <%- title === 'Trang chủ' ? 'active': '' %> " aria-current="page" href="/">Trang
+                chủ</a>
+            </li>
+
+            <% if(currentUser){ %>
+              <li class="nav-item">
+                <a class="nav-link <%- title === 'Đổi mật khẩu' ? 'active': '' %> " href="/auth/changePassword">Đổi mật
+                  khẩu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link <%- title === 'Quên mật khẩu' ? 'active': '' %> " href="/auth/forgotPassword">Quên
+                  mật khẩu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/auth/logout">Đăng xuất</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link <%- title === 'Thông tin cá nhân' ? 'active': '' %> " href="/user/profile">
+                  <%- currentUser.displayName %>
+                </a>
+              </li>
+              <% } else{%>
+                <li class="nav-item">
+                  <a class="nav-link <%- title === 'Đăng nhập' ? 'active': '' %> " href="/auth/login">Đăng nhập</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link <%- title === 'Đăng kí tài khoản' ? 'active': '' %> " href="/auth/signup">Đăng kí
+                    tài khoản</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                    <%- currentUser?currentUser.displayName: 'Khách' %>
+                  </a>
+                </li>
+                <% } %>
+        </div>
+      </div>
+    </nav>
+    <%- body %>
+
+      <div class="footer">
+        <div class="footer__content">
+          <div class="row">
+            <div class="col-4 d-none d-sm-block col-lg-3">
+              <p>Lập Trình Web</p>
+              <ul>
+                <li><a href="#">Giới Thiệu</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Liên hệ</a></li>
+              </ul>
             </div>
-        </nav>
-        <h1><%- title %></h1>
-        <%- body %>
-    </div>
+            <div class="col-4 d-none d-sm-block col-lg-3">
+              <p>Điều Khoản sủ dụng</p>
+              <ul>
+                <li><a href="#">Điều Khoản Chung</a></li>
+                <li><a href="#">Điều Khoản Giao Dịch</a></li>
+                <li><a href="#">Điều Khoản Thanh Toán</a></li>
+                <li><a href="#">Điều Khoản Bảo Mật</a></li>
+                <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+              </ul>
+            </div>
+            <div class="col-12 d-none d-lg-block col-lg-3">
+              <p>Đối tác</p>
+              <ul>
+                <li class="logoL">
+                  <a href="https://www.cgv.vn/" class="logo"><img src="../assets/logo/cgv.png" /></a>
+                  <a href="https://www.galaxycine.vn/" class="logo"><img src="../assets/logo/galaxycine.png" /></a>
+                  <a href="http://lottecinemavn.com/LCHS/index.aspx"><img src="../assets/logo/lotte.png" /></a>
+
+                </li>
+                <li class="logoL">
+                  <a href="https://www.bhdstar.vn/" class="logo"><img src="../assets/logo/bhd.png" /></a>
+                  <a href="https://www.megagscinemas.vn/" class="logo"><img src="../assets/logo/megags.png" /></a>
+                  <a href="http://ddcinema.vn/"><img src="../assets/logo/dongdacinema.png"/></a>
+
+                </li>
+                <li>
+                  <a href="http://cinestar.com.vn/" class="logo"><img src="../assets/logo/cinestar.png" /></a>
+                  <a href="https://cinemaxvn.com/" class="logo"><img src="../assets/logo/cnx.jpg" /></a>
+                  <a href="https://www.betacinemas.vn/home.htm"><img src="../assets/logo/bt.jpg" /></a>
+
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-3">
+              <p>Liên hệ</p>
+              <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i>Duy</a> </li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i>Duy</a> </li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i>Bảo</a> </li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i>Huy</a> </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
 </body>
+
 </html>

@@ -11,7 +11,6 @@ const authRouter = require('./routers/auth');
 const authMiddleware = require('./middlewares/auth');
 
 const app = express();
-
 //EJS
 app.set('views', 'views');
 app.set('view engine', 'ejs');
