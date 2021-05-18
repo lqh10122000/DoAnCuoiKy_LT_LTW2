@@ -8,6 +8,7 @@ const cookieSession = require('cookie-session');
 const db = require('./models/db');
 const userRouter = require('./routers/user');
 const authRouter = require('./routers/auth');
+const theater_clusterRouter = require('./routers/theater_cluster');
 const authMiddleware = require('./middlewares/auth');
 
 const app = express();
@@ -30,13 +31,10 @@ app.use(cookieSession({
 app.use(authMiddleware);
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
-
+app.use('/theater_cluster', theater_clusterRouter);
 app.get('/', function(req, res){
     res.render('index', {title: 'Trang chủ' });
 });
-
-
-
 
 db.sync().then(function (){
     const port = process.env.PORT || 3000;
