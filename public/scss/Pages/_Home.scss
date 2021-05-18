@@ -1,5 +1,6 @@
 .Home {
     .Home__carousel {
+        position: relative;
         img {
             height: 500px;
         }
@@ -11,10 +12,53 @@
                 background-color: $color-red-primary;
             }
         }
+        .Home__search {
+            position: absolute;
+            bottom: -50px;
+            left: 15%;
+            width: 70%;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            .Home__item {
+                border-right: 1px solid $color-white-1;
+                padding: 0 10px;
+                button {
+                    outline: none;
+                    width: 100%;
+                    text-align: left;
+                    &:focus {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+                .btn-danger {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
     }
     .Home__List {
         width: 80%;
         margin: 30px auto;
+        .Home__title {
+            width: 100%;
+            min-height: 80px;
+            margin-top: 80px;
+            a {
+                font-size: 26px;
+                text-decoration: none;
+                color: black;
+                font-weight: 500;
+                transition: 0.3s;
+                &:hover {
+                    color: $color-red-primary;
+                    font-size: 28px;
+                }
+            }
+        }
         .Home__item {
             transition: 0.5s;
             .Home__img {
