@@ -2,7 +2,13 @@
 @import './Helper/reset';
 @import './Helper/variables';
 // Trang chủ
-@import './Pages/Home';
 @import './Pages/Layout';
-@import './Pages/news';
-@import './Pages/app';
+
+@import './Pages/Home/Home';
+@import './Pages/Home/news';
+@import './Pages/Home/app';
+
+@import './Pages/DetailMovie/DetailMovie';
+@import './Pages/DetailMovie/ListMovie';
+
+@import './Pages/DetailTheater';

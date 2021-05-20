@@ -1,0 +1,62 @@
+.detailMovie {
+    width: 90%;
+    margin: 30px auto;
+    .Home__rap {
+        margin-top: 20px;
+        .Home__logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                border-radius: 50%;
+                width: 100px;
+            }
+        }
+        .row{
+            justify-content: space-between;
+        }
+        .rap__item {
+            box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2), 0 0 1px 0 rgba(0, 0, 0, 0.4);
+            max-width: 47%;
+            padding: 10px 10px 10px 10px;
+            margin-right: 8px;
+            margin-top: 10px;
+            h3 {
+                font-size: 16px;
+                min-height: 38px;
+                .BHD {
+                    color: $color-green-1;
+                }
+                .CGV {
+                    color: $color-red-primary;
+                }
+                .CNS {
+                    color: $color-red-pink;
+                }
+                .Beta {
+                    color: #008fe5;
+                }
+            }
+            p {
+                font-size: 14px;
+                color: $color-white-1;
+                margin-bottom: 10px;
+            }
+            a {
+                color: #ff5252;
+                font-size: 18px;
+                font-weight: 700;
+                padding: 5px;
+                margin-right: 5px;
+                text-decoration: none;
+                background-color: white;
+                &:hover{
+                    background-color: #ff5252;
+                    color: white;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+    }
+}

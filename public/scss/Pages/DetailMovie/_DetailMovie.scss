@@ -1,0 +1,187 @@
+.CtPhim__Intro {
+    background: linear-gradient(to top left, #ff867f, #ff5252, #ff867f, #ff867f, #ff5252, #c50e29);
+    .CtPhim__content {
+        width: 90%;
+        margin: auto;
+        padding: 20px 0;
+        .CtPhim__img {
+            img {
+                width: 100%;
+                height: auto;
+                border: 9px solid #fae2a2;
+                display: block;
+            }
+        }
+        .CtPhim__Text {
+            background-color: #f18720b8;
+            margin: 0 auto;
+            box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3), 0 0 50px 0 rgba(0, 0, 0, 0.4);
+            padding: 0 50px;
+
+            .tab__left {
+                color: $color-white-1;
+
+                h2 {
+                    color: $color-red-dark;
+                    font-size: 52px;
+                    text-align: center;
+                    margin-top: 50px;
+                    margin-bottom: 30px;
+                }
+                .tab__txt {
+                    font-size: 20px;
+                    min-height: 240px;
+                    span {
+                        font-size: 24px;
+                        color: white;
+                        margin-left: 10px;
+                    }
+                }
+                .tab__button {
+                    text-align: center;
+                    a {
+                        cursor: pointer;
+                        text-decoration: none;
+                        font-size: 24px;
+                        color: white;
+                        background-color: #c50e2970;
+                        padding: 20px 50px;
+                        margin: 0 20px 20px 0;
+                        width: 35%;
+                        font-weight: 700;
+                        transition: 0.5s;
+                        border: none;
+                        &:focus {
+                            outline: white;
+                        }
+                        &:hover {
+                            background-color: rgb(255, 196, 0);
+                            color: $color-black-1;
+                        }
+                    }
+                    a:first-child {
+                        border-top-left-radius: 50px;
+                        border-bottom-left-radius: 50px;
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                    }
+                    a:last-child {
+                        border-top-left-radius: 5px;
+                        border-bottom-left-radius: 5px;
+                        border-top-right-radius: 50px;
+                        border-bottom-right-radius: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsible("extra-large") {
+    .CtPhim__Intro {
+        .CtPhim__content {
+            .CtPhim__Text {
+                .tab__left {
+                    h2 {
+                        font-size: 48px;
+                    }
+                    .tab__txt {
+                        font-size: 18px;
+                        min-height: 160px;
+                        span {
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsible("large") {
+    .CtPhim__Intro {
+        .CtPhim__content {
+            .CtPhim__Text {
+                .ant-tabs-tab {
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+                .tab__left {
+                    h2 {
+                        font-size: 40px;
+                    }
+                    .tab__txt {
+                        font-size: 16px;
+                        min-height: 100px;
+                        span {
+                            font-size: 20px;
+                        }
+                    }
+                    .tab__button {
+                        button {
+                            font-size: 18px;
+                            padding: 10px 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsible("medium") {
+    .CtPhim__Intro {
+        .CtPhim__content {
+            .CtPhim__Text {
+                .ant-tabs-tab {
+                    font-size: 16px;
+
+                    font-weight: 500;
+                }
+                .tab__left {
+                    h2 {
+                        font-size: 32px;
+                        margin: 0;
+
+                    }
+                    .tab__txt {
+                        p {
+                            margin-bottom: 5px;
+                        }
+                        font-size: 14px;
+                        min-height: 50px;
+                        span {
+                            font-size: 16px;
+                        }
+                    }
+                    .tab__button {
+                        button {
+                            font-size: 16px;
+                            padding: 5px 10px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsible("small") {
+    .CtPhim__Intro {
+        .CtPhim__content {
+            .CtPhim__Text {
+                .tab__left {
+                    .tab__txt {
+                        font-size: 12px;
+                        min-height: 60px;
+                        span {
+                            font-size: 14px;
+                        }
+                    }
+                    .tab__button {
+                        button {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

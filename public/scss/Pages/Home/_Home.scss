@@ -85,6 +85,7 @@
                     font-size: 20px;
                     font-weight: 500;
                     min-height: 50px;
+                    color: $color-black-0;
                     span {
                         padding: 0 10px;
                         background-color: $color-green-0;
@@ -92,6 +93,9 @@
                         color: white;
                         border-radius: 6px;
                     }
+                }
+                p{
+                    color: $color-black-1;
                 }
                 .buttonHome {
                     position: absolute;
