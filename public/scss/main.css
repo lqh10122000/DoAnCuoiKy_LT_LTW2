@@ -18,6 +18,10 @@ li {
   list-style: none;
 }
 
+.Home .Home__carousel {
+  position: relative;
+}
+
 .Home .Home__carousel img {
   height: 500px;
 }
@@ -29,9 +33,63 @@ li {
   background-color: #ff5252;
 }
 
+.Home .Home__carousel .Home__search {
+  position: absolute;
+  bottom: -50px;
+  left: 15%;
+  width: 70%;
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.Home .Home__carousel .Home__search .Home__item {
+  border-right: 1px solid #c7c7c7;
+  padding: 0 10px;
+}
+
+.Home .Home__carousel .Home__search .Home__item button {
+  outline: none;
+  width: 100%;
+  text-align: left;
+}
+
+.Home .Home__carousel .Home__search .Home__item button:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.Home .Home__carousel .Home__search .Home__item .btn-danger {
+  width: 100%;
+  text-align: center;
+}
+
 .Home .Home__List {
   width: 80%;
   margin: 30px auto;
+}
+
+.Home .Home__List .Home__title {
+  width: 100%;
+  min-height: 80px;
+  margin-top: 80px;
+}
+
+.Home .Home__List .Home__title a {
+  font-size: 26px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.Home .Home__List .Home__title a:hover {
+  color: #ff5252;
+  font-size: 28px;
 }
 
 .Home .Home__List .Home__item {
