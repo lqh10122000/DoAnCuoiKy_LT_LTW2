@@ -1,0 +1,122 @@
+.Ctr__InTro {
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    .bgBlack {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    .Ctr__content {
+        margin: auto;
+        height: 600px;
+        align-items: center;
+        color: white;
+        .ctr__img {
+            float: left;
+            margin-left: 15%;
+            img {
+                margin: auto;
+                width: 200px;
+                height: 300px;
+                border-radius: 10px;
+            }
+            margin-right: 20px;
+        }
+        .ctr__text {
+            margin: 60px 0 0 0;
+            h2 {
+                color: white;
+                font-size: 24px;
+            }
+            p {
+                color: $color-white-1;
+            }
+            button {
+                padding: 8px 30px;
+                background-color: $color-red-primary;
+                border: none;
+                outline: none;
+                border-radius: 10px;
+                margin-top: 30px;
+                transition: 0.5;
+                &:hover {
+                    background-color: $color-red-dark;
+                }
+            }
+        }
+      
+    }
+}
+.theater__map{
+    margin: 30px 0;
+    text-align: center;
+}
+@include responsible("large") {
+    .Ctr__InTro {
+        height: 400px;
+        .Ctr__content {
+            height: 400px;
+            .ctr__img {
+                margin-left: 10%;
+            }
+            .ctr__text {
+                h2 {
+                    font-size: 22px;
+                }
+            }
+         
+        }
+    }
+}
+@include responsible("medium") {
+    .Ctr__InTro {
+        height: 380px;
+        .Ctr__content {
+            height: 380px;
+            .ctr__img {
+                margin-left: 8%;
+                img {
+                    width: 180px;
+                    height: 280px;
+                }
+            }
+            .ctr__text {
+                h2 {
+                    font-size: 20px;
+                }
+                p{
+                    font-size: 12px;
+                }
+            }
+           
+        }
+    }
+}
+@include responsible("small") {
+    .Ctr__InTro {
+        height: 380px;
+        .Ctr__content {
+            height: 380px;
+            .ctr__img {
+                margin-left: 8%;
+                img {
+                    width: 180px;
+                    height: 280px;
+                }
+            }
+            .ctr__text {
+                h2 {
+                    font-size: 20px;
+                }
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
