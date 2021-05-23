@@ -1258,6 +1258,10 @@ li {
   width: 92%;
 }
 
+.signup .signup__content .signup__form .signup__input input[type="password"] {
+  width: 92%;
+}
+
 .signup .signup__content .signup__form a button {
   border: none;
   border-radius: 5px;
