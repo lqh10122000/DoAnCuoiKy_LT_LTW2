@@ -1210,4 +1210,67 @@ li {
 .login .login__content .login__form .login__icons .login__end p {
   font-size: 16px;
 }
+
+.signup .signup__content {
+  border-radius: 5px;
+  position: relative;
+}
+
+.signup .signup__content img {
+  height: 700px;
+  width: 100%;
+}
+
+.signup .signup__content .signup__form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 20px 20px;
+  background-color: rgba(0, 60, 255, 0.349);
+  width: 30%;
+  border-radius: 5px;
+}
+
+.signup .signup__content .signup__form h3 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.signup .signup__content .signup__form .signup__input {
+  margin-bottom: 20px;
+  border-bottom: 1px solid white;
+  padding: 10px;
+}
+
+.signup .signup__content .signup__form .signup__input input {
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  font-size: 15px;
+}
+
+.signup .signup__content .signup__form .signup__input input[type="text"] {
+  width: 92%;
+}
+
+.signup .signup__content .signup__form a button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 25px;
+  background-color: black;
+  color: white;
+  margin-left: 35%;
+}
+
+.signup .signup__content .signup__form a button:hover {
+  color: black;
+  background-color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
 /*# sourceMappingURL=main.css.map */
