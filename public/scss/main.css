@@ -1211,6 +1211,38 @@ li {
   font-size: 16px;
 }
 
+.changePassword {
+  position: relative;
+}
+
+.changePassword img {
+  width: 100%;
+  height: 700px;
+}
+
+.changePassword .change__form {
+  width: 40%;
+  margin: auto;
+  background-color: rgba(0, 0, 255, 0.014);
+  position: absolute;
+  padding: 50px;
+  top: 35%;
+  left: 3%;
+}
+
+.changePassword .change__form .change__input {
+  margin-bottom: 20px;
+}
+
+.changePassword .change__form .change__input input {
+  border: none;
+  outline: none;
+}
+
+.changePassword .change__form a button {
+  padding: 6px 30px;
+}
+
 .forgotPassword {
   position: relative;
 }
