@@ -9,6 +9,7 @@ const db = require('./models/db');
 const userRouter = require('./routers/user');
 const authRouter = require('./routers/auth');
 const detailRouter = require('./routers/detail');
+const ticketRouter = require('./routers/ticket');
 
 const authMiddleware = require('./middlewares/auth');
 
@@ -33,7 +34,7 @@ app.use(authMiddleware);
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
 app.use('/detail', detailRouter);
-//app.use('/theater_cluster', theater_clusterRouter);
+app.use('/ticket', ticketRouter);
 app.get('/', function(req, res){
     res.render('index', {title: 'Trang chủ' });
 });
