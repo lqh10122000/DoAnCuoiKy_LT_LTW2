@@ -1,19 +1,19 @@
 const { DataTypes } = require('sequelize');
 const db = require('./db');
 const Booking = db.define('Booking', {
-    User_Id: {
+    userId: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    ShowTime_Id: {
+    showTimeId: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    Time: {
+    time: {
         type: DataTypes.TIME,
         allowNull: false,
     },
-    Total_Money: {
+    totalMoney: {
         type: DataTypes.DOUBLE,
         allowNull: false,
     }

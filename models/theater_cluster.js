@@ -1,20 +1,20 @@
 const { DataTypes } = require('sequelize');
 const db = require('./db');
 const TheaterCluster = db.define('TheaterCluster', {
-    Name: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    Address: {
+    address: {
         type: DataTypes.STRING,
         allowNull: false,
     }  
 });
 
-TheaterCluster.findByName = async function (Name) {
+TheaterCluster.findByName = async function (name) {
     return TheaterCluster.findOne({
         where: {
-            Name,
+            name,
         },
     });
 };
