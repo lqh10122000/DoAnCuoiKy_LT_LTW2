@@ -1,8 +1,20 @@
 @import './Helper/mixin';
 @import './Helper/reset';
 @import './Helper/variables';
-
 // Trang chủ
-@import './Pages/Home';
 @import './Pages/Layout';
 
+@import './Pages/Home/Home';
+@import './Pages/Home/news';
+@import './Pages/Home/app';
+
+@import './Pages/DetailMovie/DetailMovie';
+@import './Pages/DetailMovie/ListMovie';
+
+@import './Pages/DetailTheater/DetailTheater';
+@import './Pages/DetailTheater/ListTheater';
+
+@import './Pages/authAccount/login';
+@import './Pages/authAccount/changePassword';
+@import './Pages/authAccount/forgotPassword';
+@import './Pages/authAccount/signup';

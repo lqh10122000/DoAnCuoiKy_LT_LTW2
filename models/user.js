@@ -3,7 +3,7 @@ const db = require('./db');
 const User = db.define('User', {
     displayName: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     email: {
         type: DataTypes.STRING,
@@ -13,6 +13,10 @@ const User = db.define('User', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    phone: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
     picture: {
         type: DataTypes.BLOB,
         allowNull: true,
@@ -20,6 +24,7 @@ const User = db.define('User', {
     token: {
         type: DataTypes.STRING,
     }
+
 });
 
 User.findByEmail = async function (email) {

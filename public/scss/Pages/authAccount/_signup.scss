@@ -1,0 +1,59 @@
+.signup {
+    .signup__content {
+        border-radius: 5px;
+        position: relative;
+        img {
+            height: 700px;
+            width: 100%;
+        }
+        .signup__form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px 20px;
+            background-color: rgba(0, 60, 255, 0.349);
+            width: 30%;
+            border-radius: 5px;
+            h3 {
+                font-size: 25px;
+                font-weight: 600;
+                margin-bottom: 20px;
+                color: white;
+            }
+            .signup__input {
+                margin-bottom: 20px;
+                border-bottom: 1px solid white;
+                padding: 10px;
+                input {
+                    border: none;
+                    outline: none;
+                    background: rgba(0, 0, 0, -0.897);
+                    color: white;
+                    font-size: 15px;
+                }
+                input[type="text"] {
+                    width: 92%;
+                }
+                input[type="password"] {
+                    width: 92%;
+                }
+            }
+            a {
+                button {
+                    border: none;
+                    border-radius: 5px;
+                    padding: 5px 25px;
+                    background-color: black;
+                    color: white;
+                    margin-left: 35%;
+                    &:hover {
+                        color: black;
+                        background-color: white;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}
