@@ -13,10 +13,13 @@ function GetIdMovie() {
 }
 
 router.get(
-  "/movie",
+  "/",
   asyncHandler(async function (req, res) {
     res.locals.title = "Chi tiết phim";
-    const movie = await Movie.getAllMovies();
+
+    const IdMovie = req.query.id;
+
+    const movie = await Movie.findById(IdMovie);
 
     // var a = JSDOM.getElementsByTagName("a");
 
@@ -32,7 +35,7 @@ router.post(
   "/movie",
   asyncHandler(async function (req, res) {
     res.locals.title = "Chi tiết phim";
-    const movie = await Movie.getAllMovies();
+    // const movie = await Movie.getAllMovies();
 
     // var a = JSDOM.getElementsByTagName("a");
 
@@ -40,7 +43,7 @@ router.post(
 
     console.log("aaaaaaa: ");
 
-    res.render("detail/movie", { movies: movie });
+    res.render("detail/movie");
   })
 );
 

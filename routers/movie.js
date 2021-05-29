@@ -25,6 +25,11 @@ function getDaysInMonth() {
   return days;
 }
 
+router.post(
+  "/detail",
+  asyncHandler(async function (req, res, text) {})
+);
+
 router.get(
   "/",
   asyncHandler(async function (req, res, next) {

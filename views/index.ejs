@@ -150,9 +150,15 @@
     </div>
     <div class="row">
       <% for(let i = 0; i < movies[0].length; i++) { %>
-      <form method="post" action="">
+      <form method="post" action="/detail">
+        <input
+          type="hidden"
+          id="IdMovie"
+          name="IdMovie"
+          value="<%= movies[0][i].id %>"
+        />
         <a
-          href="/detail/movie"
+          href="/detail/?id=<%= movies[0][i].id %>"
           class="Home__item col-3"
           value="<%= movies[0][i].id %>"
           type="submit"

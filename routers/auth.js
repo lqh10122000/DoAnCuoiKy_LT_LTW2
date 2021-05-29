@@ -2,6 +2,7 @@ require("dotenv").config();
 const asyncHandler = require("@joellesenne/express-async-handler");
 const { body, validationResult } = require("express-validator");
 const crypto = require("crypto");
+const bcrypt = require("bcrypt");
 const express = require("express");
 const router = express.Router();
 
@@ -33,6 +34,11 @@ router.get("/changePassword", function (req, res) {
   res.render("auth/changePassword");
 });
 
+router.get("/emailForgotPassword", function (req, res) {
+  res.locals.title = "Quên mật khẩu";
+  res.render("auth/emailForgotPassword");
+});
+
 router.get("/forgotPassword", function (req, res) {
   res.locals.title = "Quên mật khẩu";
   res.render("auth/forgotPassword");
@@ -48,7 +54,7 @@ router.post(
   asyncHandler(async function (req, res) {
     const { email, password } = req.body;
     const foundUser = await User.findByEmail(email);
-    if (foundUser && foundUser.password === password) {
+    if (foundUser && bcrypt.compareSync(password, foundUser.password)) {
       req.session.userId = foundUser.id;
       res.redirect("/");
     } else {
@@ -111,9 +117,26 @@ router.post(
   asyncHandler(async function (req, res) {
     const { password, newpassword } = req.body;
     const user = await User.findById(req.session.userId);
-    if (user && user.password == password) {
-      user.password = newpassword;
+    if (user && bcrypt.compareSync(password, user.password)) {
+      user.password = bcrypt.hashSync(newpassword, 10);
       user.save();
+    }
+    res.redirect("/");
+  })
+);
+
+router.post(
+  "/emailForgotPassword",
+  asyncHandler(async function (req, res) {
+    const { email } = req.body;
+    const user = await User.findByEmail(email);
+    if (user) {
+      await Email.send(
+        user.email,
+        "Đổi mật khẩu",
+        `${process.env.BASE_URL}/auth/forgotPassword`
+      );
+      console.log(`Vui lòng kiểm tra email`);
     }
     res.redirect("/");
   })
@@ -124,8 +147,8 @@ router.post(
   asyncHandler(async function (req, res) {
     const { newpassword } = req.body;
     const user = await User.findById(req.session.userId);
-    if (user && user.password == password) {
-      user.password = newpassword;
+    if (user) {
+      user.password = bcrypt.hashSync(newpassword, 10);
       user.save();
     }
     res.redirect("/");

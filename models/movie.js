@@ -28,7 +28,11 @@ Movie.findByName = async function (Name) {
 };
 
 Movie.findById = async function (id) {
-  return Movie.findByPk(id);
+  return Movie.findOne({
+    where: {
+      id,
+    },
+  });
 };
 
 Movie.getAllMovies = async function () {

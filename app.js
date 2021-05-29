@@ -8,10 +8,12 @@ const db = require("./models/db");
 const userRouter = require("./routers/user");
 const authRouter = require("./routers/auth");
 const detailRouter = require("./routers/detail");
+const ticketRouter = require("./routers/ticket");
 const movieRouter = require("./routers/movie");
 const authMiddleware = require("./middlewares/auth");
 
 const app = express();
+
 //EJS
 app.set("views", "views");
 app.set("view engine", "ejs");
@@ -33,8 +35,8 @@ app.use(authMiddleware);
 app.use("/user", userRouter);
 app.use("/auth", authRouter);
 app.use("/detail", detailRouter);
+app.use("/ticket", ticketRouter);
 app.use("/", movieRouter);
-//app.use('/theater_cluster', theater_clusterRouter);
 
 db.sync()
   .then(function () {
