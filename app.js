@@ -14,10 +14,10 @@ const ticketRouter = require('./routers/ticket');
 const authMiddleware = require('./middlewares/auth');
 
 const app = express();
+
 //EJS
 app.set('views', 'views');
 app.set('view engine', 'ejs');
-
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressLayouts);

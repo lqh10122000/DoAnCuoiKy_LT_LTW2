@@ -1,15 +1,15 @@
 const { DataTypes } = require('sequelize');
 const db = require('./db');
 const Ticket = db.define('Ticket', {
-    Booking_Id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    Seat_Code: {
+    bookingId: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    Price: {
+    seatCode: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    price: {
         type: DataTypes.DOUBLE,
         allowNull: false,
     }

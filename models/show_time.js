@@ -1,32 +1,40 @@
 const { DataTypes } = require('sequelize');
 const db = require('./db');
 const ShowTime = db.define('ShowTime', {
-    Movie_Id: {
+    movieId: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    Theater_Id: {
+    theaterId: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    Start: {
+    start: {
         type: DataTypes.TIME,
         allowNull: false,
     },
-    End: {
+    end: {
         type: DataTypes.TIME,
         allowNull: false,
     },
-    Price: {
+    price: {
         type: DataTypes.DOUBLE,
         allowNull: false,
     }
 });
 
-ShowTime.findByName = async function (Name) {
+ShowTime.findByMovieId = async function (movieId) {
     return ShowTime.findOne({
         where: {
-            Name,
+            movieId,
+        },
+    });
+};
+
+ShowTime.findByTheaterId = async function (theaterId) {
+    return ShowTime.findOne({
+        where: {
+            theaterId,
         },
     });
 };

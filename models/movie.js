@@ -1,28 +1,28 @@
 const { DataTypes } = require('sequelize');
 const db = require('./db');
 const Movie = db.define('Movie', {
-    Name: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    Premiere_Date: {
+    premiereDate: {
         type: DataTypes.DATE,
         allowNull: false,
     },
-    Picture_Poster: {
+    picturePoster: {
         type: DataTypes.BLOB,
         allowNull: true,
     },
-    Time: {
+    time: {
         type: DataTypes.TIME,
         allowNull: false,
     }
 });
 
-Movie.findByName = async function (Name) {
+Movie.findByName = async function (name) {
     return Movie.findOne({
         where: {
-            Name,
+            name,
         },
     });
 };
