@@ -1,19 +1,19 @@
 const { DataTypes } = require("sequelize");
 const db = require("./db");
 const Movie = db.define("Movie", {
-  Name: {
+  name: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  Premiere_Date: {
+  premiereDate: {
     type: DataTypes.DATE,
     allowNull: false,
   },
-  Picture_Poster: {
+  picturePoster: {
     type: DataTypes.BLOB,
     allowNull: true,
   },
-  Time: {
+  time: {
     type: DataTypes.TIME,
     allowNull: false,
   },
@@ -36,8 +36,8 @@ Movie.findById = async function (id) {
 };
 
 Movie.getAllMovies = async function () {
-  const allMovies = db.query('select * from public."Movies"');
-  return allMovies;
+  // const allMovies = db.query('select * from public."Movies"');
+  // return allMovies;
 };
 
 module.exports = Movie;
