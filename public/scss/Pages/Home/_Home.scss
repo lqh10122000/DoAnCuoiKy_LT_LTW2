@@ -19,19 +19,19 @@
             width: 70%;
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            padding: 15px;
+            padding: 15px 15px 0 15px;
             border-radius: 10px;
             .Home__item {
                 border-right: 1px solid $color-white-1;
-                padding: 0 10px;
-                button {
+                select {
+                    cursor: pointer;
+                    font-size: 16px;
                     outline: none;
                     width: 100%;
                     text-align: left;
-                    &:focus {
-                        outline: none;
-                        box-shadow: none;
-                    }
+                    border: none;
+
+                    box-shadow: none;
                 }
                 .btn-danger {
                     width: 100%;
@@ -94,7 +94,7 @@
                         border-radius: 6px;
                     }
                 }
-                p{
+                p {
                     color: $color-black-1;
                 }
                 .buttonHome {

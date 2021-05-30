@@ -134,23 +134,21 @@ li {
   width: 70%;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  padding: 15px;
+  padding: 15px 15px 0 15px;
   border-radius: 10px;
 }
 
 .Home .Home__carousel .Home__search .Home__item {
   border-right: 1px solid #c7c7c7;
-  padding: 0 10px;
 }
 
-.Home .Home__carousel .Home__search .Home__item button {
+.Home .Home__carousel .Home__search .Home__item select {
+  cursor: pointer;
+  font-size: 16px;
   outline: none;
   width: 100%;
   text-align: left;
-}
-
-.Home .Home__carousel .Home__search .Home__item button:focus {
-  outline: none;
+  border: none;
   box-shadow: none;
 }
 
@@ -969,5 +967,429 @@ li {
   background-color: #ff5252;
   color: white;
   border-radius: 10px;
+}
+
+.login .login__content {
+  border-radius: 5px;
+  position: relative;
+}
+
+.login .login__content img {
+  width: 100%;
+  height: 700px;
+}
+
+.login .login__content .login__form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 20px;
+  background-color: rgba(0, 60, 255, 0.349);
+  width: 30%;
+  border-radius: 5px;
+}
+
+.login .login__content .login__form h3 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.login .login__content .login__form .form-input {
+  margin-bottom: 20px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.login .login__content .login__form .form-input input {
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.login .login__content .login__form .form-input i {
+  border-right: 1px solid gray;
+  font-size: 15px;
+  margin-right: 10px;
+  padding-right: 10px;
+  color: rgba(255, 255, 255, 0.767);
+}
+
+.login .login__content .login__form .login__remember {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login .login__content .login__form .login__remember .login__remaind {
+  display: flex;
+  align-items: center;
+}
+
+.login .login__content .login__form .login__remember .login__remaind input {
+  margin: 0 10px;
+}
+
+.login .login__content .login__form .login__remember .login__remaind p {
+  font-size: 14px;
+  margin-top: 16px;
+  color: white;
+}
+
+.login .login__content .login__form .login__remember a button {
+  margin-top: 6px;
+  padding: 5px 35px;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+.login .login__content .login__form .login__remember a button:hover {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.login .login__content .login__form .login__new {
+  margin-bottom: 30px;
+}
+
+.login .login__content .login__form .login__new a {
+  font-size: 16px;
+  color: #fd1e1e;
+}
+
+.login .login__content .login__form .login__icons {
+  position: relative;
+  border-top: 1px solid rgba(187, 183, 183, 0.418);
+  border-bottom: 1px solid rgba(187, 183, 183, 0.418);
+  height: 80px;
+  margin-bottom: 30px;
+}
+
+.login .login__content .login__form .login__icons .login__continue {
+  position: absolute;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  background: #ebe8e8;
+  color: black;
+  text-align: center;
+  display: inline-block;
+  width: 40px;
+  border-radius: 50%;
+  height: 40px;
+  line-height: 40px;
+  top: -23%;
+  left: 45%;
+}
+
+.login .login__content .login__form .login__icons .login__social {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.login .login__content .login__form .login__icons .login__social .facebook {
+  margin-right: 40px;
+}
+
+.login .login__content .login__form .login__icons .login__social .facebook i {
+  border-radius: 50%;
+  background-color: blue;
+  color: white;
+  padding: 10px 18px;
+  font-size: 16px;
+}
+
+.login .login__content .login__form .login__icons .login__social .facebook i:hover {
+  background-color: rgba(0, 0, 255, 0.6);
+}
+
+.login .login__content .login__form .login__icons .login__social .google {
+  margin-left: 40px;
+}
+
+.login .login__content .login__form .login__icons .login__social .google i {
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  padding: 10px 12px;
+  font-size: 16px;
+}
+
+.login .login__content .login__form .login__icons .login__social .google i:hover {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+.login .login__content .login__form .login__icons .login__end p {
+  font-size: 16px;
+}
+
+.changePassword {
+  position: relative;
+}
+
+.changePassword img {
+  width: 100%;
+  height: 700px;
+}
+
+.changePassword .change__form {
+  width: 40%;
+  margin: auto;
+  background-color: rgba(0, 0, 255, 0.014);
+  position: absolute;
+  padding: 50px;
+  top: 35%;
+  left: 3%;
+}
+
+.changePassword .change__form .change__input {
+  margin-bottom: 20px;
+}
+
+.changePassword .change__form .change__input input {
+  border: none;
+  outline: none;
+}
+
+.changePassword .change__form a button {
+  padding: 6px 30px;
+}
+
+.forgotPassword {
+  position: relative;
+}
+
+.forgotPassword img {
+  width: 100%;
+  height: 700px;
+}
+
+.forgotPassword .forgot__form {
+  width: 40%;
+  margin: auto;
+  background-color: rgba(0, 0, 255, 0.014);
+  position: absolute;
+  padding: 50px;
+  top: 40%;
+  left: 3%;
+}
+
+.forgotPassword .forgot__form .forgot__input {
+  margin-bottom: 20px;
+}
+
+.forgotPassword .forgot__form .forgot__input input {
+  border: none;
+  outline: none;
+}
+
+.forgotPassword .forgot__form a button {
+  padding: 6px 30px;
+}
+
+.signup .signup__content {
+  border-radius: 5px;
+  position: relative;
+}
+
+.signup .signup__content img {
+  height: 700px;
+  width: 100%;
+}
+
+.signup .signup__content .signup__form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 20px;
+  background-color: rgba(0, 60, 255, 0.349);
+  width: 30%;
+  border-radius: 5px;
+}
+
+.signup .signup__content .signup__form h3 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.signup .signup__content .signup__form .signup__input {
+  margin-bottom: 20px;
+  border-bottom: 1px solid white;
+  padding: 10px;
+}
+
+.signup .signup__content .signup__form .signup__input input {
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  font-size: 15px;
+}
+
+.signup .signup__content .signup__form .signup__input input[type="text"] {
+  width: 92%;
+}
+
+.signup .signup__content .signup__form .signup__input input[type="password"] {
+  width: 92%;
+}
+
+.signup .signup__content .signup__form a button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 25px;
+  background-color: black;
+  color: white;
+  margin-left: 35%;
+}
+
+.signup .signup__content .signup__form a button:hover {
+  color: black;
+  background-color: white;
+  transition: 0.5s;
+}
+
+.booking {
+  background-image: url("../assets/img/bannerrapchieu.jpg");
+  height: 700px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0 20px;
+}
+
+.booking .creen {
+  height: 580px;
+  width: 100%;
+  background-color: white;
+  margin-top: 50px;
+  border-radius: 5px;
+  padding: 30px 50px;
+}
+
+.booking .creen .main {
+  width: 70%;
+  margin: auto;
+}
+
+.booking .creen .main .col-1 {
+  padding: 0;
+}
+
+.booking .creen .main .text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #df0d7a;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.booking .creen .main .textS {
+  font-size: 20px;
+  font-weight: 700;
+  color: #00ac4d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.booking .creen .main .ghe {
+  height: 35px;
+  width: 35px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #b8b7b7;
+}
+
+.booking .creen .main .gheDaDat {
+  background-color: #4e4e4e;
+}
+
+.booking .creen .main .gheDangDat {
+  background-color: #d2ff2f;
+}
+
+.booking .thongtin_datve {
+  height: 580px;
+  width: 100%;
+  background-color: white;
+  margin-top: 50px;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.booking .thongtin_datve p,
+.booking .thongtin_datve hr {
+  margin-bottom: 8px;
+}
+
+.booking .thongtin_datve .tt_tenPhim {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.booking .thongtin_datve .tt_email,
+.booking .thongtin_datve .tt_sdt,
+.booking .thongtin_datve .tt_tithttt {
+  font-weight: 700;
+}
+
+.booking .thongtin_datve .tt_tenRap,
+.booking .thongtin_datve .tt_thoiGianChieu {
+  font-size: 13px;
+  font-style: italic;
+}
+
+.booking .thongtin_datve .tt_datGhe,
+.booking .thongtin_datve .tt_giaVe {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.booking .thongtin_datve .tt_datGhe {
+  color: #ff5252;
+}
+
+.booking .thongtin_datve .tt_giaVe,
+.booking .thongtin_datve .tt_soGheDat {
+  color: #0cc40c;
+}
+
+.booking .thongtin_datve .tt_httt .form-check {
+  margin: 10px 0;
+}
+
+.booking .thongtin_datve .tt_httt .form-check .form-check-input {
+  top: 20%;
+}
+
+.booking .thongtin_datve .tt_httt .form-check img {
+  width: 30px;
+  height: 30px;
+  display: inline;
+  margin-right: 8px;
+}
+
+.booking .thongtin_datve .tt_httt span {
+  font-size: 14px;
+}
+
+.booking .thongtin_datve .btn__datve button {
+  width: 100%;
 }
 /*# sourceMappingURL=main.css.map */
