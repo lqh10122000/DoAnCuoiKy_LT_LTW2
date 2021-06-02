@@ -31,10 +31,12 @@
                 <div class="col-3 Home__item">
                     <div class="form-group">
                         <select class="form-control form-control-sm" placeholder="Phim">
-                            <option hidden selected>Phim</option>                                                      
+                            <option hidden selected>Phim</option>
                             <% for(var i=0; i < listMovie.length; i++) { %>
-                                <option><%- listMovie[i].name %></option>                               
-                            <% } %>                       
+                                <option>
+                                    <%- listMovie[i].name %>
+                                </option>
+                                <% } %>
                         </select>
                     </div>
                 </div>
@@ -43,8 +45,10 @@
                         <select class="form-control form-control-sm" placeholder="Phim">
                             <option hidden selected>Rạp</option>
                             <% for(var i=0; i < listTheaterCluster.length; i++) { %>
-                                <option><%- listTheaterCluster[i].name %></option>                               
-                            <% } %>      
+                                <option>
+                                    <%- listTheaterCluster[i].name %>
+                                </option>
+                                <% } %>
                         </select>
                     </div>
                 </div>
@@ -76,7 +80,7 @@
     </div>
     <div class="Home__List">
         <div class="Home__title">
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-4" style="text-align: right;">
                     <a href="#">Đang Chiếu</a>
                 </div>
@@ -88,26 +92,56 @@
                 <div class="col-4">
                     <a href="#">Phim Yêu Thích</a>
                 </div>
-
+            </div> -->
+            <ul class="nav nav-tabs row" id="myTab" role="tablist">
+                <li class="nav-item col-4" role="presentation" style="text-align: right;">
+                    <a class="nav-link active" id="dangChieu-tab" data-toggle="tab" href="#dangChieu" role="tab"
+                        aria-controls="dangChieu" aria-selected="true">Đang Chiếu</a>
+                </li>
+                <li class="nav-item col-4" role="presentation" style="text-align: center;">
+                    <a class="nav-link" id="sapChieu-tab" data-toggle="tab" href="#sapChieu" role="tab"
+                        aria-controls="sapChieu" aria-selected="false">Sắp Chiếu</a>
+                </li>
+                <li class="nav-item col-4" role="presentation">
+                    <a class="nav-link" id="yeuThich-tab" data-toggle="tab" href="#yeuThich" role="tab"
+                        aria-controls="yeuThich" aria-selected="false">Phim Yêu Thích</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="dangChieu" role="tabpanel" aria-labelledby="dangChieu-tab">
+                    <div class="row">
+                        <% for(var i=0; i < listMovie.length; i++) { %>
+                            <a href="/detail/movie" class="Home__item col-3">
+                                <div class="Home__img">
+                                    <img src="/movie/picturePoster/<%- listMovie[i].id  %>" alt="">
+                                    <div class="blackHome"></div>
+                                </div>
+                                <div class="Home__text">
+                                    <h2><span>
+                                            <%- listMovie[i].name.slice(0,1); %>
+                                        </span>
+                                        <%- listMovie[i].name %>
+                                    </h2>
+                                    <p>
+                                        <%- listMovie[i].time %> phút
+                                    </p>
+                                    <div class="buttonHome">
+                                        <button class="btn btn-danger">Mua Vé</button>
+                                    </div>
+                                </div>
+                            </a>
+                            <% } %>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="sapChieu" role="tabpanel" aria-labelledby="sapChieu-tab">
+                    Sắp Chiếu
+                </div>
+                <div class="tab-pane fade" id="yeuThich" role="tabpanel" aria-labelledby="yeuThich-tab">
+                    Phim Yêu Thích
+                </div>
             </div>
         </div>
-        <div class="row">
-            <% for(var i=0; i < listMovie.length; i++) { %>   
-                <a href="/detail/movie" class="Home__item col-3">
-                    <div class="Home__img">
-                        <img src="/movie/picturePoster/<%- listMovie[i].id  %>" alt="">
-                        <div class="blackHome"></div>
-                    </div>
-                    <div class="Home__text">
-                        <h2><span><%- listMovie[i].name.slice(0,1); %></span><%- listMovie[i].name %></h2>
-                        <p><%- listMovie[i].time %> phút</p>
-                        <div class="buttonHome">
-                            <button class="btn btn-danger">Mua Vé</button>
-                        </div>
-                    </div>
-                </a>                           
-            <% } %>                           
-        </div>
+
 
     </div>
     <div class="Home__CumRap">
