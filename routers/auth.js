@@ -101,7 +101,7 @@ router.get('/activate/:id/:token', asyncHandler (async function (req, res) {
     res.redirect('/');
 }));
 
-router.post('/changePassword', asyncHandler (async function(req, res){   
+router.post('/changePassword', asyncHandler (async function(req, res){  
     const { password, newpassword } = req.body;
     const user = await User.findById(req.session.userId);
     if(user && bcrypt.compareSync(password, user.password)) {

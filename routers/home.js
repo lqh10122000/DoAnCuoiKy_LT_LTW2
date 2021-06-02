@@ -16,7 +16,6 @@ const Booking = require('../models/booking');
 const Ticket = require('../models/ticket');
 
 router.get('/', function(req, res){    
-    
     res.render('index', {title: 'Trang chủ' });
 });
 

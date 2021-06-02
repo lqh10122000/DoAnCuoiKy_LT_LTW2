@@ -31,10 +31,10 @@
                 <div class="col-3 Home__item">
                     <div class="form-group">
                         <select class="form-control form-control-sm" placeholder="Phim">
-                            <option hidden selected>Phim</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
+                            <option hidden selected>Phim</option>                                                      
+                            <% for(var i=0; i < listMovie.length; i++) { %>
+                                <option><%- listMovie[i].name %></option>                               
+                            <% } %>                       
                         </select>
                     </div>
                 </div>
@@ -42,9 +42,9 @@
                     <div class="form-group">
                         <select class="form-control form-control-sm" placeholder="Phim">
                             <option hidden selected>Rạp</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
+                            <% for(var i=0; i < listTheaterCluster.length; i++) { %>
+                                <option><%- listTheaterCluster[i].name %></option>                               
+                            <% } %>      
                         </select>
                     </div>
                 </div>
@@ -79,103 +79,34 @@
             <div class="row">
                 <div class="col-4" style="text-align: right;">
                     <a href="#">Đang Chiếu</a>
-
                 </div>
+
                 <div class="col-4" style="text-align: center;">
                     <a href="#">Sắp Chiếu</a>
-
                 </div>
+
                 <div class="col-4">
                     <a href="#">Phim Yêu Thích</a>
-
                 </div>
+
             </div>
         </div>
         <div class="row">
-            <a href="/detail/movie" class="Home__item col-3">
-                <div class="Home__img">
-                    <img src="../assets/img/trang-ti-1.jpg" alt="">
-                    <div class="blackHome"></div>
-                </div>
-                <div class="Home__text">
-                    <h2><span>P</span>Trạng Tí Phiêu Lưu Ký</h2>
-                    <p>100 phút</p>
-                    <div class="buttonHome">
-                        <button class="btn btn-danger">Mua Vé</button>
+            <% for(var i=0; i < listMovie.length; i++) { %>   
+                <a href="/detail/movie" class="Home__item col-3">
+                    <div class="Home__img">
+                        <img src="/movie/picturePoster/<%- listMovie[i].id  %>" alt="">
+                        <div class="blackHome"></div>
                     </div>
-                </div>
-            </a>
-
-            <a href="/detail/movie" class="Home__item col-3">
-                <div class="Home__img">
-                    <img src="../assets/img/trang-ti-1.jpg" alt="">
-                    <div class="blackHome"></div>
-                </div>
-                <div class="Home__text">
-                    <h2><span>P</span>Trạng Tí Phiêu Lưu Ký</h2>
-                    <p>100 phút</p>
-                    <div class="buttonHome">
-                        <button class="btn btn-danger">Mua Vé</button>
+                    <div class="Home__text">
+                        <h2><span><%- listMovie[i].name.slice(0,1); %></span><%- listMovie[i].name %></h2>
+                        <p><%- listMovie[i].time %> phút</p>
+                        <div class="buttonHome">
+                            <button class="btn btn-danger">Mua Vé</button>
+                        </div>
                     </div>
-                </div>
-            </a>
-
-            <a href="/detail/movie" class="Home__item col-3">
-                <div class="Home__img">
-                    <img src="../assets/img/trang-ti-1.jpg" alt="">
-                    <div class="blackHome"></div>
-                </div>
-                <div class="Home__text">
-                    <h2><span>P</span>Trạng Tí Phiêu Lưu Ký</h2>
-                    <p>100 phút</p>
-                    <div class="buttonHome">
-                        <button class="btn btn-danger">Mua Vé</button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="/detail/movie" class="Home__item col-3">
-                <div class="Home__img">
-                    <img src="../assets/img/trang-ti-1.jpg" alt="">
-                    <div class="blackHome"></div>
-                </div>
-                <div class="Home__text">
-                    <h2><span>P</span>Trạng Tí Phiêu Lưu Ký</h2>
-                    <p>100 phút</p>
-                    <div class="buttonHome">
-                        <button class="btn btn-danger">Mua Vé</button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="/detail/movie" class="Home__item col-3">
-                <div class="Home__img">
-                    <img src="../assets/img/trang-ti-1.jpg" alt="">
-                    <div class="blackHome"></div>
-                </div>
-                <div class="Home__text">
-                    <h2><span>P</span>Trạng Tí Phiêu Lưu Ký</h2>
-                    <p>100 phút</p>
-                    <div class="buttonHome">
-                        <button class="btn btn-danger">Mua Vé</button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="/detail/movie" class="Home__item col-3">
-                <div class="Home__img">
-                    <img src="../assets/img/trang-ti-1.jpg" alt="">
-                    <div class="blackHome"></div>
-                </div>
-                <div class="Home__text">
-                    <h2><span>P</span>Trạng Tí Phiêu Lưu Ký</h2>
-                    <p>100 phút</p>
-                    <div class="buttonHome">
-                        <button class="btn btn-danger">Mua Vé</button>
-                    </div>
-                </div>
-
-            </a>
+                </a>                           
+            <% } %>                           
         </div>
 
     </div>
