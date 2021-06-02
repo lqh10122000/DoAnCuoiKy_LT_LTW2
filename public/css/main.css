@@ -183,6 +183,7 @@ li {
 
 .Home .Home__List .Home__title .nav {
   border: none;
+  margin-bottom: 30px;
 }
 
 .Home .Home__List .Home__title .nav-item .nav-link {
