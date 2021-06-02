@@ -16,7 +16,7 @@ const Movie = db.define('Movie', {
     time: {
         type: DataTypes.INTEGER,
         allowNull: false,
-    }
+    },
 });
 
 Movie.findByName = async function (name) {

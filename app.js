@@ -10,6 +10,7 @@ const userRouter = require('./routers/user');
 const authRouter = require('./routers/auth');
 const detailRouter = require('./routers/detail');
 const ticketRouter = require('./routers/ticket');
+const homeRouter = require('./routers/home');
 
 const authMiddleware = require('./middlewares/auth');
 
@@ -35,9 +36,10 @@ app.use('/user', userRouter);
 app.use('/auth', authRouter);
 app.use('/detail', detailRouter);
 app.use('/ticket', ticketRouter);
-app.get('/', function(req, res){
+app.use('/', homeRouter);
+/* app.get('/', function(req, res){
     res.render('index', {title: 'Trang chủ' });
-});
+}); */
 
 db.sync().then(function (){
     const port = process.env.PORT || 3000;

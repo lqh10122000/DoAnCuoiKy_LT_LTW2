@@ -16,7 +16,7 @@ const Booking = db.define('Booking', {
     totalMoney: {
         type: DataTypes.DOUBLE,
         allowNull: false,
-    }
+    },
 });
 
 Booking.findById = async function (id) {
