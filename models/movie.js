@@ -14,7 +14,7 @@ const Movie = db.define('Movie', {
         allowNull: true,
     },
     time: {
-        type: DataTypes.TIME,
+        type: DataTypes.INTEGER,
         allowNull: false,
     }
 });

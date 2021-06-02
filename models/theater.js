@@ -14,11 +14,11 @@ const Theater = db.define('Theater', {
         allowNull: false,
     }   ,
     horizontalSize: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     wideSize: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.INTEGER,
         allowNull: false,
     }
 });
