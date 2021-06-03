@@ -24,7 +24,7 @@ const ShowTime = db.define("ShowTime", {
 });
 
 ShowTime.findByMovieId = async function (movieId) {
-  return ShowTime.findOne({
+  return ShowTime.findAll({
     where: {
       movieId,
     },

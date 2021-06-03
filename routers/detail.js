@@ -5,6 +5,8 @@ const crypto = require("crypto");
 const express = require("express");
 const router = express.Router();
 const Movie = require("../models/movie");
+const ShowTime = require("../models/show_time");
+const Theater = require("../models/theater");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
@@ -16,18 +18,15 @@ router.get(
   "/",
   asyncHandler(async function (req, res) {
     res.locals.title = "Chi tiết phim";
-
     const IdMovie = req.query.id;
 
     const movie = await Movie.findById(IdMovie);
+    const showTime = await ShowTime.findByMovieId(IdMovie);
+    const idTheater = showTime[0].theaterId;
+    const theaters = await Theater.findById(idTheater);
 
-    // var a = JSDOM.getElementsByTagName("a");
-
-    // JSDOM.getElementById("demo").innerHTML = a[0].getAttribute("value");
-
-    // console.log("aaaaaaa: " + a[0].getAttribute("value"));
-
-    res.render("detail/movie", { movies: movie });
+    console.log(" this is id show time :" + JSON.stringify(theaters));
+    res.render("detail/movie", { movies: movie, showTimes: showTime });
   })
 );
 
@@ -35,14 +34,6 @@ router.post(
   "/movie",
   asyncHandler(async function (req, res) {
     res.locals.title = "Chi tiết phim";
-    // const movie = await Movie.getAllMovies();
-
-    // var a = JSDOM.getElementsByTagName("a");
-
-    // JSDOM.getElementById("demo").innerHTML = a[0].getAttribute("value");
-
-    console.log("aaaaaaa: ");
-
     res.render("detail/movie");
   })
 );

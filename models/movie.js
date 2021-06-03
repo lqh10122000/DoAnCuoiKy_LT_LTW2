@@ -11,6 +11,7 @@ const Movie = db.define("Movie", {
   },
   picturePoster: {
     type: DataTypes.BLOB,
+
     allowNull: true,
   },
   time: {
@@ -36,8 +37,8 @@ Movie.findById = async function (id) {
 };
 
 Movie.getAllMovies = async function () {
-  // const allMovies = db.query('select * from public."Movies"');
-  // return allMovies;
+  const allMovies = db.query('select * from public."Movies"');
+  return allMovies;
 };
 
 module.exports = Movie;

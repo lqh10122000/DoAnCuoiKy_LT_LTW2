@@ -1,0 +1,119 @@
+.booking {
+    background-image: url('../assets/img/bannerrapchieu.jpg');
+    height: 700px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0 20px;
+    .creen{
+        height: 580px;
+        width: 100%;
+        background-color: white;
+        margin-top: 50px;
+        border-radius: 5px;
+        padding: 30px 50px;
+        .main{
+            width: 70%;
+            margin: auto;
+            .col-1{
+                padding: 0;
+            }
+            .text{
+                font-size: 20px;
+                font-weight: 700;
+                color: $color-red-pink;
+                text-align: center;
+                margin-bottom: 5px;
+               
+            }
+            .textS{
+                font-size: 20px;
+                font-weight: 700;
+                color: $color-green-0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-top: 5px;
+            }
+            .ghe{
+                height: 35px;
+                width: 35px;
+                border: none;
+                border-radius: 5px;
+                margin: 5px;
+                cursor: pointer;
+                background-color: rgb(184, 183, 183) ;
+            }
+            .gheDaDat{
+                background-color: rgb(78, 78, 78) ;
+            }
+            .gheDangDat{
+                background-color: rgb(210, 255, 47);
+            }
+        }
+    }
+    .thongtin_datve {
+        height: 580px;
+        width: 100%;
+        background-color: white;
+        margin-top: 50px;
+        border-radius: 5px;
+        padding: 15px;
+        p,
+        hr {
+            margin-bottom: 8px;
+        }
+      
+        .tt_tenPhim {
+            font-size: 25px;
+            font-weight: 700;
+        }
+        .tt_email,
+        .tt_sdt,
+        .tt_tithttt {
+            font-weight: 700;
+        }
+        .tt_tenRap,
+        .tt_thoiGianChieu {
+            font-size: 13px;
+            font-style: italic;
+        }
+        .tt_datGhe,
+        .tt_giaVe {
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .tt_datGhe {
+            color: $color-red-primary;
+        }
+        .tt_giaVe,
+        .tt_soGheDat {
+            color: rgb(12, 196, 12);
+        }
+        .tt_httt {
+            .form-check {
+                margin: 10px 0;
+                .form-check-input {
+                    top: 20%;
+                }
+                img {
+                    width: 30px;
+                    height: 30px;
+                    display: inline;
+                    margin-right: 8px;
+                }
+            }
+            span{
+                font-size: 14px;
+            }
+        }
+     
+        .btn__datve{
+            button{
+                width: 100%;
+
+            }
+        }
+    }
+}

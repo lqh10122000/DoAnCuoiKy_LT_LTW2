@@ -5,11 +5,11 @@
     </div>
     <div class="col-8 CtPhim__Text">
       <div class="tab__left">
-        <h2><%= movies.Name %></h2>
+        <h2><%= movies.name %></h2>
         <div class="tab__txt">
-          <p>Ngày công chiếu: <span><%= movies.Premiere_Date %></span</span></p>
+          <p>Ngày công chiếu: <span><%= movies.premiereDate %></span</span></p>
           <p>Nội dung: <span>abcxyz</span></p>
-          <p>Thời Lượng: <span><%= movies.Time %></span> phút</p>
+          <p>Thời Lượng: <span><%= movies.time %></span> phút</p>
         </div>
         <div class="tab__button">
           <a>TRAILER</a>
@@ -27,6 +27,9 @@
     <div class="col-10">
       <div class="row">
         <div class="col-6 rap__item">
+          <% for(let i = 0; i < showTimes.length; i++) { %>
+
+          <%}%>
           <h3><span class="BHD">BHD Star</span> - Bitexco</h3>
           <p>L3-Bitexco Icon 68</p>
           <a href="">12:00</a>
