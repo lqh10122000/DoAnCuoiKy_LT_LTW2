@@ -14,19 +14,19 @@ const Theater = db.define("Theater", {
     allowNull: false,
   },
   horizontalSize: {
-    type: DataTypes.FLOAT,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   wideSize: {
-    type: DataTypes.FLOAT,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
 });
 
-Theater.findByName = async function (Name) {
+Theater.findByName = async function (name) {
   return Theater.findOne({
     where: {
-      Name,
+      name,
     },
   });
 };

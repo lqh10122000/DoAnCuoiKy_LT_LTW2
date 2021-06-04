@@ -11,22 +11,13 @@ const Movie = db.define("Movie", {
   },
   picturePoster: {
     type: DataTypes.BLOB,
-
     allowNull: true,
   },
   time: {
-    type: DataTypes.TIME,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
 });
-
-Movie.findByName = async function (Name) {
-  return Movie.findOne({
-    where: {
-      Name,
-    },
-  });
-};
 
 Movie.findById = async function (id) {
   return Movie.findOne({

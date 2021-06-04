@@ -1,0 +1,73 @@
+.info__user {
+    .info__user__content {
+        .info__main {
+            ul {
+                li {
+                    a {
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: brown;
+                        &:hover {
+                            color: blue;
+                            transition: 0.5s;
+                        }
+                    }
+                }
+            }
+            .info__item {
+                display: flex;
+                .info__form__user {
+                    width: 60%;
+                    height: 600px;
+                    padding: 20px 20px 20px 40px;
+                    .row {
+                        .col-md-12 {
+                            a {
+                                color: black;
+                                text-decoration: none;
+                                &:hover {
+                                    color: brown;
+                                }
+                            }
+                        }
+                    }
+                    a {
+                        button {
+                            margin-top: 15px;
+                            padding: 8px 30px;
+                            background: brown;
+                            border: none;
+                            &:hover {
+                                background-color: rgba(122, 26, 26, 0.966);
+                            }
+                        }
+                    }
+                }
+                .info__img {
+                    margin-top: 30px;
+                    width: 40%;
+                    img {
+                        border-radius: 5px;
+                    }
+                }
+            }
+            .info__form__history {
+                height: 600px;
+                padding: 20px 20px 20px 40px;
+                .row {
+                    .table-responsive {
+                        margin-top: 20px;
+                        tr {
+                            background-color: rgb(63, 14, 14);
+                            th {
+                                color: white;
+                                font-weight: 500;
+                                width: 20%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

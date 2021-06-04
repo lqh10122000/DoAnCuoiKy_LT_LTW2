@@ -9,8 +9,11 @@ const userRouter = require("./routers/user");
 const authRouter = require("./routers/auth");
 const detailRouter = require("./routers/detail");
 const ticketRouter = require("./routers/ticket");
+const homeRouter = require("./routers/home");
 const movieRouter = require("./routers/movie");
+
 const authMiddleware = require("./middlewares/auth");
+const homeMiddleware = require("./middlewares/home");
 
 const app = express();
 
@@ -32,11 +35,13 @@ app.use(
 );
 
 app.use(authMiddleware);
+app.use(homeMiddleware);
 app.use("/user", userRouter);
 app.use("/auth", authRouter);
 app.use("/detail", detailRouter);
 app.use("/ticket", ticketRouter);
-app.use("/", movieRouter);
+app.use("/", homeRouter);
+app.use("/movie", movieRouter);
 
 db.sync()
   .then(function () {

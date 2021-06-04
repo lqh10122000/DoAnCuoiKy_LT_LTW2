@@ -10,11 +10,11 @@ const ShowTime = db.define("ShowTime", {
     allowNull: false,
   },
   start: {
-    type: DataTypes.TIME,
+    type: DataTypes.DATE,
     allowNull: false,
   },
   end: {
-    type: DataTypes.TIME,
+    type: DataTypes.DATE,
     allowNull: false,
   },
   price: {
