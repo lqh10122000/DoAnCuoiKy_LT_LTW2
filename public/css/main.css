@@ -116,10 +116,6 @@ li {
   position: relative;
 }
 
-.Home .Home__carousel img {
-  height: 500px;
-}
-
 .Home .Home__carousel .carousel-indicators li {
   border-radius: 50%;
   width: 15px;
