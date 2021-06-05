@@ -9,7 +9,7 @@ module.exports = asyncHandler (async function home (req, res, next){
     const listTheaterCluster = await TheaterCluster.findAll();
     if(listMovie) {
         res.locals.listMovie = listMovie;
-        res.locals.listTheaterCluster = listTheaterCluster
+        res.locals.listTheaterCluster = listTheaterCluster;
         next(); 
     } else {
         next(); 
