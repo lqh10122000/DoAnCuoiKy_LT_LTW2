@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const expressLayouts = require("express-ejs-layouts");
 const cookieSession = require("cookie-session");
-
 //router
 const db = require("./models/db");
 const userRouter = require("./routers/user");
