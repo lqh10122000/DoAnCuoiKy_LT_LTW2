@@ -1324,6 +1324,7 @@ li {
   border-radius: 5px;
   margin: 5px;
   cursor: pointer;
+  outline: none;
   background-color: #b8b7b7;
 }
 
@@ -1372,11 +1373,12 @@ li {
   font-size: 20px;
 }
 
+.booking .thongtin_datve .tt_giaVe,
 .booking .thongtin_datve .tt_datGhe {
   color: #ff5252;
 }
 
-.booking .thongtin_datve .tt_giaVe,
+.booking .thongtin_datve .tt_tongGiaVe,
 .booking .thongtin_datve .tt_soGheDat {
   color: #0cc40c;
 }

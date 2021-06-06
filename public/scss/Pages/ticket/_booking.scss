@@ -43,6 +43,7 @@
                 border-radius: 5px;
                 margin: 5px;
                 cursor: pointer;
+                outline: none;
                 background-color: rgb(184, 183, 183) ;
             }
             .gheDaDat{
@@ -84,10 +85,11 @@
             font-weight: 700;
             font-size: 20px;
         }
+        .tt_giaVe,
         .tt_datGhe {
             color: $color-red-primary;
         }
-        .tt_giaVe,
+        .tt_tongGiaVe,
         .tt_soGheDat {
             color: rgb(12, 196, 12);
         }

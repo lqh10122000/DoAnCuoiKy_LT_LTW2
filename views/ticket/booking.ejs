@@ -326,8 +326,8 @@
                 <p class="mb-1 tt_sdt">Số điện thoại</p>
                 <p class=""> 0123654789 </p>
                 <hr />
-                <p class="tt_datGhe"> Ghế: <span class="tt_soGheDat" value="A1,A2,A3"> A1 A2 A3 </span></p>
-                <p class="tt_giaVe">Giá: <span class="tt_tongGiaVe" value="300000"> 300.000 </span>VND</p>
+                <p class="tt_datGhe"> Ghế: <span class="tt_soGheDat" id="danhSachGhe"></span></p>
+                <p class="tt_giaVe">Giá: <span class="tt_tongGiaVe" id="gia"> 0 </span> VND</p>
                 <hr />
                 <div class="tt_httt">
                     <h4 class="tt_tithttt">Hình thức thanh toán</h4>
@@ -363,3 +363,31 @@
         </div>
     </div>
 </div>
+<script>
+var danhSachGhe = [];
+var gia = 0;
+var datVe = function (event) {
+    let ghe = event.target.value;
+    let index = danhSachGhe.findIndex(gheDD => gheDD === ghe)
+    if (index !== -1) {
+        danhSachGhe.splice(index, 1);
+        gia-=90000;
+    }
+    else {
+        danhSachGhe.push(ghe);
+        gia+=90000;
+    }
+    document.querySelector("#danhSachGhe").innerHTML = danhSachGhe;
+    document.querySelector("#gia").innerHTML = gia;
+
+    let indexGheDD = danhSachGhe.findIndex(gheDD => gheDD === ghe)
+    if(indexGheDD !== -1){
+        document.querySelector(`#${ghe}`).className= "gheDangDat ghe";
+    }
+    else{
+        document.querySelector(`#${ghe}`).className= "ghe";
+
+    }
+}
+
+</script>
