@@ -1,25 +1,26 @@
-
 <div class="CtPhim__Intro">
   <div class="CtPhim__content row">
     <div class="col-4 d-none d-sm-block CtPhim__img">
       <!-- <img src="../../assets/img/trang-ti-1.jpg" /> -->
 
-      <img
-      src="/movie/picturePoster/<%- movies.id  %>"
-      alt=""
-      style="height: 500px;"
-    />
+      <img src="/movie/picturePoster/<%- movies.id  %>" alt="" style="height: 500px;" />
     </div>
     <div class="col-8 CtPhim__Text">
       <div class="tab__left">
-        <h2><%= movies.name %></h2>
+        <h2>
+          <%= movies.name %>
+        </h2>
         <div class="tab__txt">
-          <p>Ngày công chiếu: <span><%= movies.premiereDate %></span</span></p>
+          <p>Ngày công chiếu: <span>
+              <%= movies.premiereDate %>
+          </p>
           <p>Nội dung: <span>abcxyz</span></p>
-          <p>Thời Lượng: <span><%= movies.time %></span> phút</p>
+          <p>Thời Lượng: <span>
+              <%= movies.time %>
+            </span> phút</p>
         </div>
         <div class="tab__button">
-          <a class="venobox" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=Q6hn7crntG0">TRAILER</a>
+          <a class="venobox" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=jluSu8Rw6YE&t=17s">TRAILER</a>
           <a href="/ticket/booking">MUA VÉ</a>
         </div>
       </div>
@@ -34,52 +35,53 @@
     <div class="col-10">
       <div class="row">
         <div class="col-6 rap__item">
-          
+
           <h3><span class="BHD">BHD Star</span> - Bitexco</h3>
           <p>L3-Bitexco Icon 68</p>
 
-          <% for(let i = 0; i < showTimes.length; i++) { %>
-            <% if(showTimes[i].theaterId == 1) { %>
-            <a href="/ticket/booking/?idM=<%- movies.id %>&idT=1&idTime=<%- showTimes[i].minute %>">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
-          <% } %>
-              
-            <% } %>
-          <!-- <a href="">12:00</a>
+          <% for(let i=0; i < showTimes.length; i++) { %>
+            <% if(showTimes[i].theaterId==1) { %>
+              <a href="/ticket/booking/?idM=<%- movies.id %>&idT=1&idTime=<%- showTimes[i].minute %>">0<%-
+                  showTimes[i].minute %>:0<%- showTimes[i].second %></a>
+              <% } %>
+
+                <% } %>
+                  <!-- <a href="">12:00</a>
           <a href="">13:00</a>
           <a href="">14:00</a>
           <a href="">15:00</a>
           <a href="">16:00</a>
           <a href="">17:00</a> -->
         </div>
-       <div class="col-6 rap__item">
-           <h3><span class="BHD">BHD Star</span> - Thảo Điền</h3>
+        <div class="col-6 rap__item">
+          <h3><span class="BHD">BHD Star</span> - Thảo Điền</h3>
           <p>L3-Bitexco Icon 68</p>
-          <% for(let i = 0; i < showTimes.length; i++) { %>
-            <% if(showTimes[i].theaterId == 2) { %>
-            <a href="/ticket/booking">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
-          <% } %>
-              
-            <% } %>
+          <% for(let i=0; i < showTimes.length; i++) { %>
+            <% if(showTimes[i].theaterId==2) { %>
+              <a href="/ticket/booking">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
+              <% } %>
+
+                <% } %>
         </div>
         <div class="col-6 rap__item">
           <h3><span class="BHD">BHD Star</span> - 3/2</h3>
           <p>L3-Bitexco Icon 68</p>
-          <% for(let i = 0; i < showTimes.length; i++) { %>
-            <% if(showTimes[i].theaterId == 3) { %>
-            <a href="/ticket/booking">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
-          <% } %>
-              
-            <% } %>
+          <% for(let i=0; i < showTimes.length; i++) { %>
+            <% if(showTimes[i].theaterId==3) { %>
+              <a href="/ticket/booking">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
+              <% } %>
+
+                <% } %>
         </div>
         <div class="col-6 rap__item">
           <h3><span class="BHD">BHD Star</span> - Quang Trung</h3>
           <p>L3-Bitexco Icon 68</p>
-          <% for(let i = 0; i < showTimes.length; i++) { %>
-            <% if(showTimes[i].theaterId == 4) { %>
-            <a href="/ticket/booking">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
-          <% } %>
-              
-            <% } %>
+          <% for(let i=0; i < showTimes.length; i++) { %>
+            <% if(showTimes[i].theaterId==4) { %>
+              <a href="/ticket/booking">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
+              <% } %>
+
+                <% } %>
         </div>
       </div>
     </div>
@@ -93,43 +95,43 @@
         <div class="col-6 rap__item">
           <h3><span class="CGV">CGV</span> - Vạn Hạnh Mail</h3>
           <p>L3-Bitexco Icon 68</p>
-          <% for(let i = 0; i < showTimes.length; i++) { %>
-            <% if(showTimes[i].theaterId == 5) { %>
-            <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
-          <% } %>
-              
-            <% } %>
+          <% for(let i=0; i < showTimes.length; i++) { %>
+            <% if(showTimes[i].theaterId==5) { %>
+              <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
+              <% } %>
+
+                <% } %>
         </div>
         <div class="col-6 rap__item">
           <h3><span class="CGV">CGV</span> - Thảo Điền</h3>
           <p>L3-Bitexco Icon 68</p>
-          <% for(let i = 0; i < showTimes.length; i++) { %>
-            <% if(showTimes[i].theaterId == 6) { %>
-            <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
-          <% } %>
-              
-            <% } %>
+          <% for(let i=0; i < showTimes.length; i++) { %>
+            <% if(showTimes[i].theaterId==6) { %>
+              <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
+              <% } %>
+
+                <% } %>
         </div>
         <div class="col-6 rap__item">
           <h3><span class="CGV">CGV</span> - 3/2</h3>
           <p>L3-Bitexco Icon 68</p>
-          <% for(let i = 0; i < showTimes.length; i++) { %>
-            <% if(showTimes[i].theaterId == 7) { %>
-            <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
-          <% } %>
-              
-            <% } %>
+          <% for(let i=0; i < showTimes.length; i++) { %>
+            <% if(showTimes[i].theaterId==7) { %>
+              <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
+              <% } %>
+
+                <% } %>
         </div>
         <div class="col-6 rap__item">
           <h3><span class="CGV">CGV</span> - Quang Trung</h3>
           <p>L3-Bitexco Icon 68</p>
 
-          <% for(let i = 0; i < showTimes.length; i++) { %>
-            <% if(showTimes[i].theaterId == 8) { %>
-            <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
-          <% } %>
-              
-            <% } %>
+          <% for(let i=0; i < showTimes.length; i++) { %>
+            <% if(showTimes[i].theaterId==8) { %>
+              <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
+              <% } %>
+
+                <% } %>
         </div>
       </div>
     </div>
@@ -143,12 +145,12 @@
         <div class="col-6 rap__item">
           <h3><span class="Beta">Beta Cinemas</span> - Quang Trung</h3>
           <p>L3-Bitexco Icon 68</p>
-          <% for(let i = 0; i < showTimes.length; i++) { %>
-            <% if(showTimes[i].theaterId == 9) { %>
-            <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
-          <% } %>
-              
-            <% } %>
+          <% for(let i=0; i < showTimes.length; i++) { %>
+            <% if(showTimes[i].theaterId==9) { %>
+              <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
+              <% } %>
+
+                <% } %>
         </div>
       </div>
     </div>
@@ -162,24 +164,26 @@
         <div class="col-6 rap__item">
           <h3><span class="CNS">Cinestar</span> - Hai Bà Trưng</h3>
           <p>L3-Bitexco Icon 68</p>
-          <% for(let i = 0; i < showTimes.length; i++) { %>
-            <% if(showTimes[i].theaterId == 10) { %>
-            <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
-          <% } %>
-              
-            <% } %>
+          <% for(let i=0; i < showTimes.length; i++) { %>
+            <% if(showTimes[i].theaterId==10) { %>
+              <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
+              <% } %>
+
+                <% } %>
         </div>
         <div class="col-6 rap__item">
           <h3><span class="CNS">Cinestar</span> - Quốc Thanh</h3>
           <p>L3-Bitexco Icon 68</p>
-          <% for(let i = 0; i < showTimes.length; i++) { %>
-            <% if(showTimes[i].theaterId == 11) { %>
-            <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
-          <% } %>
-              
-            <% } %>
+          <% for(let i=0; i < showTimes.length; i++) { %>
+            <% if(showTimes[i].theaterId==11) { %>
+              <a href="">0<%- showTimes[i].minute %>:0<%- showTimes[i].second %></a>
+              <% } %>
+
+                <% } %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
