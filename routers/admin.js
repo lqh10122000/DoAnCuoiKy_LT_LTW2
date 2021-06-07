@@ -20,14 +20,28 @@ router.use(function(req, res, next){
     next();
 });
 
-router.get('/manage', function(req, res){  
-    res.locals.title = 'Quản lí';    
-    res.render('admin/manage');
+router.get('/', function(req, res){   
+    res.render('admin/home');
 });
 
+router.get('/theater', function(req, res){   
+    res.render('admin/theater');
+});
 
-router.post('/manage', asyncHandler (async function(req, res){   
+router.get('/theatercluster', function(req, res){  
+    res.render('admin/theatercluster');
+});
 
-}));
+router.get('/movie', function(req, res){    
+    res.render('admin/movie');
+});
+
+router.get('/showtime', function(req, res){    
+    res.render('admin/showtime');
+});
+
+router.get('/statistical', function(req, res){    
+    res.render('admin/statistical');
+});
 
 module.exports = router;
