@@ -116,10 +116,6 @@ li {
   position: relative;
 }
 
-.Home .Home__carousel img {
-  height: 500px;
-}
-
 .Home .Home__carousel .carousel-indicators li {
   border-radius: 50%;
   width: 15px;
@@ -181,6 +177,20 @@ li {
   font-size: 28px;
 }
 
+.Home .Home__List .Home__title .nav {
+  border: none;
+  margin-bottom: 30px;
+}
+
+.Home .Home__List .Home__title .nav-item .nav-link {
+  border: none;
+}
+
+.Home .Home__List .Home__title .nav-item .active {
+  color: #ff5252;
+  font-size: 28px;
+}
+
 .Home .Home__List .Home__item {
   transition: 0.5s;
 }
@@ -191,6 +201,7 @@ li {
 
 .Home .Home__List .Home__item .Home__img img {
   width: 100%;
+  height: 310px;
   border-radius: 10px;
 }
 
@@ -1313,6 +1324,7 @@ li {
   border-radius: 5px;
   margin: 5px;
   cursor: pointer;
+  outline: none;
   background-color: #b8b7b7;
 }
 
@@ -1361,11 +1373,12 @@ li {
   font-size: 20px;
 }
 
+.booking .thongtin_datve .tt_giaVe,
 .booking .thongtin_datve .tt_datGhe {
   color: #ff5252;
 }
 
-.booking .thongtin_datve .tt_giaVe,
+.booking .thongtin_datve .tt_tongGiaVe,
 .booking .thongtin_datve .tt_soGheDat {
   color: #0cc40c;
 }
@@ -1391,5 +1404,74 @@ li {
 
 .booking .thongtin_datve .btn__datve button {
   width: 100%;
+}
+
+.info__user .info__user__content .info__main ul li a {
+  font-size: 20px;
+  font-weight: 600;
+  color: brown;
+}
+
+.info__user .info__user__content .info__main ul li a:hover {
+  color: blue;
+  transition: 0.5s;
+}
+
+.info__user .info__user__content .info__main .info__item {
+  display: flex;
+}
+
+.info__user .info__user__content .info__main .info__item .info__form__user {
+  width: 60%;
+  height: 600px;
+  padding: 20px 20px 20px 40px;
+}
+
+.info__user .info__user__content .info__main .info__item .info__form__user .row .col-md-12 a {
+  color: black;
+  text-decoration: none;
+}
+
+.info__user .info__user__content .info__main .info__item .info__form__user .row .col-md-12 a:hover {
+  color: brown;
+}
+
+.info__user .info__user__content .info__main .info__item .info__form__user a button {
+  margin-top: 15px;
+  padding: 8px 30px;
+  background: brown;
+  border: none;
+}
+
+.info__user .info__user__content .info__main .info__item .info__form__user a button:hover {
+  background-color: rgba(122, 26, 26, 0.966);
+}
+
+.info__user .info__user__content .info__main .info__item .info__img {
+  margin-top: 30px;
+  width: 40%;
+}
+
+.info__user .info__user__content .info__main .info__item .info__img img {
+  border-radius: 5px;
+}
+
+.info__user .info__user__content .info__main .info__form__history {
+  height: 600px;
+  padding: 20px 20px 20px 40px;
+}
+
+.info__user .info__user__content .info__main .info__form__history .row .table-responsive {
+  margin-top: 20px;
+}
+
+.info__user .info__user__content .info__main .info__form__history .row .table-responsive tr {
+  background-color: #3f0e0e;
+}
+
+.info__user .info__user__content .info__main .info__form__history .row .table-responsive tr th {
+  color: white;
+  font-weight: 500;
+  width: 20%;
 }
 /*# sourceMappingURL=main.css.map */
