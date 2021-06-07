@@ -12,6 +12,7 @@ const detailRouter = require('./routers/detail');
 const ticketRouter = require('./routers/ticket');
 const homeRouter = require('./routers/home');
 const movieRouter = require('./routers/movie');
+const adminRouter = require('./routers/admin');
 
 const authMiddleware = require('./middlewares/auth');
 const homeMiddleware = require('./middlewares/home');
@@ -41,6 +42,7 @@ app.use('/detail', detailRouter);
 app.use('/ticket', ticketRouter);
 app.use('/', homeRouter);
 app.use('/movie', movieRouter);
+app.use('/admin', adminRouter);
 
 db.sync().then(function (){
     const port = process.env.PORT || 3000;

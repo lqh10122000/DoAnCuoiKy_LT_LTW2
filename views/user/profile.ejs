@@ -1,8 +1,103 @@
-<img src="/user/picture/<%- currentUser.id  %>" alt="" width="1000" height="800" style="border-radius: 100px;">
-<form method="POST" enctype="multipart/form-data">
-    <div class="custom-file">
-      <input type="file" class="custom-file-input" id="picture" name="picture">
-      <label class="custom-file-label" for="picture">Choose file</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Upload</button>
-  </form>
+<div class="info__user">
+  <div class="info__user__content">
+
+      <div class="info__main">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="user" aria-selected="true">THÔNG TIN THÀNH VIÊN</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="false">LỊCH SỬ ĐẶT VÉ</a>
+              </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active " id="user" role="tabpanel" aria-labelledby="user-tab">
+                  <div class="info__item">
+                      <div class="info__form__user">
+
+                          <div class="row">
+                              <div class="form-group col-md-7 col-sm-7 col-xs-7">
+                                  <label for="displayname">Họ và tên</label>
+                                  <input type="displayname" class="form-control" id="displayname" readonly="readonly">
+                              </div>
+                              <div class="form-group col-md-2 col-sm-7 col-xs-7">
+                                  <label for="id">ID</label>
+                                  <input type="id" class="form-control" id="id" readonly="readonly">
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="form-group col-md-6 col-sm-4 col-xs-4">
+                                  <label for="email">E-mail</label>
+                                  <input type="email" class="form-control" id="email" readonly="readonly">
+                              </div>
+                              <div class="form-group col-md-3 col-sm-4 col-xs-4">
+                                  <label for="phone">Số điện thoại</label>
+                                  <input type="phone" class="form-control" id="phone" readonly="readonly">
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="form-group col-md-6">
+                                  <label for="password">Mật khẩu</label>
+                                  <input type="password" class="form-control" id="password">
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="form-group col-md-4">
+                                  <label for="token">Mã thông báo</label>
+                                  <input type="token" class="form-control" id="token">
+                              </div>
+                              <div class="form-group col-md-3">
+                                  <label for="role">Vai trò</label>
+                                  <input type="role" class="form-control" id="role" readonly="readonly">
+                              </div>
+                          </div>
+                          <a href=""><button type="submit" class="btn btn-primary">Lưu lại</button></a>
+                      </div>
+                      <div class="info__img">
+                          <img src="/user/picture/<%- currentUser.id  %>" alt="" width="200" height="200" style="border-radius: 200px;">
+                              <form method="POST" enctype="multipart/form-data">
+                                  <div class="custom-file">
+                                  <input type="file" class="custom-file-input" id="picture" name="picture">
+                                  <label class="custom-file-label" for="picture">Choose file</label>
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Upload</button>
+                              </form>
+                      </div>
+                  </div>
+              </div>
+              <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
+                  <div class="info__form__history">
+                      <div class="row">
+                          <div class="form-group col-md-3 col-sm-8 col-xs-8">
+                              <label for="date">Từ</label>
+                              <input type="date" class="form-control" id="date">
+                          </div>
+                          <div class="form-group col-md-3 col-sm-8 col-xs-8">
+                              <label for="date">Đến</label>
+                              <input type="date" class="form-control" id="date">
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-10 col-sm-10 col-xs-10">
+                              <div class="table-responsive">
+                                  <table class="table member-table table-striped">
+                                      <thead valign="top">
+                                          <tr>
+                                              <th>Ngày/Giờ</th>
+                                              <th>Phim</th>
+                                              <th>Rạp/Cụm rạp</th>
+                                              <th>Ghế</th>
+                                          </tr>
+                                      </thead>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+</div>
