@@ -16,7 +16,7 @@ const Booking = require('../models/booking');
 const Ticket = require('../models/ticket');
 
 router.use(function(req, res, next){     
-    res.locals.title = 'Đăng nhập';
+    res.locals.title = 'Quản lí';
     next();
 });
 
@@ -27,7 +27,7 @@ router.get('/manage', function(req, res){
 
 
 router.post('/manage', asyncHandler (async function(req, res){   
-    
+
 }));
 
 module.exports = router;
