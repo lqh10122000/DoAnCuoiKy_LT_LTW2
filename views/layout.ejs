@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../logo.png">
+    <link rel="stylesheet" type="text/css" href="../venobox/venobox.css" media="screen" />
 
 </head>
 
@@ -52,36 +53,49 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/auth/logout">Đăng xuất</a>
                             </li>
-                            <% if(currentUser.displayName == 'admin'){ %>
+                            <% if(currentUser.displayName=='admin' ){ %>
                                 <li class="nav-item">
                                     <a class="nav-link <%- title === 'Quản lí' ? 'active': '' %> " href="/admin/manage">
                                         Quản lí
                                     </a>
                                 </li>
-                            <% } else{%>
-                            <li class="nav-item">
-                                <a class="nav-link <%- title === 'Thông tin cá nhân' ? 'active': '' %> "
-                                    href="/user/profile">
-                                    <%- currentUser.displayName %>
-                                </a>
-                            </li>
-                            <% } %>
-                        <% } else{%>
-                            <li class="nav-item">
-                                <a class="nav-link <%- title === 'Đăng nhập' ? 'active': '' %> "
-                                    href="/auth/login">Đăng nhập</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link <%- title === 'Đăng kí tài khoản' ? 'active': '' %> "
-                                    href="/auth/signup">Đăng kí
-                                    tài khoản</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-                                    <%- currentUser?currentUser.displayName: 'Khách' %>
-                                </a>
-                            </li>
-                            <% } %>
+                                <% } else{%>
+                                    <li class="nav-item">
+                                        <a class="nav-link <%- title === 'Thông tin cá nhân' ? 'active': '' %> "
+                                            href="/user/profile">
+                                            <%- currentUser.displayName %>
+                                        </a>
+                                    </li>
+                                    <% } %>
+                                        <% } else{%>
+                                            <li class="nav-item">
+                                                <a class="nav-link <%- title === 'Đăng nhập' ? 'active': '' %> "
+                                                    href="/auth/login">Đăng nhập</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link <%- title === 'Đăng kí tài khoản' ? 'active': '' %> "
+                                                    href="/auth/signup">Đăng kí
+                                                    tài khoản</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link disabled" href="#" tabindex="-1"
+                                                    aria-disabled="true">
+                                                    <%- currentUser?currentUser.displayName: 'Khách' %>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                                <li class="nav-item">
+                                                    <a class="nav-link <%- title === 'Thông tin cá nhân' ? 'active': '' %> "
+                                                        href="#">
+                                                        thông tin cá nhân
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link <%- title === 'Thông tin cá nhân' ? 'active': '' %> "
+                                                        href="/admin/manage">
+                                                        admin
+                                                    </a>
+                                                </li>
                 </div>
             </div>
         </nav>
@@ -161,6 +175,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.js"
+        integrity="sha512-zBTnX97k269iewUwROiWwO82A6uXO4lcjq0Z4xnvO+qAblC/RMQRUu8fQVKtSFhPNKD5Xzh9PMoZG7+LnmH1Hg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            $('.venobox').venobox();
+        });
+    </script>
 
 </body>
 
