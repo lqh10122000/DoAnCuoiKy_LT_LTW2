@@ -26,18 +26,22 @@ router.get(
       premiereDate: moment(movie.premiereDate).format("D MMM, YYYY"),
       time: movie.time,
     };
+
+    const theater = await Theater.findById();
     const showTime = await ShowTime.findByMovieId(IdMovie);
     // const idTheater = showTime[0].theaterId;
     // const theaters = await Theater.findByMovieId(IdMovie);
     const HoursMinute = showTime.map((showTimeItem) => {
       return {
+        hour: new Date(showTimeItem.start).getHours(),
         minute: new Date(showTimeItem.start).getMinutes(),
-        second: new Date(showTimeItem.start).getSeconds(),
         theaterId: showTimeItem.theaterId,
+        showTimeId: showTimeItem.id,
+        theaterClusterId: showTimeItem.theaterClusterId,
       };
     });
 
-    console.log(" this is id show time :" + JSON.stringify(HoursMinute));
+    console.log(" aaaaaaaaaaaaaaaaa :" + JSON.stringify(HoursMinute));
     res.render("detail/movie", { movies: detailMovie, showTimes: HoursMinute });
   })
 );
