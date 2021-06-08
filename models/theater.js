@@ -35,4 +35,13 @@ Theater.findById = async function (id) {
   return Theater.findByPk(id);
 };
 
+Theater.findTheaterCluster = async function (id, theaterClusterId) {
+  return Theater.findOne({
+    where: {
+      id,
+      theaterClusterId,
+    },
+  });
+};
+
 module.exports = Theater;
