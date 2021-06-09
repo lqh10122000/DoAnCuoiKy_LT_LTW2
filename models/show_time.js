@@ -9,6 +9,10 @@ const ShowTime = db.define("ShowTime", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  theaterClusterId: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   start: {
     type: DataTypes.DATE,
     allowNull: false,
