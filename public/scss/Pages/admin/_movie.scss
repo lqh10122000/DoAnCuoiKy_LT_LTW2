@@ -1,0 +1,61 @@
+.admin {
+    .tab__admin {
+        padding: 0;
+        .img__admin {
+            text-align: center;
+            margin: 20px 0;
+            img {
+                width: 100px;
+            }
+        }
+        .admin__line {
+            margin: 20px 0;
+            a {
+                color: $color-black-1;
+                text-decoration: none;
+                display: inline-block;
+                padding: 15px 30px;
+                width: 100%;
+                font-size: 16px;
+                box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+                transition: 0.3s;
+                &:hover {
+                    color: white;
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+    }
+    .content__admin {
+        background-color: $color-white-1;
+        padding: 0;
+        margin: 0;
+        .title__admin {
+            background-color: white;
+            text-align: center;
+            padding: 15px 15px;
+            margin: 20px 30px 10px 20px;
+            font-size: 24px;
+            border-radius: 10px;
+        }
+        .main__admin {
+            background-color: white;
+            margin: 20px 30px 10px 20px;
+            padding: 15px 15px;
+            border-radius: 10px;
+            tbody{
+                .thaotac{
+                    width: 48%;
+                }
+            }
+
+            .button__admin {
+                text-align: right;
+                margin-bottom: 15px;
+                button {
+                    padding: 10px 30px;
+                }
+            }
+        }
+    }
+}
