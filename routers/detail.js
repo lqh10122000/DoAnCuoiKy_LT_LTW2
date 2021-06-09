@@ -7,6 +7,7 @@ const router = express.Router();
 const Movie = require("../models/movie");
 const ShowTime = require("../models/show_time");
 const Theater = require("../models/theater");
+const TheaterCluster = require("../models/theater_cluster");
 const jsdom = require("jsdom");
 const { time } = require("console");
 const { JSDOM } = jsdom;
@@ -41,7 +42,6 @@ router.get(
       };
     });
 
-    console.log(" aaaaaaaaaaaaaaaaa :" + JSON.stringify(HoursMinute));
     res.render("detail/movie", { movies: detailMovie, showTimes: HoursMinute });
   })
 );
@@ -54,9 +54,34 @@ router.post(
   })
 );
 
-router.get("/theater", function (req, res) {
-  res.locals.title = "Chi tiết rạp";
-  res.render("detail/theater");
-});
+router.get(
+  "/theater",
+  asyncHandler(async function (req, res) {
+    const IdTheater = req.query.idT;
+    const IdTheaterCluster = req.query.idTC;
+    const showTime = await ShowTime.findTheaterClusterId(IdTheaterCluster);
+    const theaterCluster = await TheaterCluster.findById(IdTheaterCluster);
+    const movie = await Movie.findAll();
+
+    const ShowTimeItems = showTime.map((showTimeItem) => {
+      return {
+        hour: new Date(showTimeItem.start).getHours(),
+        minute: new Date(showTimeItem.start).getMinutes(),
+        theaterId: showTimeItem.theaterId,
+        showTimeId: showTimeItem.id,
+        theaterClusterId: showTimeItem.theaterClusterId,
+        movieId: showTimeItem.movieId,
+      };
+    });
+
+    console.log("aaaaaaaaaaaaaaaaaaa " + JSON.stringify(ShowTimeItems));
+    res.locals.title = "Chi tiết rạp";
+    res.render("detail/theater", {
+      TheaterClusters: theaterCluster,
+      ShowTimes: ShowTimeItems,
+      Movies: movie,
+    });
+  })
+);
 
 module.exports = router;

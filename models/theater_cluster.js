@@ -9,6 +9,10 @@ const TheaterCluster = db.define("TheaterCluster", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  theaterClusterId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
 });
 
 TheaterCluster.findByName = async function (name) {
