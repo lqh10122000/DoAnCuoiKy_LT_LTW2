@@ -1,12 +1,18 @@
 const { DataTypes } = require("sequelize");
 const db = require("./db");
 const Theater = db.define("Theater", {
+  id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
+  },
   name: {
     type: DataTypes.STRING,
     allowNull: false,
   },
   theaterClusterId: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   species: {

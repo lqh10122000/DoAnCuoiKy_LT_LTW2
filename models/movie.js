@@ -1,6 +1,12 @@
 const { DataTypes } = require("sequelize");
 const db = require("./db");
 const Movie = db.define("Movie", {
+  id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
+  },
   name: {
     type: DataTypes.STRING,
     allowNull: false,

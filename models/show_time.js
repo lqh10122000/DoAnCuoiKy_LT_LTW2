@@ -1,15 +1,17 @@
 const { DataTypes } = require("sequelize");
 const db = require("./db");
 const ShowTime = db.define("ShowTime", {
+  id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
+  },
   movieId: {
     type: DataTypes.STRING,
     allowNull: false,
   },
   theaterId: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  theaterClusterId: {
     type: DataTypes.STRING,
     allowNull: false,
   },

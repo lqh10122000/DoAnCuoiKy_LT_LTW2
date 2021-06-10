@@ -1,6 +1,12 @@
 const { DataTypes } = require("sequelize");
 const db = require("./db");
 const Ticket = db.define("Ticket", {
+  id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
+  },
   bookingId: {
     type: DataTypes.STRING,
     allowNull: false,
