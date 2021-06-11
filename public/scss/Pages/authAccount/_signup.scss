@@ -39,18 +39,25 @@
                     width: 92%;
                 }
             }
-            a {
-                button {
-                    border: none;
-                    border-radius: 5px;
-                    padding: 5px 25px;
-                    background-color: black;
-                    color: white;
-                    margin-left: 35%;
-                    &:hover {
-                        color: black;
-                        background-color: white;
-                        transition: 0.5s;
+            .signup__btn {
+                display: flex;
+                margin-left: 20px;
+                a {
+                    button {
+                        margin-right: 30px;
+                        border: none;
+                        border-radius: 5px;
+                        background-color: black;
+                        color: white;
+                        font-size: 15px;
+                        &:hover {
+                            color: black;
+                            background-color: white;
+                            transition: 0.5s;
+                        }
+                    }
+                    #back__btn {
+                        padding: 5px 35px;
                     }
                 }
             }
