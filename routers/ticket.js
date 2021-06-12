@@ -3,6 +3,7 @@ const asyncHandler = require("@joellesenne/express-async-handler");
 const { body, validationResult } = require("express-validator");
 const crypto = require("crypto");
 const express = require("express");
+const document = require("min-document");
 const Theater = require("../models/theater");
 const ShowTime = require("../models/show_time");
 const Movie = require("../models/movie");
@@ -47,9 +48,20 @@ router.get(
   })
 );
 
-router.get("/booking", function (req, res) {
-  const DSGH = req.body.danhSachGhe;
-  console.log("aaaaaaaaaaaaaaaaaaaaaa : " + DSGH);
-});
+router.get(
+  "/booking",
+  asyncHandler(async function (req, res) {
+    const DSGH = req.body.danhSachGhe;
+  })
+);
+
+router.post(
+  "/booking",
+  asyncHandler(async function (req, res) {
+    var span_Text = document.getElementById("danhSachGhe").innerText;
+    // const span_Text = span.textContent;
+    console.log("aaaaaaaaaaaaaaaaaaaaaa : " + span_Text);
+  })
+);
 
 module.exports = router;
