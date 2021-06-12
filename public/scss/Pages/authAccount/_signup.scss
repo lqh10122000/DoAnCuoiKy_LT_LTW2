@@ -11,53 +11,64 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 20px 20px;
-            background-color: rgba(0, 60, 255, 0.349);
+            padding: 30px 30px 15px 30px;
+            background-color: white;
             width: 30%;
             border-radius: 5px;
             h3 {
                 font-size: 25px;
                 font-weight: 600;
                 margin-bottom: 20px;
-                color: white;
+                color: black;
+                text-align: center;
             }
             .signup__input {
-                margin-bottom: 20px;
-                border-bottom: 1px solid white;
-                padding: 10px;
+                position: relative;
                 input {
+                    width: 100%;
+                    padding: 10px 0;
+                    font-size: 16px;
+                    color: $color-black-0;
+                    margin-bottom: 20px;
                     border: none;
+                    border-bottom: 1px solid $color-black-1;
                     outline: none;
-                    background: rgba(0, 0, 0, -0.897);
-                    color: white;
-                    font-size: 15px;
+                    background: transparent;
                 }
-                input[type="text"] {
-                    width: 92%;
+                label {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 10px 0;
+                    font-size: 16px;
+                    color: $color-black-0;
+                    pointer-events: none;
+                    transition: 0.5s;
                 }
-                input[type="password"] {
-                    width: 92%;
+                input:focus ~ label,
+                input:valid ~ label {
+                    top: -20px;
+                    left: 0;
+                    color: $color-red-primary;
+                    font-size: 12px;
                 }
             }
             .signup__btn {
-                display: flex;
-                margin-left: 20px;
-                a {
-                    button {
-                        margin-right: 30px;
-                        border: none;
-                        border-radius: 5px;
-                        background-color: black;
-                        color: white;
-                        font-size: 15px;
-                        &:hover {
-                            color: black;
-                            background-color: white;
-                            transition: 0.5s;
-                        }
-                    }
-                    #back__btn {
-                        padding: 5px 35px;
+                width: 100%;
+
+                button {
+                    width: 100%;
+                    padding: 10px 0;
+                    margin-right: 30px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: black;
+                    color: white;
+                    font-size: 15px;
+                    &:hover {
+                        color: black;
+                        background-color: white;
+                        transition: 0.5s;
                     }
                 }
             }
