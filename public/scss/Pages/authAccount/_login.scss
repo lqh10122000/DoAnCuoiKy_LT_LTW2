@@ -47,8 +47,8 @@
                     pointer-events: none;
                     transition: 0.5s;
                 }
-                input:focus ~ label,
-                input:valid ~ label {
+                input:focus~label,
+                input:valid~label {
                     top: -15px;
                     left: 32px;
                     color: $color-red-primary;
@@ -57,10 +57,9 @@
                     padding: 0;
                     margin: 0;
                 }
-           
                 i {
                     position: absolute;
-                    top:15px;
+                    top: 15px;
                     left: 10px;
                     border-right: 1px solid black;
                     font-size: 15px;
@@ -68,9 +67,9 @@
                     padding-right: 10px;
                     color: black;
                 }
-                input:focus ~ i,
-                input:valid ~ i {
-                    color:  $color-red-primary;
+                input:focus~i,
+                input:valid~i {
+                    color: $color-red-primary;
                 }
             }
             .login__remember {
