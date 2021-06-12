@@ -1,7 +1,4 @@
-<div
-  class="booking"
-  style="background-image: url(../../assets/img/backapp.jpg)"
->
+<div class="booking" style="background-image: url(../../assets/img/backapp.jpg)">
   <div class="row">
     <div class="col-9">
       <div class="creen">
@@ -482,47 +479,50 @@
         <p class="mb-1 tt_sdt">Số điện thoại</p>
         <p class=""><%- Users.phone %></p>
         <hr />
-        <p class="tt_datGhe">
-          Ghế:
-          <span class="tt_soGheDat" id="danhSachGhe" name="danhSachGhe"></span>
-        </p>
-        <p class="tt_giaVe">
-          Giá: <span class="tt_tongGiaVe" id="gia"> 0 </span> VND
-        </p>
-        <hr />
-        <div class="tt_httt">
-          <h4 class="tt_tithttt">Hình thức thanh toán</h4>
-          <div class="form-check">
+
+
+        <form>
+          <p class="tt_datGhe">
+            Ghế:
+            <input class="tt_soGheDat" id="danhSachGhe" name="danhSachGhe" disabled />
+          </p>
+          <p class="tt_giaVe">
+            Giá: <input class="tt_tongGiaVe" id="gia" name="gia" disabled />
+          </p>
+          <hr />
+          <div class="tt_httt">
+            <h4 class="tt_tithttt">Hình thức thanh toán</h4>
             <div class="form-check">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optradio" />
-                <img src="../../assets/logo/Icon-app_white-bg.png" />
-                <span>Thanh toán qua ZaloPay</span>
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optradio" />
-                <img src="../../assets/logo/visa.png" /><span
-                  >Visa, Master</span
-                >
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optradio" />
-                <img src="../../assets/logo/atm.png" /><span
-                  >Thẻ ATM nội địa</span
-                >
-              </label>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio" />
+                  <img src="../../assets/logo/Icon-app_white-bg.png" />
+                  <span>Thanh toán qua ZaloPay</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio" />
+                  <img src="../../assets/logo/visa.png" /><span>Visa, Master</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio" />
+                  <img src="../../assets/logo/atm.png" /><span>Thẻ ATM nội địa</span>
+                </label>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="btn__datve">
-          <a href="/ticket/booking">
-            <button class="btn btn-success" onclick="abc()">Đặt Vé</button>
-          </a>
-        </div>
+          <div class="btn__datve">
+            <a href="/ticket/booking">
+              <button type="submit" class="btn btn-success">Đặt Vé</button>
+            </a>
+          </div>
+        </form>
+
+
+
       </div>
     </div>
   </div>
@@ -540,8 +540,8 @@
       danhSachGhe.push(ghe);
       gia += 90000;
     }
-    document.querySelector("#danhSachGhe").innerHTML = danhSachGhe;
-    document.querySelector("#gia").innerHTML = gia;
+    document.querySelector("#danhSachGhe").value = danhSachGhe;
+    document.querySelector("#gia").value = gia;
 
     let indexGheDD = danhSachGhe.findIndex((gheDD) => gheDD === ghe);
     if (indexGheDD !== -1) {

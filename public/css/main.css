@@ -1478,6 +1478,8 @@ li {
 .booking .thongtin_datve .tt_tongGiaVe,
 .booking .thongtin_datve .tt_soGheDat {
   color: #0cc40c;
+  border: none;
+  display: inline-block;
 }
 
 .booking .thongtin_datve .tt_httt .form-check {
