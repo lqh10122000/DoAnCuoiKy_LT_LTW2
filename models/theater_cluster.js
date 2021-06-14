@@ -19,6 +19,10 @@ const TheaterCluster = db.define("TheaterCluster", {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
+  addressMaps: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
 });
 
 TheaterCluster.findByName = async function (name) {

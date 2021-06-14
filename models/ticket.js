@@ -25,4 +25,20 @@ Ticket.findById = async function (id) {
   return Ticket.findByPk(id);
 };
 
+Ticket.createTicket = async function (bookingId, seatCode, price) {
+  Ticket.create({
+    bookingId: `${bookingId}`,
+    seatCode: `${seatCode}`,
+    price: `${price}`,
+  });
+};
+
+Ticket.findBookingId = async function (bookingId) {
+  return Ticket.findAll({
+    where: {
+      bookingId,
+    },
+  });
+};
+
 module.exports = Ticket;
