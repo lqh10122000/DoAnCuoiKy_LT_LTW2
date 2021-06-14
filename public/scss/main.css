@@ -1677,11 +1677,30 @@ li {
 
 .info__user .info__user__content .info__main .info__item .info__img {
   margin-top: 30px;
-  width: 40%;
+  width: 300px;
+  height: 80%;
+  background-color: #dad5d5;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .info__user .info__user__content .info__main .info__item .info__img img {
+  width: 250px;
+  height: 250px;
   border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.info__user .info__user__content .info__main .info__item .info__img .custom-file {
+  margin-bottom: 20px;
+}
+
+.info__user .info__user__content .info__main .info__item .info__img .img__btn button {
+  background-color: brown;
+  border: none;
+  margin-left: 30%;
+  border-radius: 50px 50px;
+  padding: 6px 30px;
 }
 
 .info__user .info__user__content .info__main .info__form__history {
