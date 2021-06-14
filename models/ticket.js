@@ -1,6 +1,12 @@
 const { DataTypes } = require("sequelize");
 const db = require("./db");
 const Ticket = db.define("Ticket", {
+  id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
+  },
   bookingId: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -17,6 +23,22 @@ const Ticket = db.define("Ticket", {
 
 Ticket.findById = async function (id) {
   return Ticket.findByPk(id);
+};
+
+Ticket.createTicket = async function (bookingId, seatCode, price) {
+  Ticket.create({
+    bookingId: `${bookingId}`,
+    seatCode: `${seatCode}`,
+    price: `${price}`,
+  });
+};
+
+Ticket.findBookingId = async function (bookingId) {
+  return Ticket.findAll({
+    where: {
+      bookingId,
+    },
+  });
 };
 
 module.exports = Ticket;

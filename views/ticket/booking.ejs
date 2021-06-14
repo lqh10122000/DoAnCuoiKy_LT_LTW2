@@ -13,45 +13,49 @@
             <div class="col-1">
               <p class="text"></p>
             </div>
+
+            <% for(let i = 1; i < 12; i++) {%>
+
             <div class="col-1">
-              <p class="text">1</p>
+              <p class="text"><%- i %></p>
             </div>
-            <div class="col-1">
-              <p class="text">2</p>
-            </div>
-            <div class="col-1">
-              <p class="text">3</p>
-            </div>
-            <div class="col-1">
-              <p class="text">4</p>
-            </div>
-            <div class="col-1">
-              <p class="text">5</p>
-            </div>
-            <div class="col-1">
-              <p class="text">6</p>
-            </div>
-            <div class="col-1">
-              <p class="text">7</p>
-            </div>
-            <div class="col-1">
-              <p class="text">8</p>
-            </div>
-            <div class="col-1">
-              <p class="text">9</p>
-            </div>
-            <div class="col-1">
-              <p class="text">10</p>
-            </div>
-            <div class="col-1">
-              <p class="text">11</p>
-            </div>
+
+            <% } %>
           </div>
           <div class="row">
             <div class="col-1">
               <p class="textS">A</p>
             </div>
+
+            <% for(let i = 1; i < 12; i++) { let plag = 0; %> <% for(let j = 0;
+            j < AllSeat.length; j++) { %> <% if(AllSeat[j] === ("A" + i)){ plag
+            = 1 %>
             <div class="col-1">
+              <button
+                class="ghe"
+                id="A<%- i %>"
+                onclick="datVe(event)"
+                value="A<%- i %>"
+                disabled
+              >
+                A<%- i %>
+              </button>
+            </div>
+            <% } %> <% } %> <% if(plag == 0) { %>
+
+            <div class="col-1">
+              <button
+                class="ghe"
+                id="A<%- i %>"
+                onclick="datVe(event)"
+                value="A<%- i %>"
+              >
+                A<%- i %>
+              </button>
+            </div>
+            <% } %> <% } %>
+
+            <!-- <div class="col-1">
               <button class="ghe" id="A1" onclick="datVe(event)" value="A1">
                 A1
               </button>
@@ -105,367 +109,199 @@
               <button class="ghe" id="A11" onclick="datVe(event)" value="A11">
                 A11
               </button>
-            </div>
+            </div> -->
           </div>
           <div class="row">
             <div class="col-1">
               <p class="textS">B</p>
             </div>
+            <% for(let i = 1; i < 12; i++) { let plag = 0; %> <% for(let j = 0;
+            j < AllSeat.length; j++) { %> <% if(AllSeat[j] === ("B" + i)){ plag
+            = 1 %>
             <div class="col-1">
-              <button class="ghe" id="B1" onclick="datVe(event)" value="B1">
-                B1
+              <button
+                class="ghe"
+                id="B<%- i %>"
+                onclick="datVe(event)"
+                value="B<%- i %>"
+                disabled
+              >
+                B<%- i %>
               </button>
             </div>
+            <% } %> <% } %> <% if(plag == 0) { %>
+
             <div class="col-1">
-              <button class="ghe" id="B2" onclick="datVe(event)" value="B2">
-                B2
+              <button
+                class="ghe"
+                id="B<%- i %>"
+                onclick="datVe(event)"
+                value="B<%- i %>"
+              >
+                B<%- i %>
               </button>
             </div>
-            <div class="col-1">
-              <button class="ghe" id="B3" onclick="datVe(event)" value="B3">
-                B3
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="B4" onclick="datVe(event)" value="B4">
-                B4
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="B5" onclick="datVe(event)" value="B5">
-                B5
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="B6" onclick="datVe(event)" value="B6">
-                B6
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="B7" onclick="datVe(event)" value="B7">
-                B7
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="B8" onclick="datVe(event)" value="B8">
-                B8
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="B9" onclick="datVe(event)" value="B9">
-                B9
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="B10" onclick="datVe(event)" value="B10">
-                B10
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="B11" onclick="datVe(event)" value="B11">
-                B11
-              </button>
-            </div>
+            <% } %> <% } %>
           </div>
           <div class="row">
             <div class="col-1">
               <p class="textS">C</p>
             </div>
+            <% for(let i = 1; i < 12; i++) { let plag = 0; %> <% for(let j = 0;
+            j < AllSeat.length; j++) { %> <% if(AllSeat[j] === ("C" + i)){ plag
+            = 1 %>
             <div class="col-1">
-              <button class="ghe" id="C1" onclick="datVe(event)" value="C1">
-                C1
+              <button
+                class="ghe"
+                id="C<%- i %>"
+                onclick="datVe(event)"
+                value="C<%- i %>"
+                disabled
+              >
+                A<%- i %>
               </button>
             </div>
+            <% } %> <% } %> <% if(plag == 0) { %>
+
             <div class="col-1">
-              <button class="ghe" id="C2" onclick="datVe(event)" value="C2">
-                C2
+              <button
+                class="ghe"
+                id="C<%- i %>"
+                onclick="datVe(event)"
+                value="C<%- i %>"
+              >
+                C<%- i %>
               </button>
             </div>
-            <div class="col-1">
-              <button class="ghe" id="C3" onclick="datVe(event)" value="C3">
-                C3
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="C4" onclick="datVe(event)" value="C4">
-                C4
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="C5" onclick="datVe(event)" value="C5">
-                C5
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="C6" onclick="datVe(event)" value="C6">
-                C6
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="C7" onclick="datVe(event)" value="C7">
-                C7
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="C8" onclick="datVe(event)" value="C8">
-                C8
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="C9" onclick="datVe(event)" value="C9">
-                C9
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="C10" onclick="datVe(event)" value="C10">
-                C10
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="C11" onclick="datVe(event)" value="C11">
-                C11
-              </button>
-            </div>
+            <% } %> <% } %>
           </div>
           <div class="row">
             <div class="col-1">
               <p class="textS">D</p>
             </div>
+            <% for(let i = 1; i < 12; i++) { let plag = 0; %> <% for(let j = 0;
+            j < AllSeat.length; j++) { %> <% if(AllSeat[j] === ("D" + i)){ plag
+            = 1 %>
             <div class="col-1">
-              <button class="ghe" id="D1" onclick="datVe(event)" value="D1">
-                D1
+              <button
+                class="ghe"
+                id="D<%- i %>"
+                onclick="datVe(event)"
+                value="D<%- i %>"
+                disabled
+              >
+                D<%- i %>
               </button>
             </div>
+            <% } %> <% } %> <% if(plag == 0) { %>
+
             <div class="col-1">
-              <button class="ghe" id="D2" onclick="datVe(event)" value="D2">
-                D2
+              <button
+                class="ghe"
+                id="D<%- i %>"
+                onclick="datVe(event)"
+                value="D<%- i %>"
+              >
+                D<%- i %>
               </button>
             </div>
-            <div class="col-1">
-              <button class="ghe" id="D3" onclick="datVe(event)" value="D3">
-                D3
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="D4" onclick="datVe(event)" value="D4">
-                D4
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="D5" onclick="datVe(event)" value="D5">
-                D5
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="D6" onclick="datVe(event)" value="D6">
-                D6
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="D7" onclick="datVe(event)" value="D7">
-                D7
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="D8" onclick="datVe(event)" value="D8">
-                D8
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="D9" onclick="datVe(event)" value="D9">
-                D9
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="D10" onclick="datVe(event)" value="D10">
-                D10
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="D11" onclick="datVe(event)" value="D11">
-                D11
-              </button>
-            </div>
+            <% } %> <% } %>
           </div>
           <div class="row">
             <div class="col-1">
               <p class="textS">E</p>
             </div>
+            <% for(let i = 1; i < 12; i++) { let plag = 0; %> <% for(let j = 0;
+            j < AllSeat.length; j++) { %> <% if(AllSeat[j] === ("E" + i)){ plag
+            = 1 %>
             <div class="col-1">
-              <button class="ghe" id="E1" onclick="datVe(event)" value="E1">
-                E1
+              <button
+                class="ghe"
+                id="E<%- i %>"
+                onclick="datVe(event)"
+                value="E<%- i %>"
+                disabled
+              >
+                E<%- i %>
               </button>
             </div>
+            <% } %> <% } %> <% if(plag == 0) { %>
+
             <div class="col-1">
-              <button class="ghe" id="E2" onclick="datVe(event)" value="E2">
-                E2
+              <button
+                class="ghe"
+                id="E<%- i %>"
+                onclick="datVe(event)"
+                value="E<%- i %>"
+              >
+                E<%- i %>
               </button>
             </div>
-            <div class="col-1">
-              <button class="ghe" id="E3" onclick="datVe(event)" value="E3">
-                E3
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="E4" onclick="datVe(event)" value="E4">
-                E4
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="E5" onclick="datVe(event)" value="E5">
-                E5
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="E6" onclick="datVe(event)" value="E6">
-                E6
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="E7" onclick="datVe(event)" value="E7">
-                E7
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="E8" onclick="datVe(event)" value="E8">
-                E8
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="E9" onclick="datVe(event)" value="E9">
-                E9
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="E10" onclick="datVe(event)" value="E10">
-                E10
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="E11" onclick="datVe(event)" value="E11">
-                E11
-              </button>
-            </div>
+            <% } %> <% } %>
           </div>
           <div class="row">
             <div class="col-1">
               <p class="textS">F</p>
             </div>
+            <% for(let i = 1; i < 12; i++) { let plag = 0; %> <% for(let j = 0;
+            j < AllSeat.length; j++) { %> <% if(AllSeat[j] === ("F" + i)){ plag
+            = 1 %>
             <div class="col-1">
-              <button class="ghe" id="F1" onclick="datVe(event)" value="F1">
-                F1
+              <button
+                class="ghe"
+                id="F<%- i %>"
+                onclick="datVe(event)"
+                value="F<%- i %>"
+                disabled
+              >
+                A<%- i %>
               </button>
             </div>
+            <% } %> <% } %> <% if(plag == 0) { %>
+
             <div class="col-1">
-              <button class="ghe" id="F2" onclick="datVe(event)" value="F2">
-                F2
+              <button
+                class="ghe"
+                id="F<%- i %>"
+                onclick="datVe(event)"
+                value="F<%- i %>"
+              >
+                F<%- i %>
               </button>
             </div>
-            <div class="col-1">
-              <button class="ghe" id="F3" onclick="datVe(event)" value="F3">
-                F3
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="F4" onclick="datVe(event)" value="F4">
-                F4
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="F5" onclick="datVe(event)" value="F5">
-                F5
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="F6" onclick="datVe(event)" value="F6">
-                F6
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="F7" onclick="datVe(event)" value="F7">
-                F7
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="F8" onclick="datVe(event)" value="F8">
-                F8
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="F9" onclick="datVe(event)" value="F9">
-                F9
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="F10" onclick="datVe(event)" value="F10">
-                F10
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="F11" onclick="datVe(event)" value="F11">
-                F11
-              </button>
-            </div>
+            <% } %> <% } %>
           </div>
           <div class="row">
             <div class="col-1">
               <p class="textS">G</p>
             </div>
+            <% for(let i = 1; i < 12; i++) { let plag = 0; %> <% for(let j = 0;
+            j < AllSeat.length; j++) { %> <% if(AllSeat[j] === ("G" + i)){ plag
+            = 1 %>
             <div class="col-1">
-              <button class="ghe" id="G1" onclick="datVe(event)" value="G1">
-                G1
+              <button
+                class="ghe"
+                id="G<%- i %>"
+                onclick="datVe(event)"
+                value="G<%- i %>"
+                disabled
+              >
+                G<%- i %>
               </button>
             </div>
+            <% } %> <% } %> <% if(plag == 0) { %>
+
             <div class="col-1">
-              <button class="ghe" id="G2" onclick="datVe(event)" value="G2">
-                G2
+              <button
+                class="ghe"
+                id="G<%- i %>"
+                onclick="datVe(event)"
+                value="G<%- i %>"
+              >
+                G<%- i %>
               </button>
             </div>
-            <div class="col-1">
-              <button class="ghe" id="G3" onclick="datVe(event)" value="G3">
-                G3
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="G4" onclick="datVe(event)" value="G4">
-                G4
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="G5" onclick="datVe(event)" value="G5">
-                G5
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="G6" onclick="datVe(event)" value="G6">
-                G6
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="G7" onclick="datVe(event)" value="G7">
-                G7
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="G8" onclick="datVe(event)" value="G8">
-                G8
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="G9" onclick="datVe(event)" value="G9">
-                G9
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="G10" onclick="datVe(event)" value="G10">
-                G10
-              </button>
-            </div>
-            <div class="col-1">
-              <button class="ghe" id="G11" onclick="datVe(event)" value="G11">
-                G11
-              </button>
-            </div>
+            <% } %> <% } %>
           </div>
         </div>
       </div>
@@ -482,47 +318,85 @@
         <p class="mb-1 tt_sdt">Số điện thoại</p>
         <p class=""><%- Users.phone %></p>
         <hr />
-        <p class="tt_datGhe">
-          Ghế:
-          <span class="tt_soGheDat" id="danhSachGhe" name="danhSachGhe"></span>
-        </p>
-        <p class="tt_giaVe">
-          Giá: <span class="tt_tongGiaVe" id="gia"> 0 </span> VND
-        </p>
-        <hr />
-        <div class="tt_httt">
-          <h4 class="tt_tithttt">Hình thức thanh toán</h4>
-          <div class="form-check">
+        <form
+          action="/ticket/booking?idT=<%- ShowTimes.id %>&idUser=<%- Users.id %>"
+          method="post"
+        >
+          <p class="tt_datGhe">
+            Ghế:
+            <input
+              type="text"
+              class="tt_soGheDat"
+              id="danhSachGhe"
+              name="danhSachGhe"
+              readonly="readonly"
+            />
+          </p>
+          <p class="tt_giaVe">
+            Giá:
+            <input
+              type="text"
+              class="tt_tongGiaVe"
+              id="gia"
+              name="gia"
+              value="0"
+              readonly="readonly"
+            />
+            <input
+              type="hidden"
+              id="price"
+              name="price"
+              value="<%- ShowTimes.price %>"
+              disabled
+            />
+          </p>
+          <hr />
+          <div class="tt_httt">
+            <h4 class="tt_tithttt">Hình thức thanh toán</h4>
             <div class="form-check">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optradio" />
-                <img src="../../assets/logo/Icon-app_white-bg.png" />
-                <span>Thanh toán qua ZaloPay</span>
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optradio" />
-                <img src="../../assets/logo/visa.png" /><span
-                  >Visa, Master</span
-                >
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optradio" />
-                <img src="../../assets/logo/atm.png" /><span
-                  >Thẻ ATM nội địa</span
-                >
-              </label>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="optradio"
+                  />
+                  <img src="../../assets/logo/Icon-app_white-bg.png" />
+                  <span>Thanh toán qua ZaloPay</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="optradio"
+                  />
+                  <img src="../../assets/logo/visa.png" /><span
+                    >Visa, Master</span
+                  >
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="optradio"
+                  />
+                  <img src="../../assets/logo/atm.png" /><span
+                    >Thẻ ATM nội địa</span
+                  >
+                </label>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="btn__datve">
-          <a href="/ticket/booking">
-            <button class="btn btn-success" onclick="abc()">Đặt Vé</button>
-          </a>
-        </div>
+          <div class="btn__datve">
+            <a href="/ticket/booking">
+              <button type="submit" class="btn btn-success">Đặt Vé</button>
+            </a>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -533,15 +407,18 @@
   var datVe = function (event) {
     let ghe = event.target.value;
     let index = danhSachGhe.findIndex((gheDD) => gheDD === ghe);
+
+    let price = document.getElementById("price").value;
+
     if (index !== -1) {
       danhSachGhe.splice(index, 1);
-      gia -= 90000;
+      gia -= Number.parseInt(price);
     } else {
       danhSachGhe.push(ghe);
-      gia += 90000;
+      gia += Number.parseInt(price);
     }
-    document.querySelector("#danhSachGhe").innerHTML = danhSachGhe;
-    document.querySelector("#gia").innerHTML = gia;
+    document.querySelector("#danhSachGhe").value = danhSachGhe;
+    document.querySelector("#gia").value = gia;
 
     let indexGheDD = danhSachGhe.findIndex((gheDD) => gheDD === ghe);
     if (indexGheDD !== -1) {

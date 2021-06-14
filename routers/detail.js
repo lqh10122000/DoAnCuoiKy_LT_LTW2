@@ -30,8 +30,7 @@ router.get(
 
     const theater = await Theater.findById();
     const showTime = await ShowTime.findByMovieId(IdMovie);
-    // const idTheater = showTime[0].theaterId;
-    // const theaters = await Theater.findByMovieId(IdMovie);
+
     const HoursMinute = showTime.map((showTimeItem) => {
       return {
         hour: new Date(showTimeItem.start).getHours(),

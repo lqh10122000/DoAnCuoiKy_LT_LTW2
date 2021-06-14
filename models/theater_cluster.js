@@ -1,6 +1,12 @@
 const { DataTypes } = require("sequelize");
 const db = require("./db");
 const TheaterCluster = db.define("TheaterCluster", {
+  id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
+  },
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -11,6 +17,10 @@ const TheaterCluster = db.define("TheaterCluster", {
   },
   theaterClusterId: {
     type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+  addressMaps: {
+    type: DataTypes.STRING,
     allowNull: false,
   },
 });

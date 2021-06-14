@@ -995,8 +995,8 @@ li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px 20px;
-  background-color: rgba(0, 60, 255, 0.349);
+  padding: 30px 30px 15px 30px;
+  background-color: white;
   width: 30%;
   border-radius: 5px;
 }
@@ -1005,30 +1005,64 @@ li {
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: white;
+  color: black;
+  text-align: center;
 }
 
 .login .login__content .login__form .form-input {
+  position: relative;
   margin-bottom: 20px;
   border: 1px solid black;
   padding: 10px;
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.06);
 }
 
 .login .login__content .login__form .form-input input {
   border: none;
   outline: none;
   background: rgba(0, 0, 0, 0);
-  color: white;
+  color: black;
+  background: transparent;
+  padding-left: 35px;
+  width: 100%;
+}
+
+.login .login__content .login__form .form-input label {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #000;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login .login__content .login__form .form-input input:focus ~ label,
+.login .login__content .login__form .form-input input:valid ~ label {
+  top: -15px;
+  left: 32px;
+  color: #ff5252;
+  font-size: 16px;
+  background-color: white;
+  padding: 0;
+  margin: 0;
 }
 
 .login .login__content .login__form .form-input i {
-  border-right: 1px solid gray;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  border-right: 1px solid black;
   font-size: 15px;
   margin-right: 10px;
   padding-right: 10px;
-  color: rgba(255, 255, 255, 0.767);
+  color: black;
+}
+
+.login .login__content .login__form .form-input input:focus ~ i,
+.login .login__content .login__form .form-input input:valid ~ i {
+  color: #ff5252;
 }
 
 .login .login__content .login__form .login__remember {
@@ -1048,7 +1082,7 @@ li {
 .login .login__content .login__form .login__remember .login__remaind p {
   font-size: 14px;
   margin-top: 16px;
-  color: white;
+  color: black;
 }
 
 .login .login__content .login__form .login__remember a button {
@@ -1153,16 +1187,25 @@ li {
 
 .changePassword .change__form {
   width: 40%;
-  margin: auto;
   background-color: rgba(0, 0, 255, 0.014);
   position: absolute;
   padding: 50px;
-  top: 35%;
+  top: 25%;
   left: 3%;
 }
 
-.changePassword .change__form .change__input {
+.changePassword .change__form h2 {
   margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.changePassword .change__form h2:hover {
+  color: blue;
+  transition: 0.5s;
+}
+
+.changePassword .change__form .change__input {
+  margin-bottom: 30px;
 }
 
 .changePassword .change__form .change__input input {
@@ -1170,8 +1213,15 @@ li {
   outline: none;
 }
 
-.changePassword .change__form a button {
+.changePassword .change__form .change__btn a button {
   padding: 6px 30px;
+  margin-right: 30px;
+  border-radius: 50px 5px 5px 50px;
+}
+
+.changePassword .change__form .change__btn #change__btn {
+  padding: 6px 42px;
+  border-radius: 5px 50px 50px 5px;
 }
 
 .forgotPassword {
@@ -1184,13 +1234,28 @@ li {
 }
 
 .forgotPassword .forgot__form {
-  width: 40%;
-  margin: auto;
-  background-color: rgba(0, 0, 255, 0.014);
+  width: 50%;
+  background-color: rgba(22, 22, 247, 0.03);
   position: absolute;
-  padding: 50px;
-  top: 40%;
+  padding: 40px;
+  top: 3%;
   left: 3%;
+  margin-bottom: 30px;
+}
+
+.forgotPassword .forgot__form h2 {
+  color: blue;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.forgotPassword .forgot__form h2:hover {
+  color: rgba(71, 71, 248, 0.904);
+}
+
+.forgotPassword .forgot__form p {
+  color: rgba(248, 23, 23, 0.897);
+  font-size: 18px;
 }
 
 .forgotPassword .forgot__form .forgot__input {
@@ -1200,10 +1265,22 @@ li {
 .forgotPassword .forgot__form .forgot__input input {
   border: none;
   outline: none;
+  width: 85%;
 }
 
-.forgotPassword .forgot__form a button {
-  padding: 6px 30px;
+.forgotPassword .forgot__form .forgot__btn {
+  margin-bottom: 25px;
+}
+
+.forgotPassword .forgot__form .forgot__btn a button {
+  margin-right: 20px;
+  border-radius: 50px 5px 5px 50px;
+  margin-left: 10px;
+}
+
+.forgotPassword .forgot__form .forgot__btn a #back__btn {
+  border-radius: 5px 50px 50px 5px;
+  padding: 6px 41px;
 }
 
 .signup .signup__content {
@@ -1221,8 +1298,8 @@ li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px 20px;
-  background-color: rgba(0, 60, 255, 0.349);
+  padding: 30px 30px 15px 30px;
+  background-color: white;
   width: 30%;
   border-radius: 5px;
 }
@@ -1231,41 +1308,61 @@ li {
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: white;
+  color: black;
+  text-align: center;
 }
 
 .signup .signup__content .signup__form .signup__input {
-  margin-bottom: 20px;
-  border-bottom: 1px solid white;
-  padding: 10px;
+  position: relative;
 }
 
 .signup .signup__content .signup__form .signup__input input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 20px;
   border: none;
+  border-bottom: 1px solid #1b1b1b;
   outline: none;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
+}
+
+.signup .signup__content .signup__form .signup__input label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #000;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.signup .signup__content .signup__form .signup__input input:focus ~ label,
+.signup .signup__content .signup__form .signup__input input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #ff5252;
+  font-size: 12px;
+}
+
+.signup .signup__content .signup__form .signup__btn {
+  width: 100%;
+}
+
+.signup .signup__content .signup__form .signup__btn button {
+  width: 100%;
+  padding: 10px 0;
+  margin-right: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
   color: white;
   font-size: 15px;
 }
 
-.signup .signup__content .signup__form .signup__input input[type="text"] {
-  width: 92%;
-}
-
-.signup .signup__content .signup__form .signup__input input[type="password"] {
-  width: 92%;
-}
-
-.signup .signup__content .signup__form a button {
-  border: none;
-  border-radius: 5px;
-  padding: 5px 25px;
-  background-color: black;
-  color: white;
-  margin-left: 35%;
-}
-
-.signup .signup__content .signup__form a button:hover {
+.signup .signup__content .signup__form .signup__btn button:hover {
   color: black;
   background-color: white;
   transition: 0.5s;
@@ -1381,6 +1478,8 @@ li {
 .booking .thongtin_datve .tt_tongGiaVe,
 .booking .thongtin_datve .tt_soGheDat {
   color: #0cc40c;
+  border: none;
+  display: inline-block;
 }
 
 .booking .thongtin_datve .tt_httt .form-check {

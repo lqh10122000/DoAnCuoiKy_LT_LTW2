@@ -9,16 +9,23 @@ const ShowTime = require("../models/show_time");
 const Movie = require("../models/movie");
 const TheaterCluster = require("../models/theater_cluster");
 const User = require("../models/user");
+const Booking = require("../models/booking");
+const Ticket = require("../models/ticket");
 const router = express.Router();
+const moment = require("moment");
 
 router.get(
   "/",
   asyncHandler(async function (req, res) {
     res.locals.title = "Đặt vé";
+
+    // get infor prom query
     const IdMovie = req.query.idM;
     const IdTheater = req.query.idT;
     const IdTheaterCluster = req.query.idTC;
     const IdTime = req.query.idTime;
+
+    // get data from database loading for infor movie and showtime
 
     const theater = await Theater.findTheaterCluster(
       IdTheater,
@@ -29,6 +36,21 @@ router.get(
     const theaterCluster = await TheaterCluster.findById(IdTheaterCluster);
     const user = await User.findById(1);
 
+    // get showtimeId from booking
+    const bookingId = await Booking.findBookingId(showtime.id);
+    let allSeat = [];
+
+    for (let i = 0; i < bookingId.length; i++) {
+      const allSeatCode = await Ticket.findBookingId(String(bookingId[i].id));
+      for (let j = 0; j < allSeatCode.length; j++) {
+        allSeat.push(allSeatCode[j].seatCode);
+      }
+    }
+
+    // get all seatCode for booking
+
+    // const allSeatCode = await Ticket.findBookingId(bookingId);
+
     // if (!req.session.userId) {
     //   res.redirect("/");
     // } else {
@@ -36,7 +58,6 @@ router.get(
 
     // }
     // const IdUser = req.session.userId;
-    // console.log("aaaaaaaaaaaaa : " + IdUser);
 
     res.render("ticket/booking", {
       Theaters: theater,
@@ -44,23 +65,60 @@ router.get(
       Movies: movie,
       TheaterClusters: theaterCluster,
       Users: user,
+      AllSeat: allSeat,
     });
   })
 );
 
-router.get(
-  "/booking",
-  asyncHandler(async function (req, res) {
-    const DSGH = req.body.danhSachGhe;
-  })
-);
+// router.get(
+//   "/booking",
+//   asyncHandler(async function (req, res) {
+//     const DSGH = req.body.danhSachGhe;
+//   })
+// );
 
 router.post(
   "/booking",
   asyncHandler(async function (req, res) {
-    var span_Text = document.getElementById("danhSachGhe").innerText;
-    // const span_Text = span.textContent;
-    console.log("aaaaaaaaaaaaaaaaaaaaaa : " + span_Text);
+    const { idT, idUser } = req.query;
+    var ghe = req.body.danhSachGhe;
+    const totalMoney = req.body.gia;
+
+    var nowDate = moment().format();
+
+    Booking.createBooking(idUser, idT, nowDate, totalMoney);
+
+    const userBooking = await Booking.findUserBooking(idUser);
+
+    const bookingId = userBooking[userBooking.length - 1].id;
+
+    const price = totalMoney / ghe.length;
+
+    const tempSeatCode = ghe;
+
+    while (ghe.length > 0) {
+      var splitted = ghe.split(",", 1);
+
+      console.log("aaaaaaaaaaaaa " + splitted + "  " + ghe);
+
+      const bookingSeccess = await Ticket.createTicket(
+        bookingId,
+        splitted,
+        price
+      );
+
+      splitted = splitted + ",";
+
+      ghe = ghe.replace(splitted, "");
+
+      if (ghe.length <= 3) {
+        const bookingSeccess = await Ticket.createTicket(bookingId, ghe, price);
+
+        ghe = "";
+      }
+    }
+
+    res.redirect("/");
   })
 );
 
