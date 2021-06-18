@@ -61,4 +61,12 @@ ShowTime.findById = async function (id) {
   return ShowTime.findByPk(id);
 };
 
+ShowTime.findAllId = async function (id) {
+  return ShowTime.findAll({
+    where: {
+      id,
+    },
+  });
+};
+
 module.exports = ShowTime;

@@ -54,4 +54,12 @@ Booking.findBookingId = async function (showTimeId) {
   });
 };
 
+Booking.findBookingByUserId = async function (UserId) {
+  return Booking.findAll({
+    where: {
+      UserId,
+    },
+  });
+};
+
 module.exports = Booking;

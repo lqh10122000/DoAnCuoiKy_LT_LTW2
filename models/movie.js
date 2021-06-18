@@ -23,9 +23,25 @@ const Movie = db.define("Movie", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  trailer: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  content: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
 });
 
 Movie.findById = async function (id) {
+  return Movie.findOne({
+    where: {
+      id,
+    },
+  });
+};
+
+Movie.findAllId = async function (id) {
   return Movie.findOne({
     where: {
       id,
