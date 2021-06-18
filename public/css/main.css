@@ -1187,30 +1187,65 @@ li {
 
 .changePassword .change__form {
   width: 40%;
-  background-color: rgba(0, 0, 255, 0.014);
+  background-color: #b0b0d1;
   position: absolute;
   padding: 50px;
-  top: 25%;
+  top: 2%;
   left: 3%;
+  border-radius: 5px;
 }
 
 .changePassword .change__form h2 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-weight: 600;
+  color: #06066d;
 }
 
 .changePassword .change__form h2:hover {
-  color: blue;
+  color: rgba(0, 0, 255, 0.897);
   transition: 0.5s;
 }
 
 .changePassword .change__form .change__input {
-  margin-bottom: 30px;
+  position: relative;
+  margin-bottom: 35px;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
 
 .changePassword .change__form .change__input input {
   border: none;
   outline: none;
+  background: rgba(0, 0, 0, 0);
+  color: black;
+  background: transparent;
+  padding-left: 30px;
+  width: 100%;
+}
+
+.changePassword .change__form .change__input label {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #000;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.changePassword .change__form .change__input input:focus ~ label {
+  top: -13px;
+  left: 28px;
+  color: #ff5252;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  background-color: #b0b0d1;
+}
+
+.changePassword .change__form .change__btn {
+  margin-bottom: 30px;
 }
 
 .changePassword .change__form .change__btn a button {
@@ -1235,16 +1270,17 @@ li {
 
 .forgotPassword .forgot__form {
   width: 50%;
-  background-color: rgba(22, 22, 247, 0.03);
+  background-color: rgba(29, 29, 185, 0.082);
+  border-radius: 5px;
   position: absolute;
   padding: 40px;
-  top: 3%;
+  top: 1%;
   left: 3%;
   margin-bottom: 30px;
 }
 
 .forgotPassword .forgot__form h2 {
-  color: blue;
+  color: #3333f7;
   font-size: 50px;
   font-weight: 600;
 }
@@ -1548,11 +1584,30 @@ li {
 
 .info__user .info__user__content .info__main .info__item .info__img {
   margin-top: 30px;
-  width: 40%;
+  width: 300px;
+  height: 80%;
+  background-color: #dad5d5;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .info__user .info__user__content .info__main .info__item .info__img img {
+  width: 250px;
+  height: 250px;
   border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.info__user .info__user__content .info__main .info__item .info__img .custom-file {
+  margin-bottom: 20px;
+}
+
+.info__user .info__user__content .info__main .info__item .info__img .img__btn button {
+  background-color: brown;
+  border: none;
+  margin-left: 30%;
+  border-radius: 50px 50px;
+  padding: 6px 30px;
 }
 
 .info__user .info__user__content .info__main .info__form__history {
@@ -1671,5 +1726,22 @@ li {
 
 .admin .content__admin .main__admin .button__admin button {
   padding: 10px 30px;
+}
+
+.main__admin .nav {
+  justify-content: space-around;
+  border: none;
+  margin-bottom: 30px;
+}
+
+.main__admin .nav .nav-link {
+  border: none;
+  color: black;
+  font-size: 24px;
+}
+
+.main__admin .nav .active {
+  color: #df0d7a;
+  border-bottom: 1px solid #df0d7a;
 }
 /*# sourceMappingURL=main.css.map */
