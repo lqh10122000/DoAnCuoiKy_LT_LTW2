@@ -26,6 +26,8 @@ router.get(
       picturePoster: movie.picturePoster,
       premiereDate: moment(movie.premiereDate).format("D MMM, YYYY"),
       time: movie.time,
+      trailer: movie.trailer,
+      content: movie.content,
     };
 
     const theater = await Theater.findById();

@@ -41,4 +41,12 @@ Ticket.findBookingId = async function (bookingId) {
   });
 };
 
+Ticket.findTicketByBookingId = async function (bookingId) {
+  return Ticket.findAll({
+    where: {
+      bookingId,
+    },
+  });
+};
+
 module.exports = Ticket;

@@ -37,4 +37,12 @@ TheaterCluster.findById = async function (id) {
   return TheaterCluster.findByPk(id);
 };
 
+TheaterCluster.findAllId = async function (id) {
+  return TheaterCluster.findAll({
+    where: {
+      id,
+    },
+  });
+};
+
 module.exports = TheaterCluster;
