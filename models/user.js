@@ -30,6 +30,10 @@ const User = db.define("User", {
   token: {
     type: DataTypes.STRING,
   },
+  role: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
 });
 
 User.findByEmail = async function (email) {

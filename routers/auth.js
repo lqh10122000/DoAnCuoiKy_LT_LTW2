@@ -87,12 +87,12 @@ router.post(
     const user = await User.create({
       displayName: req.body.displayName,
       email: req.body.email,
-      password: req.body.password,
+      password: bcrypt.hashSync(req.body.password, 10),
       token: crypto.randomBytes(3).toString("hex").toUpperCase(),
     });
     await Email.send(
       user.email,
-      "Mã kích hoạt tài khoản",
+      "Kích hoạt tài khoản",
       `${process.env.BASE_URL}/auth/activate/${user.id}/${user.token}`
     );
     res.redirect("/");

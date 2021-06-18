@@ -53,9 +53,10 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/auth/logout">Đăng xuất</a>
                             </li>
-                            <% if(currentUser.displayName=='admin' ){ %>
+                            <% if(currentUser.role == 'admin' ){ %>
                                 <li class="nav-item">
-                                    <a class="nav-link <%- title === 'Quản lí' ? 'active': '' %> " href="/admin/manage">
+                                    <a class="nav-link <%- title === 'Quản lí' ? 'active': '' %> " 
+                                        href="/admin/movie">
                                         Quản lí
                                     </a>
                                 </li>
@@ -73,29 +74,10 @@
                                                     href="/auth/login">Đăng nhập</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link <%- title === 'Đăng kí tài khoản' ? 'active': '' %> "
-                                                    href="/auth/signup">Đăng kí
-                                                    tài khoản</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link disabled" href="#" tabindex="-1"
-                                                    aria-disabled="true">
-                                                    <%- currentUser?currentUser.displayName: 'Khách' %>
-                                                </a>
-                                            </li>
-                                            <% } %>
-                                                <li class="nav-item">
-                                                    <a class="nav-link <%- title === 'Thông tin cá nhân' ? 'active': '' %> "
-                                                        href="/user/profile">
-                                                        thông tin cá nhân
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link <%- title === 'Thông tin cá nhân' ? 'active': '' %> "
-                                                        href="/admin/movie">
-                                                        admin
-                                                    </a>
-                                                </li>
+                                                <a class="nav-link <%- title === 'Đăng kí tài khoản' ? 'active': '' %> " 
+                                                    href="/auth/signup">Đăng kí tài khoản</a>
+                                            </li>                                          
+                                            <% } %>                                                                                   
                 </div>
             </div>
         </nav>
