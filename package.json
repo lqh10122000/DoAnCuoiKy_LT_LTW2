@@ -22,6 +22,7 @@
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.17.1",
     "express-validator": "^6.11.1",
+    "js-alert": "^1.0.4",
     "jsdom": "^16.6.0",
     "min-document": "^2.19.0",
     "moment": "^2.29.1",

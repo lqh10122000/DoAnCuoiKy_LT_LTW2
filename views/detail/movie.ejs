@@ -14,13 +14,13 @@
           <p>Ngày công chiếu: <span>
               <%= movies.premiereDate %>
           </p>
-          <p>Nội dung: <span>abcxyz</span></p>
+          <p>Nội dung: <span><%- movies.content %></span></p>
           <p>Thời Lượng: <span>
               <%= movies.time %>
             </span> phút</p>
         </div>
         <div class="tab__button">
-          <a class="venobox" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=jluSu8Rw6YE&t=17s">TRAILER</a>
+          <a class="venobox" data-autoplay="true" data-vbtype="video" href="<%- movies.trailer %>">TRAILER</a>
           <a href="/ticket/booking">MUA VÉ</a>
         </div>
       </div>

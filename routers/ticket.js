@@ -1,5 +1,7 @@
 require("dotenv").config();
+const JSAlert = require("js-alert");
 const asyncHandler = require("@joellesenne/express-async-handler");
+const Email = require("../models/email");
 const { body, validationResult } = require("express-validator");
 const crypto = require("crypto");
 const express = require("express");
@@ -70,12 +72,13 @@ router.get(
   })
 );
 
-// router.get(
-//   "/booking",
-//   asyncHandler(async function (req, res) {
-//     const DSGH = req.body.danhSachGhe;
-//   })
-// );
+async function SendEmail(dataSendEmail) {
+  await Email.send(
+    dataSendEmail.email,
+    `Đặt Vé Xem Phim ${dataSendEmail.movie}`,
+    `Mã vé của bạn là ${dataSendEmail.bookingId} thời gian ${dataSendEmail.time} tại ${dataSendEmail.theaterCluster}`
+  );
+}
 
 router.post(
   "/booking",
@@ -87,36 +90,56 @@ router.post(
     var nowDate = moment().format();
 
     Booking.createBooking(idUser, idT, nowDate, totalMoney);
-
+    const findUser = await User.findById(idUser);
+    const findShowTime = await ShowTime.findById(idT);
+    const findMoive = await ShowTime.findById(findShowTime.movieId);
+    const findTheaterCluster = await TheaterCluster.findById(
+      findShowTime.theaterClusterId
+    );
     const userBooking = await Booking.findUserBooking(idUser);
 
     const bookingId = userBooking[userBooking.length - 1].id;
-
     const price = totalMoney / ghe.length;
-
     const tempSeatCode = ghe;
 
     while (ghe.length > 0) {
       var splitted = ghe.split(",", 1);
 
-      console.log("aaaaaaaaaaaaa " + splitted + "  " + ghe);
-
-      const bookingSeccess = await Ticket.createTicket(
-        bookingId,
-        splitted,
-        price
-      );
+      if (ghe.length > 3) {
+        const bookingSeccess = await Ticket.createTicket(
+          bookingId,
+          splitted,
+          price
+        );
+      }
 
       splitted = splitted + ",";
 
       ghe = ghe.replace(splitted, "");
 
       if (ghe.length <= 3) {
+        var lastSearCode = ghe.split(",", 1);
+
         const bookingSeccess = await Ticket.createTicket(bookingId, ghe, price);
 
         ghe = "";
       }
     }
+
+    const dataSendEmail = {
+      email: findUser.email,
+      bookingId: bookingId,
+      time: findShowTime.start,
+      movie: findMoive.name,
+      theaterCluster: findTheaterCluster.name,
+    };
+
+    console.log(
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      JSON.stringify(dataSendEmail)
+    );
+
+    SendEmail(dataSendEmail);
 
     res.redirect("/");
   })
