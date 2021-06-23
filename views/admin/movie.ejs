@@ -1,185 +1,344 @@
 <div class="admin">
-    <div class="row">
-        <div class="tab__admin col-2">
-            <div class="img__admin">
-                <img src="../../logo.png" alt="">
-            </div>
-            <div class="admin__line">
+  <div class="row">
+    <div class="tab__admin col-2">
+      <div class="img__admin">
+        <img src="../../logo.png" alt="" />
+      </div>
+      <div class="admin__line">
+        <a href="/admin/statistical">Thống Kê Doanh Thu</a>
 
-                <a href="/admin/statistical">Thống Kê Doanh Thu</a>
+        <a href="/admin/movie">Quản Lý Phim</a>
 
-                <a href="/admin/movie">Quản Lý Phim</a>
+        <a href="/admin/theatercluster">Quản Lý Cụm Rạp</a>
 
-                <a href="/admin/theatercluster">Quản Lý Cụm Rạp</a>
+        <a href="/admin/theater">Quản Lý Rạp</a>
 
-                <a href="/admin/theater">Quản Lý Rạp</a>
-
-                <a href="/admin/showtime">Quản Lý Suất Chiếu</a>
-
-            </div>
-        </div>
-        <div class="content__admin col-10">
-            <div class="title__admin">
-                <h2>Quản Lý Phim</h2>
-            </div>
-
-            <div class="main__admin">
-                <div class="button__admin">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#Them">Thêm</button>
-                    <div class="modal fade" id="Them" tabindex="-1" aria-labelledby="Them" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <form>
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h3>Thêm thông tin</h3>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body text-left">
-                                        <!-- Form thêm thong tin -->
-
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Tên Phim</label>
-                                            <div class="col-sm-10">
-                                                <input class="form-control" placeholder="Tên phim ...">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Thời Lượng</label>
-                                            <div class="col-sm-10">
-                                                <input class="form-control" placeholder="Thời lượng ...">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Trailer</label>
-                                            <div class="col-sm-10">
-                                                <input class="form-control" placeholder="link trailer ... ">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Hình Ảnh</label>
-                                            <div class="col-sm-10">
-                                                <input type="file" class="form-control-file" >
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Ngày Công Chiếu</label>
-                                            <div class="col-sm-10">
-                                                <input type="date" class="form-control" >
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Trạng Thái Phim</label>
-                                            <div class="col-sm-10">
-                                                <select class="form-control" >
-                                                    <option>Đang công chiếu</option>
-                                                    <option>Sắp công chiếu</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- ------- -->
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Đăng</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <table class="table">
-                    <thead class="text-center">
-                        <tr>
-                            <th scope="col">Mã số</th>
-                            <th scope="col">Hình ảnh</th>
-                            <th scope="col">Tên</th>
-                            <th scope="col">Thời lượng</th>
-                            <th scope="col">Trạng thái</th>
-                            <th scope="col">Ngày công chiếu</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-center">
-                        <tr>
-                            <td>1</td>
-                            <td><img src="https://picsum.photos/200/200" alt="" style="width: 50px;"> </td>
-                            <td>Bố già</td>
-                            <td>120</td>
-                            <td>Đang công chiếu</td>
-                            <td>09/06/2021</td>
-                            <td>
-                                <button class="btn btn-success thaotac" data-toggle="modal" data-target="#Sua">Sửa</button>
-                                <div class="modal fade" id="Sua" tabindex="-1" aria-labelledby="Sua" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <form>
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h3>Cập Nhật Thông Tin</h3>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body text-left">
-                                                    <!-- Form thêm thong tin -->
-            
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Tên Phim</label>
-                                                        <div class="col-sm-10">
-                                                            <input class="form-control" >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Thời Lượng</label>
-                                                        <div class="col-sm-10">
-                                                            <input class="form-control" >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Trailer</label>
-                                                        <div class="col-sm-10">
-                                                            <input class="form-control" >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Hình Ảnh</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="file" class="form-control-file" >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Ngày Công Chiếu</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="date" class="form-control" >
-                                                        </div>
-                                                    </div>
-                                             
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Trạng Thái Phim</label>
-                                                        <div class="col-sm-10">
-                                                            <select class="form-control" >
-                                                                <option>Đang công chiếu</option>
-                                                                <option>Sắp công chiếu</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <!-- ------- -->
-            
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-primary">Cập Nhật</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <button class=" btn btn-danger thaotac ">Xóa</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <a href="/admin/showtime">Quản Lý Suất Chiếu</a>
+      </div>
     </div>
+    <div class="content__admin col-10">
+      <div class="title__admin">
+        <h2>Quản Lý Phim</h2>
+      </div>
+
+      <div class="main__admin">
+        <div class="button__admin">
+          <button
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#Them"
+          >
+            Thêm
+          </button>
+          <div
+            class="modal fade"
+            id="Them"
+            tabindex="-1"
+            aria-labelledby="Them"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg">
+              <form method="POST" enctype="multipart/form-data">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3>Thêm thông tin</h3>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-left">
+                    <!-- Form thêm thong tin -->
+
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label">Tên Phim</label>
+                      <div class="col-sm-10">
+                        <input
+                          id="nameMovie"
+                          name="nameMovie"
+                          class="form-control"
+                          placeholder="Tên phim ..."
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label">Thời Lượng</label>
+                      <div class="col-sm-10">
+                        <input
+                          id="timeMovie"
+                          name="timeMovie"
+                          class="form-control"
+                          placeholder="Thời lượng ..."
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label">Trailer</label>
+                      <div class="col-sm-10">
+                        <input
+                          id="trailerMovie"
+                          name="trailerMovie"
+                          class="form-control"
+                          placeholder="link trailer ... "
+                        />
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label"
+                        >Nội Dung Phim</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          id="content"
+                          name="content"
+                          class="form-control"
+                          placeholder="nội dung phim ... "
+                        />
+                      </div>
+                    </div>
+
+                    <!-- <form method="POST" enctype="multipart/form-data"> -->
+                    <!-- <div class="custom-file">
+                      <input
+                        type="file"
+                        class="custom-file-input"
+                        id="picture"
+                        name="picture"
+                      />
+                      <label class="custom-file-label" for="picture"
+                        >Choose file</label
+                      >
+                    </div> -->
+
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label">Hình Ảnh</label>
+                      <div class="col-sm-10">
+                        <input
+                          id="picture"
+                          name="picture"
+                          type="file"
+                          class="form-control-file"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- <button type="submit" class="btn btn-primary">
+                      Upload
+                    </button> -->
+                    <!-- </form> -->
+                    <!--                     
+
+                    <form
+                      action="#"
+                      method="post"
+                      enctype="multipart/form-data"
+                    >
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Hình Ảnh</label>
+                        <div class="col-sm-10">
+                          <input
+                            id="posterMovie"
+                            name="posterMovie"
+                            type="file"
+                            class="form-control-file"
+                          />
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary">
+                        Upload
+                      </button>
+                    </form> -->
+
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label"
+                        >Ngày Công Chiếu</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="dateMovie"
+                          name="dateMovie"
+                        />
+                      </div>
+                    </div>
+                    <!-- <div class="form-group row">
+                      <label class="col-sm-2 col-form-label"
+                        >Trạng Thái Phim</label
+                      >
+                      <div class="col-sm-10">
+                        <select class="form-control">
+                          <option>Đang công chiếu</option>
+                          <option>Sắp công chiếu</option>
+                        </select>
+                      </div>
+                    </div> -->
+                    <!-- ------- -->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Đăng</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <table class="table">
+          <thead class="text-center">
+            <tr>
+              <th scope="col">Mã số</th>
+              <th scope="col">Hình ảnh</th>
+              <th scope="col">Tên</th>
+              <th scope="col">Thời lượng</th>
+              <th scope="col">Trạng thái</th>
+              <th scope="col">Ngày công chiếu</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <% for(let i = 0; i < movies.length; i++) { %>
+
+            <tr>
+              <td><%- movies[i].id %></td>
+              <td>
+                <img
+                  src="/movie/picturePoster/<%- movies[i].id %>"
+                  alt=""
+                  style="width: 50px"
+                />
+              </td>
+              <td><%- movies[i].name %></td>
+              <td><%- movies[i].time %></td>
+              <td>Đang công chiếu</td>
+              <td><%- movies[i].premiereDate %></td>
+              <td>
+                <button
+                  class="btn btn-success thaotac"
+                  data-toggle="modal"
+                  data-target="#Sua<%- movies[i].id %>"
+                >
+                  Sửa
+                </button>
+                <div
+                  class="modal fade"
+                  id="Sua<%- movies[i].id %>"
+                  tabindex="-1"
+                  aria-labelledby="Sua"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-lg">
+                    <form method="post" enctype="multipart/form-data" action='/admin/movie/update/?id=<%- movies[i].id %>'>
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h3>Cập Nhật Thông Tin</h3>
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body text-left">
+                          <!-- Form thêm thong tin -->
+
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"
+                              >Tên Phim</label
+                            >
+                            <div class="col-sm-10">
+                              <input name="nameMovie" class="form-control" value="<%- movies[i].name %>"/>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"
+                              >Thời Lượng</label
+                            >
+                            <div class="col-sm-10">
+                              <input
+                                class="form-control"
+                                type="number"
+                                name="timeMovie"
+                                value="<%- movies[i].time %>"
+                              />
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"
+                              >Trailer</label
+                            >
+                            <div class="col-sm-10">
+                              <input name="trailerMovie" class="form-control" value="<%- movies[i].trailer %>"/>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"
+                              >Nội Dung</label
+                            >
+                            <div class="col-sm-10">
+                              <input name="content" class="form-control" value="<%- movies[i].content %>"/>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"
+                              >Hình Ảnh</label
+                            >
+                            <div class="col-sm-10">
+                              <input type="file" 
+                              class="form-control-file" 
+                              id="picture"
+                              name="picture"/>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"
+                              >Ngày Công Chiếu</label
+                            >
+                            <div class="col-sm-10">
+                              <input
+                                type="date"
+                                class="form-control"
+                                name="premiereDate"
+                                value="<%- movies[i].premiereDate %>"
+                              />
+                            </div>
+                          </div>
+
+                          <!-- <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"
+                              >Trạng Thái Phim</label
+                            >
+                            <div class="col-sm-10">
+                              <select class="form-control">
+                                <option>Đang công chiếu</option>
+                                <option>Sắp công chiếu</option>
+                              </select>
+                            </div>
+                          </div> -->
+                          <!-- ------- -->
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-primary">
+                            Cập Nhật
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <a class="btn btn-danger thaotac" href="/admin/movie/delete/?id=<%- movies[i].id %>">Xóa</a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

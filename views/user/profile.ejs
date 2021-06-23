@@ -143,17 +143,16 @@
           <% for (let i = 0; i < bookings.length; i++) { %>
 
           <div class="info__form__history">
+            <!-- <div class="history__img">
+              <img src="/movie/picturePoster/1" alt="" />
+            </div> -->
+
             <div class="history__main">
               <% for(let j = 0; j < showTimes.length; j++) { %> <%
               if(bookings[i].showTimeId == showTimes[j].id ) { %> <% for(let k =
               0; k < movies.length; k++){ %> <% if(movies[k].id ==
               showTimes[i].movieId) { %>
-              <div class="history__img">
-                <img
-                  src="/movie/picturePoster/<%- showTimes[i].movieId  %>"
-                  alt=""
-                />
-              </div>
+
               <h2><%- movies[k].name %></h2>
               <% } %> <% } %> <% for(let k = 0; k < theaterClusters.length; k++
               ) { %> <% if(showTimes[j].theaterClusterId ==
