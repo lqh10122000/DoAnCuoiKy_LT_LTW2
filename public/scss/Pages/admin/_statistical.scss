@@ -1,0 +1,17 @@
+.main__admin {
+    .nav {
+        justify-content: space-around;
+        border: none;
+
+        .nav-link {
+            border: none;
+            color: black;
+            font-size: 24px;
+        }
+        .active{
+            color: $color-red-pink;
+            border-bottom: 1px solid $color-red-pink;
+        }
+        margin-bottom: 30px;
+    }
+}

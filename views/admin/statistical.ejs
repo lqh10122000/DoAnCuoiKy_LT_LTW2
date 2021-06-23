@@ -5,17 +5,17 @@
                 <img src="../../logo.png" alt="">
             </div>
             <div class="admin__line">
-               
+
                 <a href="/admin/statistical">Thống Kê Doanh Thu</a>
-                  
+
                 <a href="/admin/movie">Quản Lý Phim</a>
-        
+
                 <a href="/admin/theatercluster">Quản Lý Cụm Rạp</a>
-        
+
                 <a href="/admin/theater">Quản Lý Rạp</a>
-          
+
                 <a href="/admin/showtime">Quản Lý Suất Chiếu</a>
-           
+
 
             </div>
         </div>
@@ -25,7 +25,94 @@
             </div>
 
             <div class="main__admin">
-             
+                <ul class="nav nav-tabs row" id="myTab" role="tablist">
+                    <li class="nav-item col-4" role="presentation" style="text-align: right">
+                        <a class="nav-link active" id="Rap-tab" data-toggle="tab" href="#Rap" role="tab"
+                            aria-controls="Rap" aria-selected="true">Thống Kê Rạp</a>
+                    </li>
+                    <li class="nav-item col-4" role="presentation" style="text-align: center">
+                        <a class="nav-link" id="Phim-tab" data-toggle="tab" href="#Phim" role="tab" aria-controls="Phim"
+                            aria-selected="false">Thống Kê Phim</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+
+                    <div class="tab-pane fade show active" id="Rap" role="tabpanel" aria-labelledby="Rap-tab">
+
+                        <form>
+                            <div class="row">
+                                <div class="form-group col-5">
+                                    <label class="label">Ngày Bắt Đầu</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="form-group col-5">
+                                    <label class="label">Ngày Kết Thúc</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="col-2">
+                                    <label class="label d-block"> .</label>
+                                    <button type="submit" class="btn btn-success">Chọn Ngày</button>
+                                </div>
+                            </div>
+                        </form>
+                        <table class="table">
+                            <thead class="text-center">
+                                <tr>
+                                    <th scope="col">Rạp</th>
+                                    <th scope="col">Số vé</th>
+                                    <th scope="col">Doanh thu</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <td>BHD abc</td>
+                                    <td>100</td>
+                                    <td>7 000 000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="tab-pane fade" id="Phim" role="tabpanel" aria-labelledby="Phim-tab">
+                        
+                        <form>
+                            <div class="row">
+                                <div class="form-group col-5">
+                                    <label class="label">Ngày Bắt Đầu</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="form-group col-5">
+                                    <label class="label">Ngày Kết Thúc</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="col-2">
+                                    <label class="label d-block"> .</label>
+                                    <button type="submit" class="btn btn-success">Chọn Ngày</button>
+                                </div>
+                            </div>
+                        </form>
+                        <table class="table">
+                            <thead class="text-center">
+                                <tr>
+                                    <th scope="col">Phim</th>
+                                    <th scope="col">Số vé</th>
+                                    <th scope="col">Doanh thu</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <td>Bố già</td>
+                                    <td>100</td>
+                                    <td>7 000 000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
