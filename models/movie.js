@@ -31,6 +31,11 @@ const Movie = db.define("Movie", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  likes: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0,
+  },
 });
 
 Movie.findById = async function (id) {
@@ -52,6 +57,12 @@ Movie.findAllId = async function (id) {
 Movie.getAllMovies = async function () {
   const allMovies = db.query('select * from public."Movies"');
   return allMovies;
+};
+
+Movie.getAllListMovieLike = async function () { 
+  return Movie.findAll({
+    order: [['likes', 'DESC']]
+  });
 };
 
 module.exports = Movie;

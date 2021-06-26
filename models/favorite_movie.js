@@ -11,10 +11,9 @@ const FavoriteMovie = db.define("FavoriteMovie", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  numberLike: {
+  userId: {
     type: DataTypes.INTEGER,
-    allowNull: true,
-    values: 0,
+    allowNull: false,
   },
     }, { 
         timestamps: false 
