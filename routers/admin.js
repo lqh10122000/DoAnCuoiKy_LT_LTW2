@@ -9,6 +9,8 @@ const router = express.Router();
 const movieAdmin = require("./movie.admin");
 const theaterClusterAdmin = require("./theaterCluster.admin");
 const theaterAdmin = require("./theater.admin");
+const statisticalAdmin = require("./statistics.admin");
+const showTimeAdmin = require('./showTime.admin');
 
 const Email = require("../models/email");   
 const User = require("../models/user");
@@ -31,7 +33,8 @@ const rename = promisify(require("fs").rename);
 router.use('/movie', movieAdmin);
 router.use('/theatercluster', theaterClusterAdmin);
 router.use('/theater', theaterAdmin);
-
+router.use('/statistical', statisticalAdmin);
+router.use('/showtime', showTimeAdmin);
 
 
 
@@ -52,16 +55,7 @@ router.get("/", function (req, res) {
 
 
 
-router.get("/showtime", function (req, res) {
-  res.render("admin/showtime");
-});
 
-router.get(
-  "/statistical",
-  asyncHandler(async function (req, res) {
-    res.render("admin/statistical");
-  })
-);
 
 
 module.exports = router;

@@ -29,7 +29,7 @@
                     <button class="btn btn-primary" data-toggle="modal" data-target="#Them">Thêm</button>
                     <div class="modal fade" id="Them" tabindex="-1" aria-labelledby="Them" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
-                            <form>
+                            <form method="post">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h3>Thêm thông tin</h3>
@@ -43,25 +43,57 @@
                                             <div class="row">
                                                 <div class="form-group col-4">
                                                     <label class="label">Chọn Phim</label>
-                                                    <select class="form-control">
-                                                        <option>Bố già</option>
-                                                        <option>48h</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-4">
-                                                    <label class="label">Chọn Cụm Rạp</label>
-                                                    <select class="form-control">
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
+                                                    <select class="form-control" name="movie">
+                                                        <% for (let i = 0; i < movies.length; i++) { %>
+                                                            <option value="<%- movies[i].id %>"><%- movies[i].name %></option>
+
+                                                            <% } %>
+                                                        <!-- <option>48h</option> -->
                                                     </select>
                                                 </div>
                                                 <div class="form-group col-4">
                                                     <label class="label">Chọn Rạp</label>
-                                                    <select class="form-control">
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
+                                                    <select class="form-control" name="theaterCluster">
+                                                        <% for (let i = 0; i < theaterClusters.length; i++) { %>
+                                                            <option value="<%- theaterClusters[i].id %>"><%- theaterClusters[i].name %></option>
+
+                                                        <% } %>
+
+                                                        
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-4">
+                                                    <label class="label">Thời Gian</label>
+                                                    <select class="form-control" name="time">
+                                                        <option value="AM">AM</option>
+                                                        <option value="PM">PM</option>
+                                                        
+                                                    </select>
+                                                    <label class="label">Giờ</label>
+                                                    <select class="form-control" name="hourStart">
+                                                        <option name="1">1</option>
+                                                        <option name="2">2</option>
+                                                        <option name="3">3</option>
+                                                        <option name="4">4</option>
+                                                        <option name="5">5</option>
+                                                        <option name="6">6</option>
+                                                        <option name="7">7</option>
+                                                        <option name="8">8</option>
+                                                        <option name="9">9</option>
+                                                        <option name="10">10</option>
+                                                        <option name="11">11</option>
+                                                        <option name="12">12</option>
+                                                    </select>
+                                                    <label class="label">phút</label>
+
+                                                    <select class="form-control" name="minuteStart">
+                                                        <option value="10">0</option>
+                                                        <option value="10">10</option>
+                                                        <option value="20">20</option>
+                                                        <option value="30">30</option>
+                                                        <option value="40">40</option>
+                                                        <option value="50">50</option>
+                                                        
                                                     </select>
                                                 </div>
                             
@@ -69,15 +101,15 @@
                                             <div class="row">
                                                 <div class="form-group col-4">
                                                     <label class="label">Chọn Ngày Bắt Đầu</label>
-                                                    <input type="date" class="form-control">
+                                                    <input type="date" class="form-control" name="start" >
                                                 </div>
-                                                <div class="form-group col-4">
+                                                <!-- <div class="form-group col-4">
                                                     <label class="label">Chọn Ngày Kết Thúc</label>
-                                                    <input type="date" class="form-control">
-                                                </div>
+                                                    <input type="date" class="form-control" name="end">
+                                                </div> -->
                                                 <div class="form-group col-4">
                                                     <label class="label">Giá </label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="price">
                                                 </div>
                                             </div>
                                         
@@ -105,20 +137,41 @@
                         </tr>
                     </thead>
                     <tbody class="text-center">
+                        <% for(let i =0; i < showTimes.length; i++ ) { %>
                         <tr>
-                            <td>1</td>
-                            <td>bố già</td>
-                            <td>abc</td>
-                            <td>xyz</td>
-                            <td>09/06/2021</td>
-                            <td>09/06/2021</td>
-                            <td>70000</td>
+                            <td><%- showTimes[i].id %></td>
+                            <% for(let j =0; j < movies.length; j++ ) { %>
+                                <% if(showTimes[i].movieId == movies[j].id) { %>
+                                    <td><%- movies[j].name %></td>
+
+                                <% } %>
+                                <% } %>
+
+                            <% for(let j =0; j < theaters.length; j++ ) { %>
+                                <% if(showTimes[i].theaterId == theaters[j].id) { %>
+                                    <td><%- theaters[j].name %></td>
+
+    
+                                <% } %>
+                                <% } %>
+
+
+                            <% for(let j =0; j < theaterClusters.length; j++ ) { %>
+                                <% if(showTimes[i].theaterClusterId == theaterClusters[j].id) { %>
+                                    <td><%- theaterClusters[j].name %></td>
+        
+                                <% } %>
+                                <% } %>
+
+                            <td><%- showTimes[i].start %></td>
+                            <td><%- showTimes[i].end %></td>
+                            <td><%- showTimes[i].price %></td>
 
                             <td>
-                                <button class="btn btn-success thaotac" data-toggle="modal" data-target="#Sua">Sửa</button>
-                                <div class="modal fade" id="Sua" tabindex="-1" aria-labelledby="Sua" aria-hidden="true">
+                                <button class="btn btn-success thaotac" data-toggle="modal" data-target="#Sua<%- showTimes[i].id %>">Sửa</button>
+                                <div class="modal fade" id="Sua<%- showTimes[i].id %>" tabindex="-1" aria-labelledby="Sua" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
-                                        <form>
+                                        <form action="showtime/update/?id=<%- showTimes[i].id %>" method="post">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h3>Cập Nhật Thông Tin</h3>
@@ -132,41 +185,87 @@
                                                         <div class="row">
                                                             <div class="form-group col-4">
                                                                 <label class="label">Chọn Phim</label>
-                                                                <select class="form-control">
-                                                                    <option>Bố già</option>
-                                                                    <option>48h</option>
+                                                                <select class="form-control" name="movie"  value= "<%- showTimes[i].movieId %>">
+                                                                    <% for (let j = 0; j < movies.length; j++) { %>
+                                                                        <% if(movies[j].id ==  showTimes[i].movieId) { %>
+                                                                        <option value="<%- movies[j].id %>" selected ><%- movies[j].name %></option>
+            
+                                                                        <% } else { %>
+
+                                                                        <option value="<%- movies[j].id %>"><%- movies[j].name %></option>
+
+                                                                        <% } %>
+                                                                        <% } %>
+
                                                                 </select>
                                                             </div>
                                                             <div class="form-group col-4">
                                                                 <label class="label">Chọn Cụm Rạp</label>
-                                                                <select class="form-control">
-                                                                    <option>1</option>
-                                                                    <option>2</option>
-                                                                    <option>3</option>
+                                                                <select class="form-control" value = "<%- showTimes[i].theaterClusterId %>" name="theaterCluster">
+                                                                    <% for (let j = 0; j < theaterClusters.length; j++) { %>
+
+                                                                        <% if(theaterClusters[j].id ==  showTimes[i].theaterClusterId) { %>
+
+                                                                            <option value="<%- theaterClusters[j].id %>" selected ><%- theaterClusters[j].name %></option>
+                
+                                                                        <% } else { %>
+    
+                                                                            <option value="<%- theaterClusters[j].id %>"><%- theaterClusters[j].name %></option>
+    
+                                                                        <% } %>
+
+            
+                                                                    <% } %>
                                                                 </select>
                                                             </div>
                                                             <div class="form-group col-4">
-                                                                <label class="label">Chọn Rạp</label>
-                                                                <select class="form-control">
-                                                                    <option>1</option>
-                                                                    <option>2</option>
-                                                                    <option>3</option>
-                                                                </select>
+                                                                <label class="label">Thời Gian</label>
+                                                                    <select class="form-control" name="time">
+                                                                        <option value="AM">AM</option>
+                                                                        <option value="PM">PM</option>
+                                                                        
+                                                                    </select>
+                                                                    <label class="label">Giờ</label>
+                                                                    <select class="form-control" name="hourStart">
+                                                                        <option name="1">1</option>
+                                                                        <option name="2">2</option>
+                                                                        <option name="3">3</option>
+                                                                        <option name="4">4</option>
+                                                                        <option name="5">5</option>
+                                                                        <option name="6">6</option>
+                                                                        <option name="7">7</option>
+                                                                        <option name="8">8</option>
+                                                                        <option name="9">9</option>
+                                                                        <option name="10">10</option>
+                                                                        <option name="11">11</option>
+                                                                        <option name="12">12</option>
+                                                                    </select>
+                                                                    <label class="label">phút</label>
+
+                                                                    <select class="form-control" name="minuteStart">
+                                                                        <option value="10">0</option>
+                                                                        <option value="10">10</option>
+                                                                        <option value="20">20</option>
+                                                                        <option value="30">30</option>
+                                                                        <option value="40">40</option>
+                                                                        <option value="50">50</option>
+                                                        
+                                                    </select>
                                                             </div>
                                         
                                                         </div>
                                                         <div class="row">
                                                             <div class="form-group col-4">
                                                                 <label class="label">Chọn Ngày Bắt Đầu</label>
-                                                                <input type="date" class="form-control">
+                                                                <input name="start" type="date" class="form-control" value="<%- showTimes[i].start.getFullYear(); %>">
                                                             </div>
-                                                            <div class="form-group col-4">
+                                                            <!-- <div class="form-group col-4">
                                                                 <label class="label">Chọn Ngày Kết Thúc</label>
-                                                                <input type="date" class="form-control">
-                                                            </div>
+                                                                <input name = "end" type="date" class="form-control" value="<%- showTimes[i].end %>">
+                                                            </div> -->
                                                             <div class="form-group col-4">
                                                                 <label class="label">Giá </label>
-                                                                <input type="text" class="form-control">
+                                                                <input type="text" class="form-control" value="<%- showTimes[i].price %>" name="price">
                                                             </div>
                                                         </div>
                                                     
@@ -179,9 +278,10 @@
                                         </form>
                                     </div>
                                 </div>
-                                <button class=" btn btn-danger thaotac ">Xóa</button>
+                                <a class=" btn btn-danger thaotac" href="/admin/showtime/delete/?id=<%- showTimes[i].id %>">Xóa</a>
                             </td>
                         </tr>
+                        <% } %>
                     </tbody>
                 </table>
               
