@@ -57,6 +57,26 @@ ShowTime.findTheaterClusterId = async function (theaterClusterId) {
   });
 };
 
+
+
+ShowTime.findIdByTheaterCluster = async function (theaterClusterId) {
+  return ShowTime.findAll({
+    where: {
+      theaterClusterId,
+    },
+  });
+};
+
+
+ShowTime.findIdByMovie = async function (movieId)
+{
+  return ShowTime.findAll({
+    where: {
+      movieId,
+    },
+  });
+}
+
 ShowTime.findById = async function (id) {
   return ShowTime.findByPk(id);
 };
