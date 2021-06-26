@@ -45,4 +45,14 @@ TheaterCluster.findAllId = async function (id) {
   });
 };
 
+
+TheaterCluster.findTheaterByTheaterCluster = async function (id)
+{
+  return TheaterCluster.findOne({
+    where: {
+      id,
+    },
+  });
+}
+
 module.exports = TheaterCluster;
