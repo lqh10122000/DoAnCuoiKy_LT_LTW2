@@ -8,7 +8,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../assets/img/lat-mat-48h.png" class="d-block w-100" alt="..." />
+                    <img src="../assets/img/lat-mat-48h.png" class="d-block w-100" style="height: 500px;" alt="..." />
+                </div>
+                <div class="carousel-item">
+                    <img src="../assets/img/ban-tay-diet-quy.png" class="d-block w-100" style="height: 500px;" alt="..." />
+                </div>
+                <div class="carousel-item">
+                    <img src="../assets/img/trang-ti.jpg" class="d-block w-100" style="height: 500px;" alt="..." />
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselHome" role="button" data-slide="prev">
@@ -72,7 +78,7 @@
             </div>
         </div>
     </div>
-    <div class="Home__List">
+    <div class="Home__List" id="lichChieu">
         <div class="Home__title">
             <ul class="nav nav-tabs row" id="myTab" role="tablist">
                 <li class="nav-item col-4" role="presentation" style="text-align: right">
@@ -105,7 +111,7 @@
                                             </span>
                                             <%- listMovie[i].name %>
                                         </h2>
-                                        <p>
+                                        <p style="font-size: 16px;">
                                             <%- listMovie[i].time %> phút
                                         </p>
                                         <div class="buttonHome">
@@ -133,7 +139,7 @@
                                             </span>
                                             <%- listMovie[i].name %>
                                         </h2>
-                                        <p>
+                                        <p style="font-size: 16px;">
                                             <%- listMovie[i].time %> phút
                                         </p>
                                         <div class="buttonHome">
@@ -161,7 +167,7 @@
                                             </span>
                                             <%- listMovieLike[i].name %>
                                         </h2>
-                                        <p>
+                                        <p style="font-size: 16px;">
                                             <%- listMovieLike[i].time %> phút
                                         </p>
                                         <div class="buttonHome">
@@ -176,7 +182,7 @@
             </div>
         </div>
     </div>
-    <div class="Home__CumRap">
+    <div class="Home__CumRap" id="cumRap">
         <div class="Home__rap row">
             <div class="Home__logo col-2">
                 <img src="../assets/logo/bhd.png" />
@@ -269,7 +275,7 @@
             </div>
         </div>
     </div>
-    <div class="news">
+    <div class="news" id="tinTuc">
         <div class="news__content">
             <div class="news__row">
                 <div class="news__col">
@@ -483,7 +489,7 @@
             </div>
         </div>
     </div>
-    <div class="app">
+    <div class="app" id="ungDung">
         <div class="app__content">
             <div class="app__banner">
                 <div class="app__img">

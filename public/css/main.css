@@ -17,6 +17,112 @@ li {
   list-style: none;
 }
 
+header {
+  box-shadow: 0 0 15px black;
+  width: 100%;
+  background: white;
+}
+
+header .navbar-light .navbar-brand {
+  color: white;
+  margin-left: 30px;
+}
+
+header .navbar-light .navbar-brand:hover {
+  color: white;
+}
+
+header .header-logo {
+  font-family: "Dancing Script", sans-serif;
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 90px;
+  color: #ff867f !important;
+}
+
+header .navbar {
+  padding: 0;
+}
+
+header .navbar .navbar-nav .nav-item {
+  margin: 2px 2px 0 2px;
+}
+
+header .navbar .navbar-nav .nav-item .nav-link {
+  font-weight: 700;
+  transition: all 0.5s;
+  border-radius: 20px;
+  min-width: 70px;
+  text-align: center;
+  color: #1b1b1b;
+  border-bottom: 2px solid white;
+  padding: 3px 10px;
+}
+
+header .navbar .navbar-nav .nav-item .nav-link:hover {
+  background-color: #fff;
+  color: #c50e29;
+  border-bottom: 2px solid #c50e29;
+}
+
+header .btn_header {
+  padding: 10px 15px;
+  margin: 0 5px;
+  color: #1b1b1b;
+  border-radius: 50px;
+  min-width: 80px;
+}
+
+header .btn_header:hover {
+  color: #c50e29;
+  border-color: black;
+}
+
+header .btn_header i {
+  color: #1b1b1b;
+}
+
+header .btn_dangnhap {
+  border-left: 1px solid #c50e29;
+  position: relative;
+}
+
+header .btn_dangnhap::after {
+  position: absolute;
+  right: -3px;
+  top: 5px;
+  z-index: 5;
+  content: "";
+  display: inline-block;
+  height: 80%;
+  width: 1px;
+  background-color: #c7c7c7;
+}
+
+header .btn_admin {
+  color: #00ac4d;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+header .btn_dangki {
+  border-right: 1px solid #c50e29;
+}
+
+header .navbar-expand-lg .navbar-collapse {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 992px) {
+  header .navbar .navbar-nav .nav-item {
+    text-align: center;
+  }
+  header .navbar .navbar-nav .nav-item .nav-link {
+    display: inline-block;
+    font-size: 20px;
+  }
+}
+
 .footer {
   background-color: #1b1b1b;
   padding: 30px 0;
@@ -1571,8 +1677,18 @@ li {
   color: brown;
 }
 
+.info__user .info__user__content .info__main .info__item .info__form__user .row label:hover {
+  color: blue;
+}
+
+.info__user .info__user__content .info__main .info__item .info__form__user .row p {
+  padding-left: 15px;
+  color: blue;
+  margin-top: 10px;
+}
+
 .info__user .info__user__content .info__main .info__item .info__form__user a button {
-  margin-top: 15px;
+  margin-top: 10px;
   padding: 8px 30px;
   background: brown;
   border: none;
