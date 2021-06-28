@@ -30,7 +30,7 @@ const User = db.define("User", {
   token: {
     type: DataTypes.STRING,
   },
-  position: {
+  role: {
     type: DataTypes.STRING,
     allowNull: true,
   },

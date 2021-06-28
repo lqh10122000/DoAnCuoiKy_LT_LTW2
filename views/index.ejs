@@ -125,97 +125,42 @@
         </div>
     </div>
     <div class="Home__CumRap">
-        <div class="Home__rap row">
-            <div class="Home__logo col-2">
-                <img src="../assets/logo/bhd.png" />
-            </div>
-            <div class="col-10">
-                <div class="row">
-                    <div class="col-3 rap__item">
-                        <h3><span class="BHD">BHD Star</span> - Bitexco</h3>
-                        <p>L3-Bitexco Icon 68</p>
-                        <a href="/detail/theater/?idT=1&idTC=1">[Chi tiết]</a>
-                    </div>
-                    <div class="col-3 rap__item">
-                        <h3><span class="BHD">BHD Star</span> - Thảo Điền</h3>
-                        <p>L3-Bitexco Icon 68</p>
-                        <a href="/detail/theater/?idT=1&idTC=2">[Chi tiết]</a>
-                    </div>
-                    <div class="col-3 rap__item">
-                        <h3><span class="BHD">BHD Star</span> - 3/2</h3>
-                        <p>L3-Bitexco Icon 68</p>
-                        <a href="/detail/theater/?idT=1&idTC=3">[Chi tiết]</a>
-                    </div>
-                    <div class="col-3 rap__item">
-                        <h3><span class="BHD">BHD Star</span> - Quang Trung</h3>
-                        <p>L3-Bitexco Icon 68</p>
-                        <a href="/detail/theater/?idT=1&idTC=4">[Chi tiết]</a>
-                    </div>
+
+
+
+        <% for(let i = 0; i < theaters.length; i++) { %>
+
+            <div class="Home__rap row">
+                <div class="Home__logo col-2">
+                    <img src="../assets/logo/<%- theaters[i].name %>.png" />
                 </div>
-            </div>
-        </div>
-        <div class="Home__rap row">
-            <div class="Home__logo col-2">
-                <img src="../assets/logo/cgv.png" />
-            </div>
-            <div class="col-10">
-                <div class="row">
-                    <div class="col-3 rap__item">
-                        <h3><span class="CGV">CGV</span> - Vạn Hạnh Mail</h3>
-                        <p>L3-Bitexco Icon 68</p>
-                        <a href="/detail/theater/?idT=1&idTC=5">[Chi tiết]</a>
+                <div class="col-10">
+                    <div class="row">
+
+
+                        
+                        <% for(let j = 0; j < theaterClusters.length; j++) { %>
+
+                            <% if(theaters[i].id == theaterClusters[j].theaterClusterId ) { %>
+                                <div class="col-3 rap__item">
+                                    <h3><span class="BHD"><%- theaterClusters[j].name %></span></h3>
+                                    
+                                    <a href="/detail/theater/?idT=<%- theaters[i].id %>&idTC=<%- theaterClusters[j].id %>">[Chi tiết]</a>
+                                </div>
+                            <% } %>
+
+                        
+                            
+                        <% } %>
                     </div>
-                    <div class="col-3 rap__item">
-                        <h3><span class="CGV">CGV</span> - Thảo Điền</h3>
-                        <p>L3-Bitexco Icon 68</p>
-                        <a href="/detail/theater/?idT=1&idTC=6">[Chi tiết]</a>
-                    </div>
-                    <div class="col-3 rap__item">
-                        <h3><span class="CGV">CGV</span> - 3/2</h3>
-                        <p>L3-Bitexco Icon 68</p>
-                        <a href="/detail/theater/?idT=1&idTC=7">[Chi tiết]</a>
-                    </div>
-                    <div class="col-3 rap__item">
-                        <h3><span class="CGV">CGV</span> - Quang Trung</h3>
-                        <p>L3-Bitexco Icon 68</p>
-                        <a href="/detail/theater/?idT=1&idTC=8">[Chi tiết]</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="Home__rap row">
-            <div class="Home__logo col-2">
-                <img src="../assets/logo/bt.jpg" />
-            </div>
-            <div class="col-10">
-                <div class="row">
-                    <div class="col-3 rap__item">
-                        <h3><span class="Beta">Beta Cinemas</span> - Quang Trung</h3>
-                        <p>L3-Bitexco Icon 68</p>
-                        <a href="/detail/theater/?idT=1&idTC=9">[Chi tiết]</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="Home__rap row">
-            <div class="Home__logo col-2">
-                <img src="../assets/logo/cinestar.png" />
-            </div>
-            <div class="col-10">
-                <div class="row">
-                    <div class="col-3 rap__item">
-                        <h3><span class="CNS">Cinestar</span> - Hai Bà Trưng</h3>
-                        <p>L3-Bitexco Icon 68</p>
-                        <a href="/detail/theater/?idT=1&idTC=10">[Chi tiết]</a>
-                    </div>
-                    <div class="col-3 rap__item">
-                        <h3><span class="CNS">Cinestar</span> - Quốc Thanh</h3>
-                        <p>L3-Bitexco Icon 68</p>
-                        <a href="/detail/theater/?idT=1&idTC=11">[Chi tiết]</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                </div> 
+            </div> 
+
+        <% } %>
+
+     
+     
+
     </div>
     <div class="news">
         <div class="news__content">

@@ -34,11 +34,7 @@ const Movie = db.define("Movie", {
 });
 
 Movie.findById = async function (id) {
-  return Movie.findOne({
-    where: {
-      id,
-    },
-  });
+  return Movie.findByPk(id);
 };
 
 Movie.findAllId = async function (id) {

@@ -19,24 +19,18 @@ router.use(ensureLoggedIn);
 router.get(
   "/profile",
   asyncHandler(async function (req, res) {
-    // const userId = req.session.userId;
 
-    const userId = 1;
+    const userId = req.session.userId;
 
-    const findUser = await User.findById(1);
+    const findUser = await User.findById(userId);
     const booking = await Booking.findBookingByUserId(userId);
     const ticket = await Ticket.findTicketByBookingId(
       booking.map((bookingTicket) => bookingTicket.id.toString())
     );
-
     const showTime = await ShowTime.findAllId(
       booking.map((bookingTicket) => bookingTicket.showTimeId.toString())
     );
-
-    const movie = await Movie.findAllId(
-      showTime.map((showtimeItem) => showtimeItem.movieId)
-    );
-
+    const movie = await Movie.findAll();
     const theaterCluster = await TheaterCluster.findAllId(
       showTime.map((showtimeItem) => showtimeItem.theaterClusterId)
     );

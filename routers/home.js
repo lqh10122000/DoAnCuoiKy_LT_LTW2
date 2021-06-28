@@ -15,9 +15,11 @@ const ShowTime = require('../models/show_time');
 const Booking = require('../models/booking');
 const Ticket = require('../models/ticket');
 
-router.get('/', function(req, res){    
-    res.render('index', {title: 'Trang chủ' });
-});
+router.get('/', asyncHandler(async function(req, res){    
+    const theater = await Theater.findAll();
+    const theaterCluster = await TheaterCluster.findAll();
+    res.render('index', {title: 'Trang chủ', theaters: theater, theaterClusters: theaterCluster });
+}));
 
 
 module.exports = router;
