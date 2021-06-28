@@ -72,17 +72,10 @@
                   />
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="password">Mật khẩu</label>
-                  <input type="password" class="form-control" id="password" />
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-4">
-                  <label for="token">Mã thông báo</label>
-                  <input type="token" class="form-control" id="token" />
-                </div>
+             
+
+              <!-- <div class="row">
+               
                 <div class="form-group col-md-3">
                   <label for="role">Vai trò</label>
                   <input
@@ -93,21 +86,20 @@
                     value="<%- user.position %>"
                   />
                 </div>
-              </div>
+              </div> -->
               <div class="row">
-                <a href="/auth/changePassword"><p><i>Đổi mật khẩu ?</i></p></a>
         </div>
 
 
-        <a href=""><button type="submit" class="btn btn-primary">
+        <!-- <a href=""><button type="submit" class="btn btn-primary">
                   Lưu lại
-                </button></a
-              >
+                </button></a -->
+              <!-- > -->
               <!--Thêm change pass-->
             </div>
             <div class="info__img">
               <img
-                src=""
+                src="/user/picture/<%- currentUser.id  %>"
                 alt=""
                 width="200"
                 height="200"
@@ -144,27 +136,31 @@
             </div> -->
 
             <div class="history__main">
-              <% for(let j = 0; j < showTimes.length; j++) { %> <%
-              if(bookings[i].showTimeId == showTimes[j].id ) { %> <% for(let k =
-              0; k < movies.length; k++){ %> <% if(movies[k].id ==
-              showTimes[i].movieId) { %>
+              <% for(let j = 0; j < showTimes.length; j++) { %>
+                <% if(bookings[i].showTimeId == showTimes[j].id ) { %>
+                  <% for(let k = 0; k < movies.length; k++){ %>
+                    <% if(movies[k].id == showTimes[j].movieId) { %>
 
-              <h2><%- movies[k].name %></h2>
-              <% } %> <% } %> <% for(let k = 0; k < theaterClusters.length; k++
-              ) { %> <% if(showTimes[j].theaterClusterId ==
-              theaterClusters[k].id ) { %>
+                      <p>Tên Phim: <span><%- movies[k].name %></span></p>
+                    <% } %>
+                  <% } %>
+                  <% for(let k = 0; k < theaterClusters.length; k++ ) { %>
+                    <% if(showTimes[j].theaterClusterId == theaterClusters[k].id ) { %>
 
-              <p>Tên rạp: <span><%- theaterClusters[k].name %></span></p>
-              <% } %> <% } %> <% } %> <% } %>
+                    <p>Tên rạp: <span><%- theaterClusters[k].name %></span></p>
+                    <% } %>
+                  <% } %>
+                <% } %>
+              <% } %>
 
               <p>Ngày đặt: <span><%- bookings[i].time %></span></p>
 
               <p>
                 Ghế:
                 <span>
-                  <% for(let j = 0; j < tickets.length; j++) { %> <%
-                  if(bookings[i].id == tickets[j].bookingId) { %> <%-
-                  tickets[j].seatCode %> <% } %> <% } %>
+                  <% for(let j = 0; j < tickets.length; j++) { %> 
+                    <% if(bookings[i].id == tickets[j].bookingId) { %>
+                      <%- tickets[j].seatCode %> <% } %> <% } %>
                 </span>
               </p>
             </div>

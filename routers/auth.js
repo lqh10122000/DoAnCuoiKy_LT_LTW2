@@ -54,7 +54,10 @@ router.post(
   "/login",
   asyncHandler(async function (req, res) {
     const { email, password } = req.body;
+    
+    
     const foundUser = await User.findByEmail(email);
+    console.log('this is email ', foundUser);
     if (foundUser && bcrypt.compareSync(password, foundUser.password)) {
       req.session.userId = foundUser.id;
       res.redirect("/");
@@ -87,6 +90,7 @@ router.post(
     const user = await User.create({
       displayName: req.body.displayName,
       email: req.body.email,
+      phone: req.body.phone,
       password: bcrypt.hashSync(req.body.password, 10),
       phone: req.body.phone,
       token: crypto.randomBytes(3).toString("hex").toUpperCase(),

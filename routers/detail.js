@@ -20,6 +20,9 @@ router.get(
     const IdMovie = req.query.id;
 
     const movie = await Movie.findById(IdMovie);
+    const Alltheater = await Theater.findAll();
+    const AlltheaterCluster = await TheaterCluster.findAll();
+
     const detailMovie = {
       id: movie.id,
       name: movie.name,
@@ -43,7 +46,9 @@ router.get(
       };
     });
 
-    res.render("detail/movie", { movies: detailMovie, showTimes: HoursMinute });
+    res.render("detail/movie", { movies: detailMovie, showTimes: HoursMinute,
+      theaters: Alltheater,
+      theaterClusters: AlltheaterCluster });
   })
 );
 
@@ -75,7 +80,6 @@ router.get(
       };
     });
 
-    console.log("aaaaaaaaaaaaaaaaaaa " + JSON.stringify(ShowTimeItems));
     res.locals.title = "Chi tiết rạp";
     res.render("detail/theater", {
       TheaterClusters: theaterCluster,

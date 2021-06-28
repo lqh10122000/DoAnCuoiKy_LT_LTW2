@@ -51,7 +51,7 @@ router.post(
     if(time == "AM")
     { 
         let hour, endHour;
-        if(hourStart < 10)
+        if(hourStart <= 12)
         {
             hour = '0' + hourStart.toString();
         }
@@ -64,7 +64,6 @@ router.post(
         startDate = start.toString() + ' ' + hour + ':' + minuteStart.toString()  + ':' + '00';
         endDate = start.toString() + ' ' + endHour + ':' + minuteStart.toString()  + ':' + '00';
         
-        console.log('this is start ', endDate);
     }
     else
     {
@@ -74,15 +73,16 @@ router.post(
         
         console.log('this is start ', endDate);
     }
-
+    
     const theater = await  TheaterCluster.findTheaterByTheaterCluster(theaterCluster);
-
+    
     console.log('this is start ', endDate);
-
+    
     const date = new Date(startDate);
     const end = new Date(endDate);
-
-    console.log('this is date ', end);
+    
+    console.log('this is start ', date);
+    console.log('this is end date ', end);
     
 
     const newShowtime = await ShowTime.create({
@@ -167,7 +167,7 @@ router.post('/update', async function (req, res) {
 
     await ShowTime.update(
         { 'movieId': movie.toString(),
-          'theaterId': theater.id.toString(),
+          'theaterId': Number(theater.theaterClusterId),
           'theaterClusterId': theaterCluster.toString(),   
           start: date,
           end: endStart,
