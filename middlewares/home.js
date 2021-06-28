@@ -5,13 +5,18 @@ const TheaterCluster = require("../models/theater_cluster");
 module.exports = asyncHandler(async function home(req, res, next) {
   res.locals.listMovie = null;
   res.locals.listTheaterCluster = null;
+  res.locals.listMovieLove = null;
+  res.locals.datenow = Date.now();
   const listMovie = await Movie.findAll();
   const listTheaterCluster = await TheaterCluster.findAll();
+  const listMovieLike = await Movie.getAllListMovieLike();
   if (listMovie) {
     res.locals.listMovie = listMovie;
     res.locals.listTheaterCluster = listTheaterCluster;
+    res.locals.listMovieLike = listMovieLike;
     next();
   } else {
     next();
   }
 });
+

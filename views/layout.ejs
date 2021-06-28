@@ -24,64 +24,72 @@
 
 <body>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">Lập trình Web 2</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link <%- title === 'Trang chủ' ? 'active': '' %> " aria-current="page"
-                                href="/">Trang
-                                chủ</a>
-                        </li>
 
-                        <% if(currentUser){ %>
-                            <li class="nav-item">
-                                <a class="nav-link <%- title === 'Đổi mật khẩu' ? 'active': '' %> "
-                                    href="/auth/changePassword">Đổi mật
-                                    khẩu</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link <%- title === 'Quên mật khẩu' ? 'active': '' %> "
-                                    href="/auth/emailForgotPassword">Quên
-                                    mật khẩu</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/auth/logout">Đăng xuất</a>
-                            </li>
-                            <% if(currentUser.role == 'admin' ){ %>
-                                <li class="nav-item">
-                                    <a class="nav-link <%- title === 'Quản lí' ? 'active': '' %> " 
-                                        href="/admin/movie">
+        <header>
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <a href="/">
+                        <img class="navbar-brand header-logo p-0 pr-1 img-fluid"
+                            style="width: 70px;height: 60px;object-fit: cover;" src="../assets/logob.jpg" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="form-inline my-2 justify-content-center">
+
+                            <% if(currentUser){ %>
+                                <% if(currentUser.role=='admin' ){ %>
+
+                                    <a class="nav-link btn_admin" href="/admin/movie">
                                         Quản lí
                                     </a>
-                                </li>
-                                <% } else{%>
-                                    <li class="nav-item">
-                                        <a class="nav-link <%- title === 'Thông tin cá nhân' ? 'active': '' %> "
-                                            href="/user/profile">
+
+                                    <% } %>
+                                        <a href='/user/profile' style="text-decoration: none;"
+                                            class="btn_header btn_dangnhap">
                                             <%- currentUser.displayName %>
                                         </a>
-                                    </li>
-                                    <% } %>
-                                        <% } else{%>
-                                            <li class="nav-item">
-                                                <a class="nav-link <%- title === 'Đăng nhập' ? 'active': '' %> "
-                                                    href="/auth/login">Đăng nhập</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link <%- title === 'Đăng kí tài khoản' ? 'active': '' %> " 
-                                                    href="/auth/signup">Đăng kí tài khoản</a>
-                                            </li>                                          
-                                            <% } %>                                                                                   
-                </div>
+                                        <a href="/auth/logout" style="outline: none;text-decoration: none;"
+                                            class="btn_header btn_dangki">Đăng Xuất</a>
+                                        <% } else {%>
+
+
+                                            <a href="/auth/login" style="text-decoration: none;"
+                                                class="btn_header btn_dangnhap"><i class="fa fa-user-circle"
+                                                    style="font-size: 20px;padding-bottom: 3px;text-decoration: none;"></i>
+                                                <span>Đăng Nhập</span></a>
+                                            <a href="/auth/signup" style="text-decoration: none;"
+                                                class="btn_header btn_dangki"> Đăng Kí <i class="fa fa-user"
+                                                    style="padding-bottom: 3px;font-size: 20px;text-decoration: none;"></i></a>
+                                            <% } %>
+
+
+                        </form>
+                        <ul class="navbar-nav m-auto  ">
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#lichChieu">Lịch Chiếu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#cumRap">Cụm Rạp</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#tinTuc">Tin Tức</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/#ungDung">Ứng Dụng</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-        </nav>
+        </header>
+
+
+
         <%- body %>
 
             <div class="footer">
