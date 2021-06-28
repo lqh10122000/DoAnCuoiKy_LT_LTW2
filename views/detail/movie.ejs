@@ -29,52 +29,95 @@
   </div>
 </div>
 <div class="detailMovie" id="detailMovie">
-  <div class="Home__rap row">
-    <div class="Home__logo col-2">
-      <img src="../../assets/logo/bhd.png" />
-    </div>
-    <div class="col-10">
-      <div class="row">
-        <div class="col-6 rap__item">
+  
 
-          <h3><span class="BHD">BHD Star</span> - Bitexco</h3>
-          <p>L3-Bitexco Icon 68</p>
 
-          <% for(let i = 0; i < showTimes.length; i++) { %>
-            <% if(showTimes[i].theaterId == 1 && showTimes[i].theaterClusterId == 1) { %>
-              
-              <%  if(showTimes[i].hour < 10) { %>
-                
-                <%  if(showTimes[i].minute < 10) { %>
+        <% for(let j = 0; j < theaters.length; j++) { %>
 
-                  <a href="/ticket/?idM=<%- movies.id %>&idT=<%-showTimes[i].theaterId %>&idTC=<%-showTimes[i].theaterClusterId %>&idTime=<%- showTimes[i].showTimeId %>">0<%- showTimes[i].hour %>:0<%- showTimes[i].minute %></a>
-                
-                <% } else { %>
+          <div class="Home__rap row">
+            <div class="Home__logo col-2">
+              <img src="../../assets/logo/<%- theaters[j].name %>.png" />
+            </div>
+            <div class="col-10">
+              <div class="row">
 
-                  <a href="/ticket/?idM=<%- movies.id %>&idT=<%-showTimes[i].theaterId %>&idTC=<%-showTimes[i].theaterClusterId %>&idTime=<%- showTimes[i].showTimeId %>">0<%- showTimes[i].hour %>:<%- showTimes[i].minute %></a>
-                  
+
+          <% for(let k = 0; k < theaterClusters.length; k++) { %>
+
+            <% if(theaters[j].id == theaterClusters[k].theaterClusterId) { %>
+
+            
+
+
+
+
+              <div class="col-6 rap__item">
+      
+                <h3><span class="BHD"><%- theaterClusters[k].name %></span></h3>
+                <!-- <p>L3-Bitexco Icon 68</p> -->
+      
+                <% for(let i = 0; i < showTimes.length; i++) { %>
+                  <% if(showTimes[i].theaterId == theaterClusters[k].theaterClusterId && showTimes[i].theaterClusterId == theaterClusters[k].id) { %>
+                    
+                    <%  if(showTimes[i].hour < 10) { %>
+                      
+                      <%  if(showTimes[i].minute < 10) { %>
+      
+                        <a href="/ticket/?idM=<%- movies.id %>&idT=<%-showTimes[i].theaterId %>&idTC=<%-showTimes[i].theaterClusterId %>&idTime=<%- showTimes[i].showTimeId %>">0<%- showTimes[i].hour %>:0<%- showTimes[i].minute %></a>
+                      
+                      <% } else { %>
+      
+                        <a href="/ticket/?idM=<%- movies.id %>&idT=<%-showTimes[i].theaterId %>&idTC=<%-showTimes[i].theaterClusterId %>&idTime=<%- showTimes[i].showTimeId %>">0<%- showTimes[i].hour %>:<%- showTimes[i].minute %></a>
+                        
+                      <% } %>
+                      
+                    <% } else { %>
+      
+                      <%  if(showTimes[i].minute < 10) { %>
+      
+                        <a href="/ticket/?idM=<%- movies.id %>&idT=<%-showTimes[i].theaterId %>&idTC=<%-showTimes[i].theaterClusterId %>&idTime=<%- showTimes[i].showTimeId %>"><%- showTimes[i].hour %>:0<%- showTimes[i].minute %></a>
+                      
+                      <% } else { %>
+      
+                        <a href="/ticket/?idM=<%- movies.id %>&idT=<%-showTimes[i].theaterId %>&idTC=<%-showTimes[i].theaterClusterId %>&idTime=<%- showTimes[i].showTimeId %>"><%- showTimes[i].hour %>:<%- showTimes[i].minute %></a>
+                        
+                      <% } %>
+                    <% } %>
+                    
+                    
+                  <% } %>
+      
                 <% } %>
-                
-              <% } else { %>
+               
+              </div>
 
-                <%  if(showTimes[i].minute < 10) { %>
 
-                  <a href="/ticket/?idM=<%- movies.id %>&idT=<%-showTimes[i].theaterId %>&idTC=<%-showTimes[i].theaterClusterId %>&idTime=<%- showTimes[i].showTimeId %>"><%- showTimes[i].hour %>:0<%- showTimes[i].minute %></a>
-                
-                <% } else { %>
 
-                  <a href="/ticket/?idM=<%- movies.id %>&idT=<%-showTimes[i].theaterId %>&idTC=<%-showTimes[i].theaterClusterId %>&idTime=<%- showTimes[i].showTimeId %>"><%- showTimes[i].hour %>:<%- showTimes[i].minute %></a>
-                  
-                <% } %>
-              <% } %>
-              
-              
+
+
+            
             <% } %>
 
+
           <% } %>
-         
-        </div>
-        <div class="col-6 rap__item">
+
+              </div>
+            </div>
+          </div>
+          
+
+
+        <% } %>
+
+
+
+
+
+
+
+
+
+        <!-- <div class="col-6 rap__item">
           <h3><span class="BHD">BHD Star</span> - Thảo Điền</h3>
           <p>L3-Bitexco Icon 68</p>
           <% for(let i = 0; i < showTimes.length; i++) { %>
@@ -181,10 +224,9 @@
             <% } %>
 
           <% } %>
-        </div>
-      </div>
-    </div>
-  </div>
+        </div> -->
+
+<!--      
   <div class="Home__rap row">
     <div class="Home__logo col-2">
       <img src="../../assets/logo/cgv.png" />
@@ -464,7 +506,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 
 

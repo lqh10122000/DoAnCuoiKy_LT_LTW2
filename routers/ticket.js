@@ -19,13 +19,33 @@ const moment = require("moment");
 router.get(
   "/",
   asyncHandler(async function (req, res) {
+
     res.locals.title = "Đặt vé";
 
+    const currentUser = req.currentUser;
+    let user;
+
+    console.log('current user is ', req.currentUser);
+
+    if(currentUser)
+    {
+      user = await User.findById(currentUser.id);
+
+    }
+    else  
+    {
+      user = [{displayName: "", email: "", phone: "",}];
+      
+    }
+
+    console.log("this is current user ", currentUser);
     // get infor prom query
     const IdMovie = req.query.idM;
     const IdTheater = req.query.idT;
     const IdTheaterCluster = req.query.idTC;
     const IdTime = req.query.idTime;
+
+    console.log('this is all id ', IdMovie, IdTheater, IdTheaterCluster, IdTime);
 
     // get data from database loading for infor movie and showtime
 
@@ -36,7 +56,6 @@ router.get(
     const showtime = await ShowTime.findById(IdTime);
     const movie = await Movie.findById(IdMovie);
     const theaterCluster = await TheaterCluster.findById(IdTheaterCluster);
-    const user = await User.findById(1);
 
     // get showtimeId from booking
     const bookingId = await Booking.findBookingId(showtime.id);
@@ -48,18 +67,6 @@ router.get(
         allSeat.push(allSeatCode[j].seatCode);
       }
     }
-
-    // get all seatCode for booking
-
-    // const allSeatCode = await Ticket.findBookingId(bookingId);
-
-    // if (!req.session.userId) {
-    //   res.redirect("/");
-    // } else {
-    // const user = await User.findById(req.session.userId);
-
-    // }
-    // const IdUser = req.session.userId;
 
     res.render("ticket/booking", {
       Theaters: theater,
@@ -76,15 +83,21 @@ async function SendEmail(dataSendEmail) {
   await Email.send(
     dataSendEmail.email,
     `Đặt Vé Xem Phim ${dataSendEmail.movie}`,
-    `Mã vé của bạn là ${dataSendEmail.bookingId} thời gian ${dataSendEmail.time} tại ${dataSendEmail.theaterCluster}`
+    `Mã vé của bạn là ${dataSendEmail.bookingId} thời gian ${dataSendEmail.time} ghế ${dataSendEmail.seatCode} tại ${dataSendEmail.theaterCluster}`
   );
 }
 
 router.post(
   "/booking",
   asyncHandler(async function (req, res) {
+
+    if(!req.currentUser)
+    {
+      res.redirect('/auth/login');
+    }
     const { idT, idUser } = req.query;
     var ghe = req.body.danhSachGhe;
+    const allSeatCode = ghe;
     const totalMoney = req.body.gia;
 
     var nowDate = moment().format();
@@ -118,9 +131,9 @@ router.post(
       ghe = ghe.replace(splitted, "");
 
       if (ghe.length <= 3) {
-        var lastSearCode = ghe.split(",", 1);
+        var lastSeatCode = ghe.split(",", 1);
 
-        const bookingSeccess = await Ticket.createTicket(bookingId, ghe, price);
+        const bookingSeccess = await Ticket.createTicket(bookingId, lastSeatCode, price);
 
         ghe = "";
       }
@@ -132,12 +145,9 @@ router.post(
       time: findShowTime.start,
       movie: findMoive.name,
       theaterCluster: findTheaterCluster.name,
+      seatCode: allSeatCode
     };
 
-    console.log(
-      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      JSON.stringify(dataSendEmail)
-    );
 
     SendEmail(dataSendEmail);
 
