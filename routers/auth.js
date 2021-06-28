@@ -88,12 +88,13 @@ router.post(
       displayName: req.body.displayName,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
+      phone: req.body.phone,
       token: crypto.randomBytes(3).toString("hex").toUpperCase(),
     });
     await Email.send(
       user.email,
       "Kích hoạt tài khoản",
-      `${process.env.BASE_URL}/auth/activate/${user.id}/${user.token}`
+      `Nhấn vào link: ${process.env.BASE_URL}/auth/activate/${user.id}/${user.token}`
     );
     res.redirect("/");
   })

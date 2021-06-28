@@ -75,8 +75,8 @@ router.get(
 async function SendEmail(dataSendEmail) {
   await Email.send(
     dataSendEmail.email,
-    `Đặt Vé Xem Phim ${dataSendEmail.movie}`,
-    `Mã vé của bạn là ${dataSendEmail.bookingId} thời gian ${dataSendEmail.time} tại ${dataSendEmail.theaterCluster}`
+    "Đặt Vé Xem Phim",
+    ` Tên phim: ${dataSendEmail.movie}\nMã vé: ${dataSendEmail.bookingId}\nThời gian: ${dataSendEmail.time}\nĐịa điểm: ${dataSendEmail.theaterCluster}`
   );
 }
 
@@ -92,7 +92,7 @@ router.post(
     Booking.createBooking(idUser, idT, nowDate, totalMoney);
     const findUser = await User.findById(idUser);
     const findShowTime = await ShowTime.findById(idT);
-    const findMoive = await ShowTime.findById(findShowTime.movieId);
+    const findMovie = await ShowTime.findById(findShowTime.movieId);
     const findTheaterCluster = await TheaterCluster.findById(
       findShowTime.theaterClusterId
     );
@@ -130,7 +130,7 @@ router.post(
       email: findUser.email,
       bookingId: bookingId,
       time: findShowTime.start,
-      movie: findMoive.name,
+      movie: findMovie.name,
       theaterCluster: findTheaterCluster.name,
     };
 
