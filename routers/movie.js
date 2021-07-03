@@ -2,6 +2,8 @@ const express = require("express");
 // const Movies = require("../models/movie");
 const asyncHandler = require("express-async-handler");
 const Movie = require("../models/movie");
+const Theater = require("../models/theater");
+const TheaterCluster = require("../models/theater_cluster");
 const moment = require("moment");
 const router = express.Router();
 
@@ -40,10 +42,15 @@ router.post(
 router.get(
   "/",
   asyncHandler(async function (req, res, next) {
+
     const movie = await Movie.getAllMovies();
     const showDate = new Date();
     const Days = getDaysInMonth();
-    res.render("index", { title: "Trang chủ", movies: movie, days: Days });
+    res.render("index", 
+    { title: "Trang chủ", 
+      movies: movie, 
+      days: Days, 
+      });
   })
 );
 

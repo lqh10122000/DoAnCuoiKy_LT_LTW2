@@ -14,6 +14,7 @@ const adminRouter = require('./routers/admin');
 
 const authMiddleware = require("./middlewares/auth");
 const homeMiddleware = require("./middlewares/home");
+const ensureLoggedIn = require("./middlewares/ensure_Logged_In");
 
 const app = express();
 

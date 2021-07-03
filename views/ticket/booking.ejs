@@ -314,12 +314,12 @@
 
         <hr />
         <p class="mb-1 tt_email">Email</p>
-        <p class=""><%- Users.displayName %></p>
+        <p class=""><%- currentUser.displayName %></p>
         <p class="mb-1 tt_sdt">Số điện thoại</p>
-        <p class=""><%- Users.phone %></p>
+        <p class=""><%- currentUser.phone %></p>
         <hr />
         <form
-          action="/ticket/booking?idT=<%- ShowTimes.id %>&idUser=<%- Users.id %>"
+          action="/ticket/booking?idT=<%- ShowTimes.id %>&idUser=<%- currentUser.id %>"
           method="post"
         >
           <p class="tt_datGhe">
@@ -401,6 +401,8 @@
     </div>
   </div>
 </div>
+
+
 <script>
   var danhSachGhe = [];
   var gia = 0;
