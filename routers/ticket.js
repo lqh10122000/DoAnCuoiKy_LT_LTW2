@@ -25,7 +25,6 @@ router.get(
     const currentUser = req.currentUser;
     let user;
 
-    console.log('current user is ', req.currentUser);
 
     if(currentUser)
     {
@@ -38,7 +37,6 @@ router.get(
       
     }
 
-    console.log("this is current user ", currentUser);
     // get infor prom query
     const IdMovie = req.query.idM;
     const IdTheater = req.query.idT;
@@ -105,7 +103,7 @@ router.post(
     Booking.createBooking(idUser, idT, nowDate, totalMoney);
     const findUser = await User.findById(idUser);
     const findShowTime = await ShowTime.findById(idT);
-    const findMovie = await ShowTime.findById(findShowTime.movieId);
+    const findMovie = await Movie.findById(findShowTime.movieId);
     const findTheaterCluster = await TheaterCluster.findById(
       findShowTime.theaterClusterId
     );
@@ -138,6 +136,7 @@ router.post(
         ghe = "";
       }
     }
+
 
     const dataSendEmail = {
       email: findUser.email,

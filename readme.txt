@@ -10,7 +10,7 @@
 
 - sửa lại thông cá nhân (huy) (v) 
 
-- sửa lại khi set cứng user (huy)
+- sửa lại khi set cứng user (huy)(v)
 
 - home (bảo)
 
