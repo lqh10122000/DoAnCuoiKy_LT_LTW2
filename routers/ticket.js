@@ -103,7 +103,7 @@ router.post(
     Booking.createBooking(idUser, idT, nowDate, totalMoney);
     const findUser = await User.findById(idUser);
     const findShowTime = await ShowTime.findById(idT);
-    const findMoive = await Movie.findById(findShowTime.movieId);
+    const findMovie = await Movie.findById(findShowTime.movieId);
     const findTheaterCluster = await TheaterCluster.findById(
       findShowTime.theaterClusterId
     );
@@ -142,7 +142,7 @@ router.post(
       email: findUser.email,
       bookingId: bookingId,
       time: findShowTime.start,
-      movie: findMoive.name,
+      movie: findMovie.name,
       theaterCluster: findTheaterCluster.name,
       seatCode: allSeatCode
     };

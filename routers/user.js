@@ -59,7 +59,6 @@ router.post(
       error.httpStatusCode = 400;
       return next(error);
     }
-    // await rename(file.path, `./public/pictures/${req.currentUser.id}.jpg`);
     const user = req.currentUser;
     user.picture = file.buffer;
     await user.save();
