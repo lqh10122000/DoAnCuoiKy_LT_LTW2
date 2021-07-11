@@ -6,12 +6,9 @@ module.exports = new Sequelize(
   {
     dialect: "postgres",
     dialectOptions: {
-      ssl: true,
-      extra: {
         ssl: {
-          rejectUnauthorized: false
-        },
-      },
+            rejectUnauthorized: false,
+        }
     } 
   }
 );
