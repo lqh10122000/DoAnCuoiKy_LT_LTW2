@@ -46,7 +46,6 @@ app.use('/movie', movieRouter);
 app.use('/admin', adminRouter);
 
 db.sync().then(function (){
-    const port = process.env.PORT || 3000;
-    app.listen(port, () => console.log(`Server is listening on port ${port}!`));
-  })
-  .catch(console.error);
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => console.log(`Server is listening on port ${port}!`));
+}).catch(console.error);
