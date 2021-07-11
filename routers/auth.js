@@ -91,7 +91,7 @@ router.post(
     await Email.send(
       user.email,
       "Kích hoạt tài khoản",
-      `Nhấn vào link: ${process.env.BASE_URL}/auth/activate/${user.id}/${user.token}`
+      `Nhấn vào link: ${process.env.BASE_URL_HEROKU}/auth/activate/${user.id}/${user.token}`
     );
     res.redirect("/");
   })
