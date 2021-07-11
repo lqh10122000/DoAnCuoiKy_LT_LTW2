@@ -8,13 +8,6 @@ const router = express.Router();
 
 const Email = require("../models/email");
 const User = require("../models/user");
-const TheaterCluster = require("../models/theater_cluster");
-const Theater = require("../models/theater");
-const Movie = require("../models/movie");
-const ShowTime = require("../models/show_time");
-const Booking = require("../models/booking");
-const Ticket = require("../models/ticket");
-const FavoriteMovie = require("../models/favorite_movie");
 
 router.use(function (req, res, next) {
   res.locals.title = "Đăng nhập";
