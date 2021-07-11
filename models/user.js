@@ -34,10 +34,6 @@ const User = db.define("User", {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  likes: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
-  }
 });
 
 User.findByEmail = async function (email) {
