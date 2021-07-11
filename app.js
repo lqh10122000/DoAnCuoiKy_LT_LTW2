@@ -45,10 +45,6 @@ app.use('/', homeRouter);
 app.use('/movie', movieRouter);
 app.use('/admin', adminRouter);
 
-app.get('/', function(req, res){
-  res.render('index', {title: 'Trang chủ' });
-});
-
 db.sync().then(function (){
     const port = process.env.PORT || 3000;
     app.listen(port, () => console.log(`Server is listening on port ${port}!`));
