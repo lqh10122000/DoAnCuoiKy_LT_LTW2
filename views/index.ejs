@@ -84,8 +84,8 @@
                         aria-controls="sapChieu" aria-selected="false">Sắp Chiếu</a>
                 </li>
                 <li class="nav-item col-4" role="presentation">
-                    <a class="nav-link" id="yeuThich-tab" data-toggle="tab" href="#yeuThich" role="tab"
-                        aria-controls="yeuThich" aria-selected="false">Phim Yêu Thích</a>
+                    <a class="nav-link" id="xemnhieunhat-tab" data-toggle="tab" href="#xemnhieunhat" role="tab"
+                        aria-controls="xemnhieunhat" aria-selected="false">Phim Xem Nhiều Nhất</a>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
@@ -145,7 +145,7 @@
                         <% } %>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="yeuThich" role="tabpanel" aria-labelledby="yeuThich-tab">
+                <div class="tab-pane fade" id="xemnhieunhat" role="tabpanel" aria-labelledby="xemnhieunhat-tab">
                     <div class="row">
                         <% for(var i=0; i < listMovieLike.length; i++) { %>
                             <% if(listMovieLike[i].likes > 0 ) { %>
@@ -177,8 +177,6 @@
         </div>
     </div>
     <div class="Home__CumRap">
-
-
 
         <% for(let i = 0; i < theaters.length; i++) { %>
 

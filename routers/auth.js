@@ -133,7 +133,7 @@ router.post(
       await Email.send(
         user.email,
         "Đổi mật khẩu",
-        `${process.env.BASE_URL}/auth/forgotPassword`
+        `${process.env.BASE_URL_HEROKU}/auth/forgotPassword`
       );
       console.log(`Vui lòng kiểm tra email`);
     }
