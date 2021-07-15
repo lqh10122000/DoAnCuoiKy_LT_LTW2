@@ -44,7 +44,7 @@ router.post(
       // req.currentUser.id = 1;
   
       const file = req.file;
-  
+      
       console.log(file);
       if (!file) {
         const error = new Error("Please choose files");

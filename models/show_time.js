@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const db = require("./db");
+const Booking = require("./booking");
 const ShowTime = db.define("ShowTime", {
   id: {
     type: DataTypes.INTEGER,
@@ -8,7 +9,7 @@ const ShowTime = db.define("ShowTime", {
     autoIncrement: true,
   },
   movieId: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   theaterId: {
@@ -87,6 +88,11 @@ ShowTime.findAllId = async function (id) {
       id,
     },
   });
+};
+
+ShowTime.getMostWatchedMovies = async function () {
+  const getMostWatchedMovies = db.query(' select s0."movieId", count(*) from public."ShowTimes" as s0 inner join public."Bookings" as b0 on s0."id" = b0."showTimeId" group by s0."movieId" order by count(*) desc ');
+  return getMostWatchedMovies;
 };
 
 module.exports = ShowTime;

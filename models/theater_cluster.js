@@ -20,7 +20,7 @@ const TheaterCluster = db.define("TheaterCluster", {
     allowNull: true,
   },
   addressMaps: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: false,
   },
 });
