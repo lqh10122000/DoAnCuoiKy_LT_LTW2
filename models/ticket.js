@@ -8,7 +8,7 @@ const Ticket = db.define("Ticket", {
     autoIncrement: true,
   },
   bookingId: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   seatCode: {

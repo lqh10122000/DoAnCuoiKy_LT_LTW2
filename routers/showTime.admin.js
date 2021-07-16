@@ -86,12 +86,12 @@ router.post(
     
 
     const newShowtime = await ShowTime.create({
-        'movieId' : movie,
-        'theaterId' : theater.theaterClusterId,
-        'theaterClusterId' : theaterCluster,
+        movieId : Number(movie),
+        theaterId : Number(theater.theaterClusterId),
+        theaterClusterId : Number(theaterCluster),
         start : date,
         end : end,
-        price: price
+        price: Number(price)
     });
 
     newShowtime.save();
@@ -166,12 +166,12 @@ router.post('/update', async function (req, res) {
 
 
     await ShowTime.update(
-        { 'movieId': movie.toString(),
-          'theaterId': Number(theater.theaterClusterId),
-          'theaterClusterId': theaterCluster.toString(),   
+        { movieId: Number(movie),
+          theaterId: Number(theater.theaterClusterId),
+          theaterClusterId: Number(theaterCluster),   
           start: date,
           end: endStart,
-          price: price
+          price: Number(price)
         },
         { where: { id: id } }
       );

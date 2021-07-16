@@ -45,21 +45,25 @@ router.post(
     "/",
     asyncHandler(async function (req, res) {
       const { nameTheaterCluster, address, addressMap, nameTheater } = req.body;
-      console.log(
-        "add theaterCluster",
-        nameTheaterCluster,
-        address,
-        addressMap,
-        nameTheater
-      );
+      
   
       const now = Date.now();
       const idTheater = await Theater.findByName(nameTheater);
+      const IDTheater = idTheater.id;
+
+      console.log(
+        "aaaaaaaaaaaaaaaaâ",
+        nameTheaterCluster,
+        address,
+        addressMap,
+        IDTheater
+      );
+
       const newTheaterCluster = await TheaterCluster.create({
         name: nameTheaterCluster,
         address: address,
-        'theaterClusterId': idTheater.id,
-        'addressMaps' : addressMap,
+        theaterClusterId: Number(IDTheater),
+        addressMaps : addressMap,
       });
       newTheaterCluster.save();
       res.redirect("/admin/theatercluster");
@@ -86,7 +90,7 @@ router.post('/update', asyncHandler(async function (req, res) {
 
   await TheaterCluster.update(
     { name: nameTheaterCluster,
-      'theaterClusterId': TheaterClusterId,
+      theaterClusterId: Number(TheaterClusterId),
       address: address,   
     },
     { where: { id: id } }

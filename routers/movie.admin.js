@@ -53,9 +53,9 @@ router.post(
       } else {
         const newMovie = await Movie.create({
           name: nameMovie,
-          'premiereDate': dateMovie,
-          'picturePoster': file.buffer,
-          time: timeMovie,
+          premiereDate: Date(dateMovie),
+          picturePoster: file.buffer ,
+          time: Number(timeMovie),
           trailer: trailerMovie,
           content: content,
         });
@@ -86,21 +86,18 @@ asyncHandler(async function (req, res) {
   const {nameMovie, timeMovie, trailerMovie, content, premiereDate } = req.body;
   const file = req.file;
 
+  console.log('aaaaaaaaaa', id, nameMovie, timeMovie, trailerMovie, content, premiereDate );
+
   await Movie.update(
     { name: nameMovie,
-      'timeMovie': timeMovie,
+      time: Number(timeMovie),
       trailer: trailerMovie,   
       content: content,
-      'premiereDate': premiereDate,
-      'picturePoster': file.buffer
+      premiereDate: Date(premiereDate),
+      picturePoster: file.buffer
     },
     { where: { id: id } }
   );
-
-
-  console.log(id);
-
-  console.log('this is update movie ', premiereDate);
   res.redirect("/admin/movie");
 }))
   

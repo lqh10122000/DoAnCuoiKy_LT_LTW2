@@ -45,26 +45,32 @@ router.post(
       const { nameTheater, species, horizontalSize, wideSide } =
         req.body;
   
-      console.log(
-        "add theater",
-        nameTheater,
-        species,
-        horizontalSize,
-        wideSide
-      );
-  
+     
       const allTheater = await Theater.findAll();
       const theaterClusterId = allTheater.length + 1;
   
       console.log(theaterClusterId);
+
+
+      console.log(
+        "aaaaaaaaaaaaaaaaaaâ",
+        nameTheater,
+        species,
+        horizontalSize,
+        wideSide,
+        theaterClusterId
+      );
+  
   
       const newTheater = await Theater.create({
         name: nameTheater,
         species: species,
-        'horizontalSize': horizontalSize,
-        'wideSize': wideSide,
+        'horizontalSize': Number(horizontalSize) ,
+        'wideSize': Number(wideSide),
         'theaterClusterId': theaterClusterId,
       });
+
+      await newTheater.save();
   
       res.redirect("/admin/theater");
     })
@@ -92,8 +98,8 @@ router.post('/update', asyncHandler(async function (req, res) {
   await Theater.update(
     { name: nameTheater,
       species: species,
-      'horizontalSize': horizontalSize,
-      'wideSize': wideSize
+      horizontalSize: horizontalSize,
+      wideSize: wideSize
     },
     { where: { id: id } }
   );
