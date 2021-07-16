@@ -53,7 +53,7 @@ router.post(
       } else {
         const newMovie = await Movie.create({
           name: nameMovie,
-          premiereDate: Date(dateMovie),
+          premiereDate: dateMovie,
           picturePoster: file.buffer ,
           time: Number(timeMovie),
           trailer: trailerMovie,
@@ -89,11 +89,12 @@ asyncHandler(async function (req, res) {
   console.log('aaaaaaaaaa', id, nameMovie, timeMovie, trailerMovie, content, premiereDate );
 
   await Movie.update(
-    { name: nameMovie,
+    { 
+      name: nameMovie,
       time: Number(timeMovie),
       trailer: trailerMovie,   
       content: content,
-      premiereDate: Date(premiereDate),
+      premiereDate: premiereDate,
       picturePoster: file.buffer
     },
     { where: { id: id } }
