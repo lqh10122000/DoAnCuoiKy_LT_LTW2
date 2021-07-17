@@ -28,9 +28,9 @@ router.get("/changePassword", function (req, res) {
   res.render("auth/changePassword");
 });
 
-router.get("/emailForgotPassword", function (req, res) {
+router.get("/forgotEmailPassword/:id", function (req, res) {
   res.locals.title = "Quên mật khẩu";
-  res.render("auth/emailForgotPassword");
+  res.render("auth/forgotEmailPassword");
 });
 
 router.get("/forgotPassword", function (req, res) {
@@ -91,7 +91,7 @@ router.post(
     await Email.send(
       user.email,
       "Kích hoạt tài khoản",
-      `Nhấn vào link: ${process.env.BASE_URL_HEROKU}/auth/activate/${user.id}/${user.token}`
+      `Nhấn vào link: ${process.env.BASE_URL}/auth/activate/${user.id}/${user.token}`
     );
     res.redirect("/");
   })
@@ -125,7 +125,7 @@ router.post(
 );
 
 router.post(
-  "/emailForgotPassword",
+  "/forgotPassword",
   asyncHandler(async function (req, res) {
     const { email } = req.body;
     const user = await User.findByEmail(email);
@@ -133,7 +133,7 @@ router.post(
       await Email.send(
         user.email,
         "Đổi mật khẩu",
-        `${process.env.BASE_URL_HEROKU}/auth/forgotPassword`
+        `${process.env.BASE_URL}/auth/forgotEmailPassword/${user.id}`
       );
       console.log(`Vui lòng kiểm tra email`);
     }
@@ -142,10 +142,11 @@ router.post(
 );
 
 router.post(
-  "/forgotPassword",
+  "/forgotEmailPassword/:id",
   asyncHandler(async function (req, res) {
+    const { id } = req.params;
     const { newpassword } = req.body;
-    const user = await User.findById(req.session.userId);
+    const user = await User.findById(id);
     if (user) {
       user.password = bcrypt.hashSync(newpassword, 10);
       user.save();
