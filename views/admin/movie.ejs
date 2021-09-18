@@ -161,7 +161,12 @@
               </td>
               <td><%- movies[i].name %></td>
               <td><%- movies[i].time %></td>
-              <td>Đang công chiếu</td>
+        
+              <% if(movies[i].premiereDate - datenow > 0 ) { %>
+                <td>Sắp công chiếu</td>              
+              <% } else {%>                               
+                <td>Đang công chiếu</td>  
+                <% } %>  
               <td><%- movies[i].premiereDate %></td>
               <td>
                 <button
